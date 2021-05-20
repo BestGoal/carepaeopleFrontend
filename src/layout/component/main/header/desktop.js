@@ -9,25 +9,22 @@ import { history } from "../../../../history"
 export default function Header() {
 
     return (
-        <AppBar position="static" className="bg-white box-shadow-none header-app-bar">
+        <AppBar position="static" className="bg-theme box-shadow-none header-app-bar">
             <Toolbar className="d-flex justify-content-between pt-1 pb-1">
-                <Box className="d-flex justify-content-right align-items-center">
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Industries</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Hire</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Work</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Jobs</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Blog</Button>
-                </Box>
                 <Box className="d-flex align-items-center crusor-pointer" onClick={() => history.push("/")}>
-                    <Typography className="font-weight-bold color-theme" variant="h4">
+                    <Typography className="font-weight-bold color-white" variant="h4">
                         CarePeople
                     </Typography>
                 </Box>
                 <Box className="d-flex justify-content-right align-items-center">
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">About</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Login</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained" onClick={() => history.push("/register")}>Register</Button>
-                    <Button className="header-btn-item bg-transparent box-shadow-none color-theme" variant="contained">Download</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Wants to hire?</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Wants to work?</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Jobs</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">How it works</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Download</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">About Us</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/register")}>Sign Up</Button>
+                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign In</Button>
                 </Box>
             </Toolbar>
         </AppBar>

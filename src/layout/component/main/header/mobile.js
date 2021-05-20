@@ -1,27 +1,32 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
+import MenuIcon from '@material-ui/icons/Menu'
 import Clear from "@material-ui/icons/Clear"
-// import WalletIcon from "../../../../asset/image/section/wallet-icon.png"
-// import ExchangeIcon from "../../../../asset/image/section/exchange-icon.png"
-// import ExplorerIcon from "../../../../asset/image/section/explorer-icon.png"
-import { history } from "../../../../history"
+
+import AppStore from "../../../../asset/image/appstore.png"
+import GoogleStore from "../../../../asset/image/googlestore.png"
+import QrCode from "../../../../asset/image/qrcode.png"
+
 
 export default function Header() {
 
     const [mode, setMode] = React.useState(false)
     const gotoPage = (url) => {
-        setMode(false)
+        alert(url)
         history.push(url)
+        setMode(false)
     }
+
+    const history = useHistory()
 
     return (
         <AppBar position="static" className="bg-theme box-shadow-none" onClick={() => history.push("/")}>
@@ -44,30 +49,32 @@ export default function Header() {
                                 <Clear onClick={() => setMode(!mode)} />
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Industries </Typography>
+                                <Typography className="font-weight-bold color-theme"> Wants to hire? </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Hire </Typography>
-                            </Box>
-                            <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Work </Typography>
+                                <Typography className="font-weight-bold color-theme"> Wants to work? </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
                                 <Typography className="font-weight-bold color-theme"> Jobs </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Blog </Typography>
-                            </Box>
-                            <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> About </Typography>
+                                <Typography className="font-weight-bold color-theme"> How it works </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
                                 <Typography className="font-weight-bold color-theme"> Download </Typography>
                             </Box>
+                            <Box className="p-1 border-solid-1">
+                                <Typography className="font-weight-bold color-theme"> About Us </Typography>
+                            </Box>
                         </CardContent>
                         <CardActions className="d-flex justify-content-center header-auth-button">
-                            <Button className="register" variant="contained" onClick={() => gotoPage("/register")}> Register </Button>
-                            <Button className="login bg-transparent" variant="contained" onClick={() => gotoPage("/login")}> Login </Button>
+                            <Button className="register text-capitalize" variant="contained" onClick={() => history.push("/register")}> Sign Up </Button>
+                            <Button className="login bg-transparent text-capitalize" variant="contained" onClick={() => gotoPage("/login")}> Sign In </Button>
+                        </CardActions>
+                        <CardActions className="d-flex justify-content-center header-auth-button">
+                            <img className="header-card-image" src={AppStore} alt="" />
+                            <img className="header-card-image" src={GoogleStore} alt="" />
+                            <img className="header-card-image" src={QrCode} alt="" />
                         </CardActions>
                     </Card>
                 }

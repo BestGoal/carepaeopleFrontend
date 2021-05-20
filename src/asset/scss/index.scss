@@ -1,6 +1,6 @@
 $white: white;
 $gray: gray;
-$theme-color: #fa4d09;
+$theme-color: rgb(12, 108, 242);
 
 $d-t-color: #1d2c39;
 $d-s-color: #e9f1f3;
@@ -9,3 +9,4 @@ $d-s-color: #e9f1f3;
 @import "./baseComponent/index.scss";
 @import "./component/header.scss";
 @import "./component/dashboard.scss";
+@import "./component/auth.scss";
