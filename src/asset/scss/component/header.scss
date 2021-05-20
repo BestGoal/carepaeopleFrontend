@@ -1,0 +1,27 @@
+.header-card{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    min-width: 500px;
+    .border-solid-1{
+        border-bottom: 1px solid #f0f2f7;
+    }
+    .header-auth-button{
+        .register{
+            width: 100%;
+            background-color: $theme-color;
+            color: $white;
+        }
+        .login{
+            width: 100%;
+            color: $theme-color;
+            border: 1px solid $theme-color;
+        }
+    }
+}
+@media(max-width: 500px) {
+    .header-card{
+        left: 10px;
+        min-width: 0;
+    }
+}

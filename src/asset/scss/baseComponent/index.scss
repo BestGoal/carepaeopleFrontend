@@ -21,6 +21,9 @@
 .position-fixed {
     position: fixed
 }
+.position-realative {
+    position: relative
+}
 
 // justify-content
 .justify-content-between {
@@ -60,13 +63,14 @@
     font-size: 3rem;
 }
 
-// background
-.bg-theme{
-    background: rgb(14 71 133) !important;
-    // background: #061121 !important;
-}
 .bg-transparent{
     background: transparent !important;
+}
+.bg-white{
+    background: $white !important;
+}
+.bg-theme{
+    background: $theme-color !important;
 }
 
 // box shadow
@@ -192,7 +196,7 @@
     margin-top: 1rem;
 }
 .mt-2{
-    margin-top: 2rem;
+    margin-top: 2rem !important;
 }
 .mt-3{
     margin-top: 3rem;
@@ -272,7 +276,10 @@
     color: $white !important;
 }
 .color-gray{
-    color: gray;
+    color: $gray;
+}
+.color-theme{
+    color: $theme-color !important;
 }
 
 .flex-direction-column{

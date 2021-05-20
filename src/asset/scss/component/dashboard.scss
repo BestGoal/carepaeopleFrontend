@@ -1,0 +1,89 @@
+.dashboard {
+    .dashboard-banner {
+        position: relative;
+        background-image: url(../../image/first-banner.jpg);
+        background-position: center 25%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: $white;
+        min-height: 45vh;
+        text-align: center;
+    }
+    .dashboard-detail{
+        position: relative;
+        .dashboard-container{
+            max-width: 80%;
+            .hire-worker-btn{
+                background: $theme-color !important;
+                color: $white;
+            }
+            .dashboard-title{
+                background: $white !important;
+                margin: -90px 0 0 0;
+                .dashboard-letter{
+                    color: $d-t-color;
+                    letter-spacing: 3px;
+                }
+                @media(max-width: 500px) {
+                    .dashboard-letter{
+                        letter-spacing: 0;
+                    }
+                }
+            }
+        }
+        .dashboard-staffers{
+            padding: 2rem;
+            .dashboard-staffers-bg{
+                background-color: $d-s-color !important;
+                .dashboard-staffers-main{
+                    padding: 3rem;
+                    .dashboard-staffers-header{
+                        font-size: 2rem !important;
+                    }
+                    .dashboard-staffers-letter{
+                        padding-bottom: 2rem;
+                    }
+                    @media(max-width: 1330px) {
+                        .dashboard-staffers-letter{
+                            padding-bottom: 1rem;
+                        }
+                    }                
+                    @media(max-width: 1100px) {
+                        .dashboard-staffers-letter{
+                            padding-bottom: 0;
+                        }
+                    }
+                    .download-btn{
+                        background: $theme-color !important;
+                        color: $white;
+                        width: 200px;
+                    }
+                }
+            }
+            .dashboard-img{
+                width: 100%;
+            }
+        }
+        @media(max-width: 500px) {
+            .dashboard-staffers{
+                padding: 0;
+                .dashboard-staffers-main{
+                    padding-top: 0;
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                    .dashboard-staffers-header{
+                        font-size: 1.5rem !important;
+                    }
+                    .dashboard-staffers-letter{
+                        font-size: 0.75rem;
+                    }
+                    .download-btn{
+                        background: $theme-color !important;
+                        color: $white;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}

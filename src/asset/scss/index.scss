@@ -1,4 +1,11 @@
 $white: white;
+$gray: gray;
+$theme-color: #fa4d09;
+
+$d-t-color: #1d2c39;
+$d-s-color: #e9f1f3;
 
 @import "./theme/index.scss";
 @import "./baseComponent/index.scss";
+@import "./component/header.scss";
+@import "./component/dashboard.scss";

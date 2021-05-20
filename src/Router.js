@@ -5,6 +5,7 @@ import { history } from "./history";
 import { ContextLayout } from "./layout";
 
 const Dashboard = lazy(() => import("./views/dashboard/index"));
+const Register = lazy(() => import("./views/auth/register/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -55,6 +56,7 @@ class AppRouter extends React.Component {
         <Switch>
           {/* <RequireAuth> */}
           <AppRoute path="/" exact component={Dashboard} MainLayout />
+          <AppRoute path="/register" exact component={Register} MainLayout />
           {/* </RequireAuth> */}
         </Switch>
       </Router>
