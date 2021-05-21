@@ -1,3 +1,4 @@
+import { SET_USER_DATA } from "../../type"
 
 const preState = {
     isAuth: false
@@ -5,8 +6,8 @@ const preState = {
 
 const auth = ( state = preState, action) => {
     switch(action.type) {
-        case "INCREMENT":
-            return state;
+        case SET_USER_DATA:
+            return { ...state, isAuth: action.payload };
         default: 
             return state
     }

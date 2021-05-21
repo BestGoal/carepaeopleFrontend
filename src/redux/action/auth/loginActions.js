@@ -1,3 +1,5 @@
+import { SET_USER_DATA } from "../../type"
+
 export const sessionCheck = async () => {
 		return { auth: { isAuth: false }}
 	// try{
@@ -31,4 +33,11 @@ export const sessionCheck = async () => {
 	// } catch(e) {
 	// 	return { auth: { isAuth: false }}
 	// }
+}
+
+export const Login_func = (key) => {
+    return {
+        type: SET_USER_DATA,
+        payload: key
+    }
 }

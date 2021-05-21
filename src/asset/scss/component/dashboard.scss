@@ -1,10 +1,37 @@
-.worker-dashboard{
-    .profile-avatar{
+.worker-dashboard {
+    .profile-avatar {
         width: 100%;
         height: 100%;
         border-radius: 100%;
     }
-    .profile-count{
-        color:#4fb55d;
+    .profile-count {
+        color: #4fb55d;
+    }
+    .worker-select-type {
+        background-color: #ecf1f4;
+        padding: 3px;
+        border-radius: 5px;
+        button{
+            width: 50%;
+        }
+        .enable-item {
+            background: $theme-color;
+            color: $white !important;
+            box-shadow: 3px 3px 3px gray;
+            text-align: center;
+        }
+        .disable-item {
+            background: $white;
+            box-shadow: 3px 3px 3px gray;
+            text-align: center;
+        }
+    }
+    .job-item{
+        border: 1px solid ;
+        border-radius: 10px;
+        img{
+            width: 100%;
+            border-radius: 100%;
+        }
     }
 }

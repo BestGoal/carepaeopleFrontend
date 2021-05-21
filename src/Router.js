@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
-import { Router, Switch, Route } from "react-router-dom";
-import { connect } from "react-redux";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
 import { history } from "./history";
 import { ContextLayout } from "./layout";
 
@@ -34,22 +34,23 @@ const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout,
 
 const AppRoute = connect(null)(RouteConfig)
 
-// const RequireAuth = (data) => {
-//   const isAuthorized = useSelector((state) => state.auth.isAuth);
-//   if (!isAuthorized && url_path() !== LOGIN_URL) {
-//     return <Redirect to={LOGIN_URL}/>;
-//   }
-//   for(let i in data.children) {
-//     if(data.children[i].props.path === data.location.pathname) {
-//       return data.children.slice(0, data.children.length-1);
-//     }
-//   }
-//   return data.children.slice(data.children.length-1, data.children.length);
-// };
+const RequireAuth = (data) => {
+  const isAuthorized = useSelector((state) => state.auth.isAuth);
+  if (!isAuthorized) {
+    return <Redirect to={"/"}/>;
+  }
+  for(let i in data.children) {
+    if(data.children[i].props.path === data.location.pathname) {
+      return data.children.slice(0, data.children.length-1);
+    }
+  }
+  return data.children.slice(data.children.length-1, data.children.length);
+};
 
 class AppRouter extends React.Component {
 
   componentDidMount() {
+
   }
 
   render() {
@@ -57,13 +58,15 @@ class AppRouter extends React.Component {
       <Router history={history}>
         {/* { this.props.loading && <Loading /> } */}
         <Switch>
-          {/* <RequireAuth> */}
           <AppRoute path="/" exact component={Dashboard} MainLayout />
           <AppRoute path="/register" exact component={Register} MainLayout />
           <AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
           <AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
-          <AppRoute path="/worker-home" exact component={WorkerHome} MainLayout />
-          {/* </RequireAuth> */}
+          <RequireAuth>
+            <AppRoute path="/worker-home" exact component={WorkerHome} MainLayout />
+            <AppRoute path="/worker-home1" exact component={WorkerHome} MainLayout />
+            <AppRoute path="/worker-home2" exact component={WorkerHome} MainLayout />
+          </RequireAuth>
         </Switch>
       </Router>
     )
@@ -71,7 +74,8 @@ class AppRouter extends React.Component {
 }
 
 const mapStateToPropss = (state) => ({
-  loading: state.base.loading
+  loading: state.base.loading,
+  isAuth: state.auth.isAuth
 })
 
 const mapDispatchToProps = {
