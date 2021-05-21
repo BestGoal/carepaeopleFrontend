@@ -1,9 +1,11 @@
 $white: white;
 $gray: gray;
-$theme-color: rgb(12, 108, 242);
+$theme-color: #2b82eb;
 
 $d-t-color: #1d2c39;
 $d-s-color: #e9f1f3;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @import "./theme/index.scss";
 @import "./baseComponent/index.scss";

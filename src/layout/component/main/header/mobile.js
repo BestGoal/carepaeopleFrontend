@@ -21,7 +21,6 @@ export default function Header() {
 
     const [mode, setMode] = React.useState(false)
     const gotoPage = (url) => {
-        alert(url)
         history.push(url)
         setMode(false)
     }
@@ -29,9 +28,9 @@ export default function Header() {
     const history = useHistory()
 
     return (
-        <AppBar position="static" className="bg-theme box-shadow-none" onClick={() => history.push("/")}>
+        <AppBar position="static" className="bg-theme box-shadow-none">
             <Toolbar className="d-flex justify-content-between">
-                <Box className="d-flex align-items-center crusor-pointer">
+                <Box className="d-flex align-items-center crusor-pointer" onClick={() => history.push("/")}>
                     <Typography className="font-weight-bold" variant="h4">
                         CarePeople
                     </Typography>
@@ -68,7 +67,7 @@ export default function Header() {
                             </Box>
                         </CardContent>
                         <CardActions className="d-flex justify-content-center header-auth-button">
-                            <Button className="register text-capitalize" variant="contained" onClick={() => history.push("/register")}> Sign Up </Button>
+                            <Button className="register text-capitalize" variant="contained" onClick={() => gotoPage("/register")}> Sign Up </Button>
                             <Button className="login bg-transparent text-capitalize" variant="contained" onClick={() => gotoPage("/login")}> Sign In </Button>
                         </CardActions>
                         <CardActions className="d-flex justify-content-center header-auth-button">

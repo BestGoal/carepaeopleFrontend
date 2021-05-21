@@ -11,12 +11,45 @@ import { sessionCheck } from "./redux/action/auth/loginActions";
 import './asset/scss/index.scss';
 
 const renderApp = preloadedState => {
+
+	const themeConfig = {
+		dark: {
+			palette: {
+				type: "dark",
+				primary: {
+					main: "#2b81eb",
+				},
+				background: {
+					default: "#111111",
+					paper: "#222222",
+				},
+			},
+			typography: {
+				fontFamily: "'Roboto', Poppins",
+				fontSize: 16,
+			},
+		},
+		light: {
+			palette: {
+				type: "light",
+				primary: {
+					main: "#2b81eb",
+				},
+			},
+			typography: {
+				fontFamily: "'Roboto', Poppins",
+				fontSize: 16,
+			},
+		},
+	};
+
 	const store = configureStore(preloadedState);
+
 	ReactDOM.render(
 		<React.StrictMode>
 			<Provider store={store}>
 				<Suspense fallback={<></>}>
-					<ThemeProvider theme={createMuiTheme()}>
+					<ThemeProvider theme={createMuiTheme(themeConfig['light'])}>
 						<CssBaseline />
 						<Layout>
 							<Router />

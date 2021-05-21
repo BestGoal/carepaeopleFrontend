@@ -6,7 +6,9 @@ import { ContextLayout } from "./layout";
 
 const Dashboard = lazy(() => import("./views/dashboard/index"));
 const Register = lazy(() => import("./views/auth/register/index"));
-const ClientRegister = lazy(() => import("./views/auth/register/index"));
+const ClientRegister = lazy(() => import("./views/auth/register/client"));
+const WorkerRegister = lazy(() => import("./views/auth/register/worker"));
+const WorkerHome = lazy(() => import("./views/home/worker/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -59,7 +61,8 @@ class AppRouter extends React.Component {
           <AppRoute path="/" exact component={Dashboard} MainLayout />
           <AppRoute path="/register" exact component={Register} MainLayout />
           <AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
-          <AppRoute path="/worker-register" exact component={Register} MainLayout />
+          <AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
+          <AppRoute path="/worker-home" exact component={WorkerHome} MainLayout />
           {/* </RequireAuth> */}
         </Switch>
       </Router>
