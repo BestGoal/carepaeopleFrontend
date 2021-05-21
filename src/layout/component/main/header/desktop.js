@@ -16,16 +16,15 @@ export default function Header() {
                     <Box className="d-flex align-items-center crusor-pointer" onClick={() => history.push("/")}>
                         <Typography className="font-weight-bold color-white" variant="h4">
                             CarePeople
-                    </Typography>
+                        </Typography>
                     </Box>
                     <Box className="d-flex justify-content-right align-items-center">
-                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Wants to hire?</Button>
-                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Wants to work?</Button>
-                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Jobs</Button>
+                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Post Shifts</Button>
+                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Work Shifts</Button>
                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">How it works</Button>
                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Download</Button>
                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">About Us</Button>
-                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/register")}>Sign Up</Button>
+                        <Button className="header-signup-item text-capitalize" variant="contained" onClick={() => history.push("/register")}>Sign Up</Button>
                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign In</Button>
                     </Box>
                 </Toolbar>

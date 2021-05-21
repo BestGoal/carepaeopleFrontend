@@ -48,13 +48,10 @@ export default function Header() {
                                 <Clear onClick={() => setMode(!mode)} />
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Wants to hire? </Typography>
+                                <Typography className="font-weight-bold color-theme"> Post Shifts </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Wants to work? </Typography>
-                            </Box>
-                            <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Jobs </Typography>
+                                <Typography className="font-weight-bold color-theme"> Work Shifts </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
                                 <Typography className="font-weight-bold color-theme"> How it works </Typography>
