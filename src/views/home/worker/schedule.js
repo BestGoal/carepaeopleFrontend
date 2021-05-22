@@ -26,17 +26,19 @@ export default function Schedule() {
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box>
-                        <Typography variant="h5">CURRENT SCHEDULE</Typography>
+                        <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
                     </Box>
                     <Box className="job-item theme-box-shadow p-2 mt-1">
                         <Grid container spacing={2}>
+                            <Grid item xs={12}>
+                                <Typography className="text-align-center" variant="h5"> UHN-TORONTO WESTERN-ON </Typography>
+                                <Typography className="text-align-center"> personal care aide(PCA) </Typography>
+                            </Grid>
                             <Grid item md={3} xs={12}>
                                 <img src={Root.adminUrl + "avatar/1.jpg"} alt="" />
                             </Grid>
                             <Grid item md={9} xs={12}>
-                                <Typography className="font-weight-bold text-align-center" variant="h5"> UHN-TORONTO WESTERN-ON </Typography>
-                                <Typography className="font-weight-bold text-align-center"> personal care aide(PCA) </Typography>
-                                <Grid container className="mt-1" spacing={3}>
+                                <Grid container spacing={3}>
                                     <Grid item md={6} xs={12}>
                                         <Box className="border1 p-1 height-100">
                                             <Box className="d-flex align-items-center">

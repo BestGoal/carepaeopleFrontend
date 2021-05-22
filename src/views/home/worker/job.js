@@ -43,7 +43,7 @@ export default function Job() {
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box>
-                        <Typography variant="h5">AVAILABLE SHIFTS</Typography>
+                        <Typography className="text-align-center font-weight-bold" variant="h5">AVAILABLE SHIFTS</Typography>
                     </Box>
                     <Grid container spacing={2} className="mt-2">
                         <Grid item md={6} xs={12}>
@@ -60,13 +60,15 @@ export default function Job() {
                         data.map((item, key) => (
                             <Box className="job-item theme-box-shadow p-2 mt-1" key={key}>
                                 <Grid container spacing={2}>
+                                    <Grid item xs={12}>
+                                        <Typography className="text-align-center" variant="h5"> {item.shiftName} </Typography>
+                                        <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
+                                    </Grid>
                                     <Grid item md={3} xs={12}>
                                         <img src={Root.adminUrl + item.avatar} alt="" />
                                     </Grid>
                                     <Grid item md={9} xs={12}>
-                                        <Typography className="font-weight-bold text-align-center" variant="h5"> {item.shiftName} </Typography>
-                                        <Typography className="font-weight-bold text-align-center"> personal care aide(PCA) </Typography>
-                                        <Grid container className="mt-1" spacing={3}>
+                                        <Grid container spacing={3}>
                                             <Grid item md={6} xs={12}>
                                                 <Box className="border1 p-1 height-100">
                                                     <Box className="d-flex align-items-center">

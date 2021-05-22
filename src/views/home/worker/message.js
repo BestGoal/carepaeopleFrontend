@@ -11,7 +11,7 @@ export default function Message() {
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box>
-                        <Typography variant="h5">GENERAL MESSAGE</Typography>
+                        <Typography className="text-align-center font-weight-bold" variant="h5">GENERAL MESSAGE</Typography>
                     </Box>
                 </CardContent>
             </Card>

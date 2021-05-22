@@ -43,11 +43,11 @@ export default function Profile() {
                                     </Box>
                                     <Box className="d-flex align-items-center mt-2">
                                         <Box className="d-flex align-items-center">
-                                            <Typography className="font-weight-bold"> Total time worked : </Typography>
+                                            <Typography className="font-weight-bold"> Time Worked: </Typography>
                                             <Typography className="ml-1"> 40h 29m </Typography>
                                         </Box>
                                         <Box className="d-flex align-items-center ml-2">
-                                            <Typography className="font-weight-bold"> Total Earning : </Typography>
+                                            <Typography className="font-weight-bold"> Earnings: </Typography>
                                             <Typography className="ml-1"> $ 2398.76 </Typography>
                                         </Box>
                                     </Box>
