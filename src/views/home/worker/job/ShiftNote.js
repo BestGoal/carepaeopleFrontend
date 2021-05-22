@@ -22,12 +22,12 @@ export default function ShiftNote() {
                 </Box>
                 {
                     mode && 
-                        <Typography className="mt-1">
+                        <span className="mt-1" dataLineBreak="true">
                             I want to good norse.
                             who can work for my patianet.
                             He have to good idea about shift and have more experience.
                             Thanks
-                        </Typography>
+                        </span>
                 }
             </CardContent>
         </Card>

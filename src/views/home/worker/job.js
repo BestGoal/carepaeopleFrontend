@@ -109,10 +109,10 @@ export default function Job() {
                                                     <Typography className="ml-1">Covid-19 Negative</Typography>
                                                 </Box>
                                             </Grid>
-                                            <Grid item xs={12} className="d-flex justify-content-center">
-                                                <Button variant="contained" className="accept">Accept Shift</Button>
-                                            </Grid>
                                         </Grid>
+                                    </Grid>
+                                    <Grid item xs={12} className="d-flex justify-content-center">
+                                        <Button variant="contained" className="accept">Accept Shift</Button>
                                     </Grid>
                                 </Grid>
                             </Box>
