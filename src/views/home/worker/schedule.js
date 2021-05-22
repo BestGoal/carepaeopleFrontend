@@ -13,7 +13,10 @@ import AvTimer from "@material-ui/icons/AvTimer"
 import Payment from "@material-ui/icons/Payment"
 import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
-import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt"
+import Explore from "@material-ui/icons/Explore"
+import Warning from "@material-ui/icons/Warning"
+
+import ShiftNote from "./job/ShiftNote"
 import { Root } from "../../../pre/config"
 
 export default function Schedule() {
@@ -23,58 +26,62 @@ export default function Schedule() {
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box>
-                        <Typography variant="h5">Curreent schedule</Typography>
+                        <Typography variant="h5">CURRENT SCHEDULE</Typography>
                     </Box>
                     <Box className="job-item theme-box-shadow p-2 mt-1">
                         <Grid container spacing={2}>
                             <Grid item md={3} xs={12}>
-                                <img src={Root.adminUrl + "avatar/ceo.jpg"} alt="" />
+                                <img src={Root.adminUrl + "avatar/1.jpg"} alt="" />
                             </Grid>
                             <Grid item md={9} xs={12}>
                                 <Typography className="font-weight-bold text-align-center" variant="h5"> UHN-TORONTO WESTERN-ON </Typography>
                                 <Typography className="font-weight-bold text-align-center"> personal care aide(PCA) </Typography>
-                                <Grid container className="mt-2">
-                                    <Grid item md={6} xs={12} className="theme-box-shadow">
-                                        <Box className="p-1">
+                                <Grid container className="mt-1" spacing={3}>
+                                    <Grid item md={6} xs={12}>
+                                        <Box className="theme-box-shadow p-1 height-100">
                                             <Box className="d-flex align-items-center">
                                                 <DateRange />
-                                                <Typography> Mon. May 90, 2021 </Typography>
+                                                <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
                                             </Box>
                                             <Box className="d-flex align-items-center">
                                                 <Timer />
-                                                <Typography> Time: 7:30 AM - 7:30 PM (12hrs) </Typography>
+                                                <Typography className="ml-1"> Time: 7:30 AM - 7:30 PM (12hrs) </Typography>
                                             </Box>
                                             <Box className="d-flex align-items-center">
                                                 <AvTimer />
-                                                <Typography> Unpaid Break: 30minutes </Typography>
+                                                <Typography className="ml-1"> Unpaid Break: 30minutes </Typography>
                                             </Box>
                                             <Box className="d-flex align-items-center">
                                                 <Payment />
-                                                <Typography> Pay: $248.55 @ $22/hr </Typography>
+                                                <Typography className="ml-1"> Pay: $248.55 @ $22/hr </Typography>
                                             </Box>
                                             <Box className="d-flex align-items-center">
                                                 <SkipPrevious />
-                                                <Typography> Instant pay: Available </Typography>
+                                                <Typography className="ml-1"> Instant pay: Available </Typography>
                                             </Box>
                                         </Box>
                                     </Grid>
-                                    <Grid item md={6} xs={12} className="theme-box-shadow p-1">
-                                        <Box className="p-1">
-                                            <Box className="d-flex">
-                                                <Typography className="font-weight-bold text-align-center"> 610 University Ave </Typography>
-                                            </Box>
+                                    <Grid item md={6} xs={12}>
+                                        <Box className="theme-box-shadow p-1 height-100">
                                             <Box className="d-flex">
                                                 <LocationOn />
-                                                <Typography className="font-weight-bold text-align-center"> Tronto, On M6V 5k8 Canada </Typography>
+                                                <Typography className="ml-1"> 610 University Ave Tronto, On M6V 5k8 Canada </Typography>
                                             </Box>
                                             <Box className="d-flex">
-                                                <ArrowRightAlt />
-                                                <Typography className="font-weight-bold text-align-center"> 13.61 km </Typography>
+                                                <Explore />
+                                                <Typography className="ml-1">Distance: 13.61 km </Typography>
                                             </Box>
                                         </Box>
                                     </Grid>
-                                    <Grid xs={12} className="mt-1 d-flex justify-content-center">
-                                        <Button variant="contained" className="">Decline Shift</Button>
+                                    <Grid item xs={12}>
+                                        <ShiftNote />
+                                        <Box className="d-flex mt-1">
+                                            <Warning />
+                                            <Typography className="ml-1">Covid-19 Negative</Typography>
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={12} className="d-flex justify-content-center">
+                                        <Button variant="contained" className="accept">Accept Shift</Button>
                                     </Grid>
                                 </Grid>
                             </Grid>

@@ -1,7 +1,7 @@
 .worker-dashboard {
     .profile-avatar {
-        width: 100%;
-        height: 100%;
+        width: 300px;
+        height: 300px;
         border-radius: 100%;
     }
     .profile-count {
@@ -28,8 +28,9 @@
     }
     .job-item{
         img{
-            width: 100%;
-            border-radius: 100%;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
         }
         button{
             width: 40%;
@@ -40,12 +41,18 @@
             box-shadow: 3px 3px 3px gray;
             text-align: center;
         }
+        .height-100{
+            height: 100% !important;
+        }
     }
     .load-more{
         background: $theme-color;
         color: $white !important;
         box-shadow: 3px 3px 3px gray;
         text-align: center;
-        width: 50%;        
+        width: 50%;
+        &:hover{
+            background: $theme-color;
+        }
     }
 }

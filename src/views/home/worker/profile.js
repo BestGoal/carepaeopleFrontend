@@ -15,14 +15,14 @@ export default function Profile() {
                 <CardContent>
                     <Grid container spacing={2}>
                         <Grid item md={4} xs={12}>
-                            <Box>
-                                <img className="profile-avatar" src={Root.adminUrl + "avatar/team-04.jpg"} alt="" />
+                            <Box className="d-flex justify-content-center">
+                                <img className="profile-avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
                             </Box>
                             <Box className="d-flex justify-content-center align-items-center mt-1">
-                                <Typography>4.0</Typography>
+                                <Typography>5.0</Typography>
                                 <StarRatings
                                     className="ml-1"
-                                    rating={4}
+                                    rating={5}
                                     starRatedColor="#f57207"
                                     starHoverColor="#f57207"
                                     numberOfStars={5}
