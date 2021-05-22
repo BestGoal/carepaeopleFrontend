@@ -27,11 +27,25 @@
         }
     }
     .job-item{
-        border: 1px solid ;
-        border-radius: 10px;
         img{
             width: 100%;
             border-radius: 100%;
         }
+        button{
+            width: 40%;
+        }
+        .accept{
+            background: $theme-color;
+            color: $white !important;
+            box-shadow: 3px 3px 3px gray;
+            text-align: center;
+        }
+    }
+    .load-more{
+        background: $theme-color;
+        color: $white !important;
+        box-shadow: 3px 3px 3px gray;
+        text-align: center;
+        width: 50%;        
     }
 }
