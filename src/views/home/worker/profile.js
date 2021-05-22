@@ -32,14 +32,14 @@ export default function Profile() {
                             </Box>
                         </Grid>
                         <Grid item md={8} xs={12}>
-                            <Card className="d-flex align-items-center justify-content-center theme-box-shadow">
+                            <Card className="d-flex align-items-center justify-content-center border1">
                                 <CardContent>
                                     <Box className="d-flex align-items-center">
                                         <Typography variant="h4"> Ragul RagulSekar </Typography>
                                         <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>
                                     </Box>
                                     <Box className="d-flex align-items-center mt-2 justify-content-center">
-                                        <Typography className="font-weight-bold p-1 theme-box-shadow"> May 09 - 15 </Typography>
+                                        <Typography className="font-weight-bold p-1 border1"> May 09 - 15 </Typography>
                                     </Box>
                                     <Box className="d-flex align-items-center mt-2">
                                         <Box className="d-flex align-items-center">
@@ -54,25 +54,25 @@ export default function Profile() {
                                 </CardContent>
                             </Card>
                             <Box className="d-flex justify-content-between text-align-center mt-2">
-                                <Card className="pl-1 pr-1 theme-box-shadow theme-border">
+                                <Card className="pl-1 pr-1 theme-border">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> Cancel </Typography>
                                     </CardContent>
                                 </Card>
-                                <Card className="pl-1 pr-1 theme-box-shadow theme-border">
+                                <Card className="pl-1 pr-1 theme-border">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> No Shows </Typography>
                                     </CardContent>
                                 </Card>
-                                <Card className="pl-1 pr-1 theme-box-shadow theme-border">
+                                <Card className="pl-1 pr-1 theme-border">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> Late Arrival </Typography>
                                     </CardContent>
                                 </Card>
-                                <Card className="pl-1 pr-1 theme-box-shadow theme-border">
+                                <Card className="pl-1 pr-1 theme-border">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> Punctual </Typography>

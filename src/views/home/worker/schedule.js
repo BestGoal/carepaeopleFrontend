@@ -38,7 +38,7 @@ export default function Schedule() {
                                 <Typography className="font-weight-bold text-align-center"> personal care aide(PCA) </Typography>
                                 <Grid container className="mt-1" spacing={3}>
                                     <Grid item md={6} xs={12}>
-                                        <Box className="theme-box-shadow p-1 height-100">
+                                        <Box className="border1 p-1 height-100">
                                             <Box className="d-flex align-items-center">
                                                 <DateRange />
                                                 <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
@@ -62,7 +62,7 @@ export default function Schedule() {
                                         </Box>
                                     </Grid>
                                     <Grid item md={6} xs={12}>
-                                        <Box className="theme-box-shadow p-1 height-100">
+                                        <Box className="border1 p-1 height-100">
                                             <Box className="d-flex">
                                                 <LocationOn />
                                                 <Typography className="ml-1"> 610 University Ave Tronto, On M6V 5k8 Canada </Typography>

@@ -12,7 +12,7 @@ export default function ShiftNote() {
     const [mode, setMode] = React.useState(false)
 
     return (
-        <Card className="theme-box-shadow">
+        <Card>
             <CardContent>
                 <Box className="d-flex justify-content-between crusor-pointer" onClick={()=>setMode(!mode)}>
                     <Typography> SEE SHIFT NOTES </Typography>

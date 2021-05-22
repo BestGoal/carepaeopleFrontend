@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
+import Pagination from '@material-ui/lab/Pagination'
 
 import DateRange from "@material-ui/icons/DateRange"
 import Timer from "@material-ui/icons/Timer"
@@ -67,7 +68,7 @@ export default function Job() {
                                         <Typography className="font-weight-bold text-align-center"> personal care aide(PCA) </Typography>
                                         <Grid container className="mt-1" spacing={3}>
                                             <Grid item md={6} xs={12}>
-                                                <Box className="theme-box-shadow p-1 height-100">
+                                                <Box className="border1 p-1 height-100">
                                                     <Box className="d-flex align-items-center">
                                                         <DateRange />
                                                         <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
@@ -91,7 +92,7 @@ export default function Job() {
                                                 </Box>
                                             </Grid>
                                             <Grid item md={6} xs={12}>
-                                                <Box className="theme-box-shadow p-1 height-100">
+                                                <Box className="border1 p-1 height-100">
                                                     <Box className="d-flex">
                                                         <LocationOn />
                                                         <Typography className="ml-1"> 610 University Ave Tronto, On M6V 5k8 Canada </Typography>
@@ -119,7 +120,7 @@ export default function Job() {
                         ))
                     }
                     <Box className="d-flex justify-content-center mt-2">
-                        <Button variant="contained" className="load-more">Load more...</Button>
+                        <Pagination page={1} count={10} showFirstButton showLastButton boundaryCount={2} />
                     </Box>
                 </CardContent>
             </Card>

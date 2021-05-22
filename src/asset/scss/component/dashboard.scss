@@ -45,14 +45,7 @@
             height: 100% !important;
         }
     }
-    .load-more{
-        background: $theme-color;
-        color: $white !important;
-        box-shadow: 3px 3px 3px gray;
-        text-align: center;
-        width: 50%;
-        &:hover{
-            background: $theme-color;
-        }
+    .border1{
+        border: 1px solid rgba(0, 0, 0, 0.23)
     }
 }
