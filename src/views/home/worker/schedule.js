@@ -22,13 +22,13 @@ import { Root } from "../../../pre/config"
 export default function Schedule() {
 
     return (
-        <Container className="mt-1 worker-dashboard">
-            <Card className="p-2 theme-border theme-box-shadow">
+        <Container className="mt-4 worker-dashboard">
+            <Box>
+                <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
+            </Box>
+            <Card className="p-2 theme-border theme-box-shadow mt-2">
                 <CardContent>
-                    <Box>
-                        <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
-                    </Box>
-                    <Box className="job-item theme-box-shadow p-2 mt-1">
+                    <Box className="job-item p-2 mt-1">
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <Typography className="text-align-center" variant="h5"> UHN-TORONTO WESTERN-ON </Typography>

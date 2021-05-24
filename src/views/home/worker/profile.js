@@ -11,7 +11,7 @@ import { Root } from "../../../pre/config"
 export default function Profile() {
     return (
         <Container className="mt-1 worker-dashboard">
-            <Card className="p-2 theme-box-shadow theme-border">
+            <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Grid container spacing={2}>
                         <Grid item md={4} xs={12}>
@@ -32,47 +32,48 @@ export default function Profile() {
                             </Box>
                         </Grid>
                         <Grid item md={8} xs={12}>
-                            <Card className="d-flex align-items-center justify-content-center border1">
-                                <CardContent>
+                            <Box className="theme-box-shadow p-2">
+                                <Box className="d-flex align-items-center">
+                                    <Typography variant="h4"> Denis postnykhdo </Typography>
+                                    <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>
+                                </Box>
+                                <Grid container className="mt-2">
+                                    <Grid item md={6} xs={12} className="d-flex align-items-center">
+                                        <Typography className="font-weight-bold"> Shift Completed: </Typography>
+                                        <Typography className="ml-1"> 15 </Typography>
+                                    </Grid>
+                                    <Grid item md={6} xs={12} className="d-flex align-items-center">
+                                        <Typography className="font-weight-bold"> Earnings: </Typography>
+                                        <Typography className="ml-1"> $ 2398.76 </Typography>
+                                    </Grid>
+                                </Grid>
+                                {/* <Box className="mt-2">
                                     <Box className="d-flex align-items-center">
-                                        <Typography variant="h4"> Ragul RagulSekar </Typography>
-                                        <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>
                                     </Box>
-                                    <Box className="d-flex align-items-center mt-2 justify-content-center">
-                                        <Typography className="font-weight-bold p-1 border1"> May 09 - 15 </Typography>
+                                    <Box className="d-flex align-items-center ml-2">
                                     </Box>
-                                    <Box className="d-flex align-items-center mt-2">
-                                        <Box className="d-flex align-items-center">
-                                            <Typography className="font-weight-bold"> Time Worked: </Typography>
-                                            <Typography className="ml-1"> 40h 29m </Typography>
-                                        </Box>
-                                        <Box className="d-flex align-items-center ml-2">
-                                            <Typography className="font-weight-bold"> Earnings: </Typography>
-                                            <Typography className="ml-1"> $ 2398.76 </Typography>
-                                        </Box>
-                                    </Box>
-                                </CardContent>
-                            </Card>
+                                </Box> */}
+                            </Box>
                             <Box className="d-flex justify-content-between text-align-center mt-2">
-                                <Card className="pl-1 pr-1 theme-border">
+                                <Card className="pl-1 pr-1 theme-border theme-border-radius">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> Cancel </Typography>
                                     </CardContent>
                                 </Card>
-                                <Card className="pl-1 pr-1 theme-border">
+                                <Card className="pl-1 pr-1 theme-border theme-border-radius">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> No Shows </Typography>
                                     </CardContent>
                                 </Card>
-                                <Card className="pl-1 pr-1 theme-border">
+                                <Card className="pl-1 pr-1 theme-border theme-border-radius">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> Late Arrival </Typography>
                                     </CardContent>
                                 </Card>
-                                <Card className="pl-1 pr-1 theme-border">
+                                <Card className="pl-1 pr-1 theme-border theme-border-radius">
                                     <CardContent>
                                         <Typography className="profile-count font-weight-bold"> 1 </Typography>
                                         <Typography> Punctual </Typography>

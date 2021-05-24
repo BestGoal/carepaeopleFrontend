@@ -2,10 +2,15 @@
     .profile-avatar {
         width: 300px;
         height: 300px;
-        // border-radius: 100%;
+        border-radius: 10%;
     }
     .profile-count {
         color: #4fb55d;
+    }
+    .profile-item{
+        padding: 0.5rem;
+        width: 100%;
+        margin: 0.2rem;
     }
     .worker-select-type {
         background-color: #ecf1f4;
@@ -28,9 +33,9 @@
     }
     .job-item{
         img{
-            width: 250px;
-            height: 250px;
-            // border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
         }
         button{
             width: 40%;
@@ -40,6 +45,7 @@
             color: $white !important;
             box-shadow: 3px 3px 3px gray;
             text-align: center;
+            width: 100%;
         }
         .height-100{
             height: 100% !important;
