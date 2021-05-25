@@ -7,7 +7,7 @@ import Message from "./message.js"
 
 export default function Dashboard() {
   return (
-    <Box className="dashboard">
+    <Box className="worker-dashboard">
       <Profile />
       <Schedule />
       <Jobs />

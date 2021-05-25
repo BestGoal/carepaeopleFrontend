@@ -35,9 +35,10 @@ export const sessionCheck = async () => {
 	// }
 }
 
-export const Login_func = (key) => {
+export const Login_func = (key, userData) => {
     return {
         type: SET_USER_DATA,
-        payload: key
+        payload: key,
+		data: userData
     }
 }

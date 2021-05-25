@@ -20,7 +20,7 @@ import { Root } from "../../../pre/config"
 export default function Schedule() {
 
     return (
-        <Container className="mt-4 worker-dashboard">
+        <Container className="mt-4">
             <Box>
                 <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
             </Box>

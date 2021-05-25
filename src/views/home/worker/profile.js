@@ -12,7 +12,7 @@ import { Root } from "../../../pre/config"
 
 export default function Profile() {
     return (
-        <Container className="mt-1 worker-dashboard">
+        <Container className="mt-1">
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Grid container spacing={2}>

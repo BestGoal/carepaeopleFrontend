@@ -19,7 +19,7 @@ export default function WorkerRegister() {
     const dispatch = useDispatch();
 
     const signUp = () => {
-        dispatch(Login_func(true))
+        dispatch(Login_func(true, { permission: "worker" }))
         history.push("/worker-home")
     }
 

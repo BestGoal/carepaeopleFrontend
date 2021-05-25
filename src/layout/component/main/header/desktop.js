@@ -11,6 +11,7 @@ import { history } from "../../../../history"
 export default function Header() {
 
     let isAuthorized = useSelector((state) => state.auth.isAuth);
+    let userData = useSelector((state) => state.auth.userData);
 
     return (
         <AppBar position="static" className="header-app-bar">
@@ -34,20 +35,22 @@ export default function Header() {
                                     <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign In</Button>
                                 </>
                                  :
-                                <>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Home</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Profile</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Documents</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">References</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Shifts</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Billings</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Faq</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Contact Us</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Refferal</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Setting</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign Out</Button>
-                                </>
-                                
+                                (
+                                    userData.permission === "worker" &&
+                                    <>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-home")}>Home</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-profile")}>Profile</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Documents</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">References</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Shifts</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Billings</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Faq</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Contact Us</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Refferal</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Setting</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign Out</Button>
+                                    </>
+                                )
                         }
                     </Box>
                 </Toolbar>

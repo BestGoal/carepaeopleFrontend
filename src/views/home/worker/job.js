@@ -36,7 +36,7 @@ export default function Job() {
     ]
 
     return (
-        <Container className="mt-3 worker-dashboard">
+        <Container className="mt-3">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5">AVAILABLE SHIFTS</Typography>
             </Box>
@@ -60,10 +60,10 @@ export default function Job() {
                                     <Typography className="text-align-center" variant="h5"> {item.shiftName} </Typography>
                                     <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
                                 </Grid>
-                                <Grid item md={3} xs={12} className="d-flex justify-content-center theme-border-radius">
+                                <Grid item md={4} xs={12} className="d-flex justify-content-center theme-border-radius">
                                     <img src={Root.adminUrl + item.avatar} alt="" />
                                 </Grid>
-                                <Grid item md={9} xs={12}>
+                                <Grid item md={8} xs={12}>
                                     <Grid container spacing={3}>
                                         <Grid item md={6} xs={12}>
                                             <Box className="p-1 height-100">
