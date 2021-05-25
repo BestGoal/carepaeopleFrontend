@@ -14,8 +14,8 @@ export default function ShiftNote() {
     return (
         <Card className="box-shadow-none shift-note">
             <CardContent>
-                <Box className="d-flex justify-content-between crusor-pointer" onClick={()=>setMode(!mode)}>
-                    <Typography> SEE SHIFT NOTES </Typography>
+                <Box className="d-flex justify-content-between crusor-pointer pr-3" onClick={()=>setMode(!mode)}>
+                    <Typography> READ SHIFT NOTES </Typography>
                     {
                         !mode ? <Add /> : <Remove />
                     }

@@ -5,6 +5,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography"
+import AssignmentTurnedIn from "@material-ui/icons/AssignmentTurnedIn"
+import MonetizationOn from "@material-ui/icons/MonetizationOn"
 import StarRatings from 'react-star-ratings';
 import { Root } from "../../../pre/config"
 
@@ -37,22 +39,18 @@ export default function Profile() {
                                     <Typography variant="h4"> Denis postnykhdo </Typography>
                                     <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>
                                 </Box>
-                                <Grid container className="mt-2">
-                                    <Grid item md={6} xs={12} className="d-flex align-items-center">
-                                        <Typography className="font-weight-bold"> Shift Completed: </Typography>
+                                <Box className="d-flex mt-2">
+                                    <Box className="d-flex align-items-center">
+                                        <AssignmentTurnedIn />
+                                        <Typography className="font-weight-bold"> Shifts Completed: </Typography>
                                         <Typography className="ml-1"> 15 </Typography>
-                                    </Grid>
-                                    <Grid item md={6} xs={12} className="d-flex align-items-center">
+                                    </Box>
+                                    <Box className="d-flex align-items-center ml-3">
+                                        <MonetizationOn />
                                         <Typography className="font-weight-bold"> Earnings: </Typography>
                                         <Typography className="ml-1"> $ 2398.76 </Typography>
-                                    </Grid>
-                                </Grid>
-                                {/* <Box className="mt-2">
-                                    <Box className="d-flex align-items-center">
                                     </Box>
-                                    <Box className="d-flex align-items-center ml-2">
-                                    </Box>
-                                </Box> */}
+                                </Box>
                             </Box>
                             <Box className="d-flex justify-content-between text-align-center mt-2">
                                 <Card className="pl-1 pr-1 theme-border theme-border-radius">

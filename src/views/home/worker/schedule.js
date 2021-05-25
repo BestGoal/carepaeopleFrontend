@@ -1,7 +1,5 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
@@ -26,21 +24,21 @@ export default function Schedule() {
             <Box>
                 <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
             </Box>
-            <Card className="p-2 theme-border theme-box-shadow mt-2">
-                <CardContent>
-                    <Box className="job-item p-2 mt-1">
+            <Box className="theme-border theme-box-shadow mt-1">
+                <Box className="job-item mt-1">
+                    <Box className="p-2">
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <Typography className="text-align-center" variant="h5"> UHN-TORONTO WESTERN-ON </Typography>
-                                <Typography className="text-align-center"> personal care aide(PCA) </Typography>
+                                <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
                             </Grid>
-                            <Grid item md={3} xs={12}>
+                            <Grid item md={4} xs={12} className="d-flex justify-content-center theme-border-radius">
                                 <img src={Root.adminUrl + "avatar/1.jpg"} alt="" />
                             </Grid>
-                            <Grid item md={9} xs={12}>
+                            <Grid item md={8} xs={12}>
                                 <Grid container spacing={3}>
                                     <Grid item md={6} xs={12}>
-                                        <Box className="border1 p-1 height-100">
+                                        <Box className="p-1 height-100">
                                             <Box className="d-flex align-items-center">
                                                 <DateRange />
                                                 <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
@@ -61,36 +59,41 @@ export default function Schedule() {
                                                 <SkipPrevious />
                                                 <Typography className="ml-1"> Instant pay: Available </Typography>
                                             </Box>
-                                        </Box>
-                                    </Grid>
-                                    <Grid item md={6} xs={12}>
-                                        <Box className="border1 p-1 height-100">
-                                            <Box className="d-flex">
-                                                <LocationOn />
-                                                <Typography className="ml-1"> 610 University Ave Tronto, On M6V 5k8 Canada </Typography>
+                                            <Box className="d-flex align-items-center">
+                                                <Warning />
+                                                <Typography className="ml-1">Covid-19 Negative</Typography>
                                             </Box>
-                                            <Box className="d-flex">
-                                                <Explore />
-                                                <Typography className="ml-1">Distance: 13.61 km </Typography>
-                                            </Box>
-                                        </Box>
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <ShiftNote />
-                                        <Box className="d-flex mt-1">
-                                            <Warning />
-                                            <Typography className="ml-1">Covid-19 Negative</Typography>
                                         </Box>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={12} className="d-flex justify-content-center">
-                                <Button variant="contained" className="accept">Cancel Shift</Button>
-                            </Grid>
                         </Grid>
                     </Box>
-                </CardContent>
-            </Card>
+                    <Box className="pb-0 mt-1">
+                        <Box className="p-1 height-100 text-align-center" style={{ background: "#eee" }}>
+                            <Box className="d-flex justify-content-center">
+                                <LocationOn />
+                                <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
+                            </Box>
+                            <Box className="d-flex justify-content-center">
+                                <Explore />
+                                <Typography className="ml-1">Distance: 13.61 km </Typography>
+                            </Box>
+                        </Box>
+                    </Box>
+
+                    <Box className="pt-0">
+                        <ShiftNote />
+                    </Box>
+
+                    <Box className="d-flex justify-content-center">
+                        <Button variant="contained" className="accept">
+                            <Typography> CANCEL Shift </Typography>
+                        </Button>
+                    </Box>
+                </Box>
+            </Box>
+
         </Container>
     )
 }

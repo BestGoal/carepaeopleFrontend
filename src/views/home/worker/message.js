@@ -8,10 +8,15 @@ import CardContent from '@material-ui/core/CardContent';
 export default function Message() {
     return (
         <Container className="m-1 worker-dashboard">
-            <Card className="p-2 theme-border theme-box-shadow">
+            <Card className="p-1 theme-border theme-box-shadow">
                 <CardContent>
                     <Box>
-                        <Typography className="text-align-center font-weight-bold" variant="h5">GENERAL MESSAGE</Typography>
+                        <Typography className="text-align-center font-weight-bold" variant="h6">GENERAL MESSAGE</Typography>
+                    </Box>
+                    <Box className="mt-2">
+                        <Typography className="text-align-center font-weight-bold">
+                            This messages are from admin.
+                        </Typography>
                     </Box>
                 </CardContent>
             </Card>
