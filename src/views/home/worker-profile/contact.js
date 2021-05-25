@@ -25,7 +25,6 @@ export default function Profile() {
                             <Box className="ml-1">
                                 <Typography>Home: 20 Park Ave, Etobicock, Toronto, ON M8W 2G4, Canada</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <PhoneAndroid /> </Box>

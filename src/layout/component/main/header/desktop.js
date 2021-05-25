@@ -40,8 +40,8 @@ export default function Header() {
                                     <>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-home")}>Home</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-profile")}>Profile</Button>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Documents</Button>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">References</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-document")}>Documents</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-reference")}>References</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Shifts</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Billings</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Faq</Button>

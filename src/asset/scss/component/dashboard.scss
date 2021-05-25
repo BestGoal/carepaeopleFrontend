@@ -68,3 +68,33 @@
         border-radius: 10%;
     }
 }
+
+.worker-document{
+    .item{
+        button{
+            width: 100% !important;
+        }
+        .upload{
+            background: $theme-color;
+            color: $white;
+        }
+        .uploaded{
+            background: #eee;
+            border: 1px solid $theme-color;
+        }
+        .notuploaded{
+            background: #eee;
+        } 
+    }
+}
+.worker-reference{
+    .border-botton-1{
+        border-bottom: 1px solid #eee;
+    }
+    .add-reference{
+        width: 100%;
+        .width-100{
+            width: 100%;
+        }
+    }
+}
