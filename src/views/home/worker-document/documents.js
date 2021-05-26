@@ -85,7 +85,7 @@ export default function Documents() {
     ]
 
     return (
-        <Container className="mt-1">
+        <Container className="mt-1 mb-1">
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box className="pb-1">

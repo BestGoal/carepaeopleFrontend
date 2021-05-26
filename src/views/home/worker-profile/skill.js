@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid"
 
 export default function Profile() {
     return (
-        <Container className="mt-1">
+        <Container className="m-1">
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box className="pb-1">

@@ -91,10 +91,20 @@
     .border-botton-1{
         border-bottom: 1px solid #eee;
     }
-    .add-reference{
+    .width-100{
+        width: 100% !important;
+    }
+}
+.worker-referal{
+    .referal-btn{
         width: 100%;
-        .width-100{
-            width: 100%;
-        }
+    }
+    .referal-item{
+        background: #eee !important;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+    .width-100{
+        width: 100% !important;
     }
 }

@@ -12,6 +12,7 @@ const WorkerHome = lazy(() => import("./views/home/worker/index"));
 const WorkerProfile = lazy(() => import("./views/home/worker-profile/index"));
 const WorkerDocument = lazy(() => import("./views/home/worker-document/index"));
 const WorkerReference = lazy(() => import("./views/home/worker-reference/index"));
+const WorkerRefferal = lazy(() => import("./views/home/worker-refferal/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -70,6 +71,7 @@ class AppRouter extends React.Component {
             <AppRoute path="/worker-profile" exact component={WorkerProfile} MainLayout />
             <AppRoute path="/worker-document" exact component={WorkerDocument} MainLayout />
             <AppRoute path="/worker-reference" exact component={WorkerReference} MainLayout />
+            <AppRoute path="/worker-refferal" exact component={WorkerRefferal} MainLayout />
             <AppRoute exact component={Dashboard} MainLayout />
           </RequireAuth>
         </Switch>

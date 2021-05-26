@@ -46,7 +46,7 @@ export default function Header() {
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Billings</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Faq</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Contact Us</Button>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Refferal</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-refferal")}>Refferal</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Setting</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign Out</Button>
                                     </>
