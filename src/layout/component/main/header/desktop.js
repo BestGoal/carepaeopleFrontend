@@ -102,12 +102,15 @@ export default function Header() {
                                             }}>Payment History</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
+                                                history.push("/billing-invoices")
                                             }}>Invoices</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
+                                                history.push("/billing-credit-note")
                                             }}>Credit Notes</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
+                                                history.push("/billing-credit-cards")
                                             }}>Credit Cards</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)

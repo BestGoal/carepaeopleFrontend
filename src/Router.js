@@ -19,6 +19,9 @@ const ShiftJobHistory = lazy(() => import("./views/home/worker-shift/job-history
 const ShiftAvailable = lazy(() => import("./views/home/worker-shift/available/index"));
 
 const BillingPaymentHistory = lazy(() => import("./views/home/worker-billings/payment-history/index"));
+const BillingPaymentInvoices = lazy(() => import("./views/home/worker-billings/invoice/index"));
+const BillingCreditNote = lazy(() => import("./views/home/worker-billings/creditnote/index"));
+const BillingCreditCards = lazy(() => import("./views/home/worker-billings/creditcards/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -84,6 +87,9 @@ class AppRouter extends React.Component {
             <AppRoute path="/shift-available" exact component={ShiftAvailable} MainLayout />
 
             <AppRoute path="/billing-payment-history" exact component={BillingPaymentHistory} MainLayout />
+            <AppRoute path="/billing-invoices" exact component={BillingPaymentInvoices} MainLayout />
+            <AppRoute path="/billing-credit-note" exact component={BillingCreditNote} MainLayout />
+            <AppRoute path="/billing-credit-cards" exact component={BillingCreditCards} MainLayout />
 
             <AppRoute exact component={Dashboard} MainLayout />
           </RequireAuth>

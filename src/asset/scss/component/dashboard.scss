@@ -116,3 +116,14 @@
         width: 100%;
     }
 }
+.worker-billing-invoice{
+    .billing-tabs{
+        .billing-tab{
+            width: 100% !important;
+            border-radius: 0% !important;
+        }
+        .billing-tab:hover, .select-item{
+            border-bottom: 2px solid $theme-color !important;
+        }
+    }
+}
