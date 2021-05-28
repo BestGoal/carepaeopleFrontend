@@ -14,6 +14,12 @@ const WorkerDocument = lazy(() => import("./views/home/worker-document/index"));
 const WorkerReference = lazy(() => import("./views/home/worker-reference/index"));
 const WorkerRefferal = lazy(() => import("./views/home/worker-refferal/index"));
 
+const ShiftCurrent = lazy(() => import("./views/home/worker-shift/current/index"));
+const ShiftJobHistory = lazy(() => import("./views/home/worker-shift/job-history/index"));
+const ShiftAvailable = lazy(() => import("./views/home/worker-shift/available/index"));
+
+const BillingPaymentHistory = lazy(() => import("./views/home/worker-billings/payment-history/index"));
+
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
     {...rest}
@@ -41,14 +47,14 @@ const AppRoute = connect(null)(RouteConfig)
 const RequireAuth = (data) => {
   const isAuthorized = useSelector((state) => state.auth.isAuth);
   if (!isAuthorized) {
-    return <Redirect to={"/"}/>;
+    return <Redirect to={"/"} />;
   }
-  for(let i in data.children) {
-    if(data.children[i].props.path === data.location.pathname) {
-      return data.children.slice(0, data.children.length-1);
+  for (let i in data.children) {
+    if (data.children[i].props.path === data.location.pathname) {
+      return data.children.slice(0, data.children.length - 1);
     }
   }
-  return data.children.slice(data.children.length-1, data.children.length);
+  return data.children.slice(data.children.length - 1, data.children.length);
 };
 
 class AppRouter extends React.Component {
@@ -72,6 +78,13 @@ class AppRouter extends React.Component {
             <AppRoute path="/worker-document" exact component={WorkerDocument} MainLayout />
             <AppRoute path="/worker-reference" exact component={WorkerReference} MainLayout />
             <AppRoute path="/worker-refferal" exact component={WorkerRefferal} MainLayout />
+
+            <AppRoute path="/shift-current" exact component={ShiftCurrent} MainLayout />
+            <AppRoute path="/shift-job-history" exact component={ShiftJobHistory} MainLayout />
+            <AppRoute path="/shift-available" exact component={ShiftAvailable} MainLayout />
+
+            <AppRoute path="/billing-payment-history" exact component={BillingPaymentHistory} MainLayout />
+
             <AppRoute exact component={Dashboard} MainLayout />
           </RequireAuth>
         </Switch>

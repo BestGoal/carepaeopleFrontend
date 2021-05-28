@@ -7,7 +7,7 @@
     .profile-count {
         color: #4fb55d;
     }
-    .profile-item{
+    .profile-item {
         padding: 0.5rem;
         width: 100%;
         margin: 0.2rem;
@@ -16,7 +16,7 @@
         background-color: #ecf1f4;
         padding: 3px;
         border-radius: 5px;
-        button{
+        button {
             width: 50%;
         }
         .enable-item {
@@ -31,16 +31,16 @@
             text-align: center;
         }
     }
-    .job-item{
-        img{
+    .job-item {
+        img {
             width: 200px;
             height: 200px;
             border-radius: 10%;
         }
-        button{
+        button {
             width: 40%;
         }
-        .accept{
+        .accept {
             background: $theme-color;
             color: $white !important;
             box-shadow: 3px 3px 3px gray;
@@ -48,20 +48,20 @@
             width: 100%;
             height: 80px;
         }
-        .height-100{
+        .height-100 {
             height: 100% !important;
         }
-        .shift-note{
+        .shift-note {
             // border: 1px solid rgba(0, 0, 0, 0.23);
             background: rgb(242, 246, 249);
         }
     }
-    .border1{
-        border: 1px solid rgba(0, 0, 0, 0.23)
+    .border1 {
+        border: 1px solid rgba(0, 0, 0, 0.23);
     }
 }
 
-.worker-profile{
+.worker-profile {
     .profile-avatar {
         width: 300px;
         height: 300px;
@@ -69,42 +69,50 @@
     }
 }
 
-.worker-document{
-    .item{
-        button{
+.worker-document {
+    .item {
+        button {
             width: 100% !important;
         }
-        .upload{
+        .upload {
             background: $theme-color;
             color: $white;
         }
-        .uploaded{
+        .uploaded {
             background: #eee;
             border: 1px solid $theme-color;
         }
-        .notuploaded{
+        .notuploaded {
             background: #eee;
-        } 
+        }
     }
 }
-.worker-reference{
-    .border-botton-1{
+.worker-reference {
+    .border-botton-1 {
         border-bottom: 1px solid #eee;
     }
-    .width-100{
+    .width-100 {
         width: 100% !important;
     }
 }
-.worker-referal{
-    .referal-btn{
+.worker-referal {
+    .referal-btn {
         width: 100%;
     }
-    .referal-item{
+    .referal-item {
         background: #eee !important;
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
     }
-    .width-100{
+    .width-100 {
         width: 100% !important;
+    }
+}
+.worker-shift-job-history{
+    .job-item-content{
+        background: #eee;
+    }
+    .job-item-btn{
+        width: 100%;
     }
 }

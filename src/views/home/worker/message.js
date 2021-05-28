@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 export default function Message() {
     return (
-        <Container className="m-1">
+        <Container className="mt-1 mb-1">
             <Card className="p-1 theme-border theme-box-shadow">
                 <CardContent>
                     <Box>
