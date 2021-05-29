@@ -22,6 +22,10 @@ const BillingPaymentHistory = lazy(() => import("./views/home/worker-billings/pa
 const BillingPaymentInvoices = lazy(() => import("./views/home/worker-billings/invoice/index"));
 const BillingCreditNote = lazy(() => import("./views/home/worker-billings/creditnote/index"));
 const BillingCreditCards = lazy(() => import("./views/home/worker-billings/creditcards/index"));
+const BillingAccountStatement = lazy(() => import("./views/home/worker-billings/accountstatement/index"));
+
+const Faq = lazy(() => import("./views/home/faq/index"));
+const ContactUs = lazy(() => import("./views/home/contact-us/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -90,6 +94,10 @@ class AppRouter extends React.Component {
             <AppRoute path="/billing-invoices" exact component={BillingPaymentInvoices} MainLayout />
             <AppRoute path="/billing-credit-note" exact component={BillingCreditNote} MainLayout />
             <AppRoute path="/billing-credit-cards" exact component={BillingCreditCards} MainLayout />
+            <AppRoute path="/billing-account-statement" exact component={BillingAccountStatement} MainLayout />
+
+            <AppRoute path="/faq" exact component={Faq} MainLayout />
+            <AppRoute path="/contact-us" exact component={ContactUs} MainLayout />
 
             <AppRoute exact component={Dashboard} MainLayout />
           </RequireAuth>

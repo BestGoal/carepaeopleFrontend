@@ -21,6 +21,9 @@ export default function Header() {
     const [BillngMenu, setBillngMenu] = React.useState(null);
     const billingKey = Boolean(BillngMenu);
 
+    const [SettingMenu, setSettingMenu] = React.useState(null);
+    const settingKey = Boolean(SettingMenu);
+
     return (
         <AppBar position="static" className="header-app-bar">
             <Container>
@@ -114,13 +117,45 @@ export default function Header() {
                                             }}>Credit Cards</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
+                                                history.push("/billing-account-statement")
                                             }}>Account Statement</MenuItem>
                                         </Menu>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Faq</Button>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Contact Us</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/faq")}>Faq</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/contact-us")}>Contact Us</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-refferal")}>Referral</Button>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Setting</Button>
-                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign Out</Button>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={(e) => setSettingMenu(e.currentTarget)}>Setting</Button>
+                                        <Menu
+                                            id="menu-appbar"
+                                            anchorEl={SettingMenu}
+                                            anchorOrigin={{
+                                                vertical: 'bottom',
+                                                horizontal: 'right',
+                                            }}
+                                            keepMounted
+                                            transformOrigin={{
+                                                vertical: 'bottom',
+                                                horizontal: 'right',
+                                            }}
+                                            open={settingKey}
+                                            onClose={() => setSettingMenu(null)}
+                                        >
+                                            <MenuItem onClick={() => {
+                                                setSettingMenu(null)
+                                            }}>Set Availability</MenuItem>
+                                            <MenuItem onClick={() => {
+                                                setSettingMenu(null)
+                                            }}>Set Distance Filter</MenuItem>
+                                            <MenuItem onClick={() => {
+                                                setSettingMenu(null)
+                                            }}>Set Rates</MenuItem>
+                                            <MenuItem onClick={() => {
+                                                setSettingMenu(null)
+                                            }}>Change Password</MenuItem>
+                                            <MenuItem onClick={() => {
+                                                setSettingMenu(null)
+                                            }}>Push Notification</MenuItem>
+                                        </Menu>
+                                        <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={()=>window.location.reload()}>Sign Out</Button>
                                     </>
                                 )
                         }

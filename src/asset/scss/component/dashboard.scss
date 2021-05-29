@@ -52,7 +52,6 @@
             height: 100% !important;
         }
         .shift-note {
-            // border: 1px solid rgba(0, 0, 0, 0.23);
             background: rgb(242, 246, 249);
         }
     }
@@ -125,5 +124,27 @@
         .billing-tab:hover, .select-item{
             border-bottom: 2px solid $theme-color !important;
         }
+    }
+}
+.worker-billing-account-statement{
+    img{
+        width: 100px;
+    }
+    .pay-btn{
+        width: 100%;
+    }
+    .transaction-item{
+        background: #eee;
+    }
+}
+.faq-page{
+    .faq-item{
+        background: rgb(242, 246, 249);
+        margin-top: 0.1rem;
+    }
+}
+.contact-us{
+    .conbtact-btn{
+        width: 100%;
     }
 }
