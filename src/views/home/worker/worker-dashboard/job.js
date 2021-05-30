@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container"
 import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
+import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 
 import DateRange from "@material-ui/icons/DateRange"
@@ -13,11 +14,12 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "../../worker/job/ShiftNote"
+import ShiftNote from "./job/ShiftNote"
 import { Root } from "../../../../pre/config"
 
 export default function Job() {
 
+    const [mode, setMode] = React.useState(true)
     const data = [
         {
             shiftName: "UHN-TORONTO WESTERN-ON",
@@ -36,9 +38,9 @@ export default function Job() {
     return (
         <Container className="mt-3">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5">JOB HISTORY</Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5">AVAILABLE SHIFTS</Typography>
             </Box>
-            {/* <Grid container spacing={2} className="mt-2">
+            <Grid container spacing={2} className="mt-2">
                 <Grid item md={6} xs={12}>
                     <TextField fullWidth variant="outlined" label="Search by company name" />
                 </Grid>
@@ -48,7 +50,7 @@ export default function Job() {
                         <Button className={!mode ? "enable-item" : ''} onClick={() => setMode(false)}> SORT BY DATES </Button>
                     </Box>
                 </Grid>
-            </Grid> */}
+            </Grid>
             {
                 data.map((item, key) => (
                     <Box className="job-item mt-1 theme-border theme-box-shadow" key={key}>
@@ -113,7 +115,7 @@ export default function Job() {
                         </Box>
 
                         <Box className="d-flex justify-content-center">
-                            <Button variant="contained" className="accept">Time Worked: 06:43:44</Button>
+                            <Button variant="contained" className="accept">Accept Shift</Button>
                         </Box>
                     </Box>
                 ))

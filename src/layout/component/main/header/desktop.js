@@ -141,18 +141,23 @@ export default function Header() {
                                         >
                                             <MenuItem onClick={() => {
                                                 setSettingMenu(null)
+                                                history.push("/set-available")
                                             }}>Set Availability</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setSettingMenu(null)
+                                                history.push("/set-distance")
                                             }}>Set Distance Filter</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setSettingMenu(null)
+                                                history.push("/set-rate")
                                             }}>Set Rates</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setSettingMenu(null)
+                                                history.push("/set-password")
                                             }}>Change Password</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setSettingMenu(null)
+                                                history.push("/set-nitification")
                                             }}>Push Notification</MenuItem>
                                         </Menu>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={()=>window.location.reload()}>Sign Out</Button>

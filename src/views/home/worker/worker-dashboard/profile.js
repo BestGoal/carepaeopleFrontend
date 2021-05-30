@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography"
 import AssignmentTurnedIn from "@material-ui/icons/AssignmentTurnedIn"
 import MonetizationOn from "@material-ui/icons/MonetizationOn"
 import StarRatings from 'react-star-ratings';
-import { Root } from "../../../pre/config"
+import { Root } from "../../../../pre/config"
 
 export default function Profile() {
     return (

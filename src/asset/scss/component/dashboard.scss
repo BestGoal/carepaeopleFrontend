@@ -148,3 +148,19 @@
         width: 100%;
     }
 }
+.worker-setting-available{
+    .btn-home{
+        background: #eee;
+        padding: 0.3rem;
+        .on-btn{
+            background: gray;
+            color: gray !important;
+        }
+        .off-btn{
+            color: $theme-color !important
+        }
+    }
+    .small-letter{
+        font-size: 0.8rem !important;
+    }
+}

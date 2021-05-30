@@ -15,7 +15,7 @@ import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
 
 import ShiftNote from "./job/ShiftNote"
-import { Root } from "../../../pre/config"
+import { Root } from "../../../../pre/config"
 
 export default function Schedule() {
 

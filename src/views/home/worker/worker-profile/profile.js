@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography"
 import Badge from "@material-ui/core/Badge"
 import StarRatings from 'react-star-ratings';
-import { Root } from "../../../pre/config"
+import { Root } from "../../../../pre/config"
 
 export default function Profile() {
     return (

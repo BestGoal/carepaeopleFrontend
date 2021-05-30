@@ -8,24 +8,30 @@ const Dashboard = lazy(() => import("./views/dashboard/index"));
 const Register = lazy(() => import("./views/auth/register/index"));
 const ClientRegister = lazy(() => import("./views/auth/register/client"));
 const WorkerRegister = lazy(() => import("./views/auth/register/worker"));
-const WorkerHome = lazy(() => import("./views/home/worker/index"));
-const WorkerProfile = lazy(() => import("./views/home/worker-profile/index"));
-const WorkerDocument = lazy(() => import("./views/home/worker-document/index"));
-const WorkerReference = lazy(() => import("./views/home/worker-reference/index"));
-const WorkerRefferal = lazy(() => import("./views/home/worker-refferal/index"));
+const WorkerHome = lazy(() => import("./views/home/worker/worker-dashboard/index"));
+const WorkerProfile = lazy(() => import("./views/home/worker/worker-profile/index"));
+const WorkerDocument = lazy(() => import("./views/home/worker/worker-document/index"));
+const WorkerReference = lazy(() => import("./views/home/worker/worker-reference/index"));
+const WorkerRefferal = lazy(() => import("./views/home/worker/worker-refferal/index"));
 
-const ShiftCurrent = lazy(() => import("./views/home/worker-shift/current/index"));
-const ShiftJobHistory = lazy(() => import("./views/home/worker-shift/job-history/index"));
-const ShiftAvailable = lazy(() => import("./views/home/worker-shift/available/index"));
+const ShiftCurrent = lazy(() => import("./views/home/worker/worker-shift/current/index"));
+const ShiftJobHistory = lazy(() => import("./views/home/worker/worker-shift/job-history/index"));
+const ShiftAvailable = lazy(() => import("./views/home/worker/worker-shift/available/index"));
 
-const BillingPaymentHistory = lazy(() => import("./views/home/worker-billings/payment-history/index"));
-const BillingPaymentInvoices = lazy(() => import("./views/home/worker-billings/invoice/index"));
-const BillingCreditNote = lazy(() => import("./views/home/worker-billings/creditnote/index"));
-const BillingCreditCards = lazy(() => import("./views/home/worker-billings/creditcards/index"));
-const BillingAccountStatement = lazy(() => import("./views/home/worker-billings/accountstatement/index"));
+const BillingPaymentHistory = lazy(() => import("./views/home/worker/worker-billings/payment-history/index"));
+const BillingPaymentInvoices = lazy(() => import("./views/home/worker/worker-billings/invoice/index"));
+const BillingCreditNote = lazy(() => import("./views/home/worker/worker-billings/creditnote/index"));
+const BillingCreditCards = lazy(() => import("./views/home/worker/worker-billings/creditcards/index"));
+const BillingAccountStatement = lazy(() => import("./views/home/worker/worker-billings/accountstatement/index"));
 
 const Faq = lazy(() => import("./views/home/faq/index"));
 const ContactUs = lazy(() => import("./views/home/contact-us/index"));
+
+const SetAvailable = lazy(() => import("./views/home/settings/setavailable/index"));
+const SetRate = lazy(() => import("./views/home/settings/setrate/index"));
+const SetDistance = lazy(() => import("./views/home/settings/setdistance/index"));
+const SetPassword = lazy(() => import("./views/home/settings/setpassword/index"));
+const SetNotification = lazy(() => import("./views/home/settings/setnotification/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -98,6 +104,12 @@ class AppRouter extends React.Component {
 
             <AppRoute path="/faq" exact component={Faq} MainLayout />
             <AppRoute path="/contact-us" exact component={ContactUs} MainLayout />
+
+            <AppRoute path="/set-available" exact component={SetAvailable} MainLayout />
+            <AppRoute path="/set-rate" exact component={SetRate} MainLayout />
+            <AppRoute path="/set-distance" exact component={SetDistance} MainLayout />
+            <AppRoute path="/set-password" exact component={SetPassword} MainLayout />
+            <AppRoute path="/set-nitification" exact component={SetNotification} MainLayout />
 
             <AppRoute exact component={Dashboard} MainLayout />
           </RequireAuth>
