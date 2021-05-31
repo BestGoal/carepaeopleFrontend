@@ -97,10 +97,10 @@ export default function WorkerDocument() {
                 <Typography>{item.name}</Typography>
                 <Grid container className="item" spacing={3}>
                   <Grid item xs={6}>
-                    <Button fullWidth className="bg-theme color-white" variant="container">Upload</Button>
+                    <Button fullWidth className="bg-theme color-white">Upload</Button>
                   </Grid>
                   <Grid item xs={6}>
-                    <Button fullWidth className={item.count > 0 ? "bg-eee theme-border" : "bg-eee"} variant="container">
+                    <Button fullWidth className={item.count > 0 ? "bg-eee theme-border" : "bg-eee"}>
                       {
                         item.count > 0 ? `Uploaded(${item.count})` : "NOT UPLOADED"
                       }

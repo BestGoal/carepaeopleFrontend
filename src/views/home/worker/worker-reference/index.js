@@ -23,7 +23,7 @@ import Email from "@material-ui/icons/Email"
 import PlayArrow from "@material-ui/icons/PlayArrow"
 import Stop from "@material-ui/icons/Stop"
 
-export default function Profile() {
+export default function WorkerReference() {
 
     const [mode, SetMode] = React.useState(false)
 
@@ -101,12 +101,13 @@ export default function Profile() {
                         ))
                     }
                     <Box className="d-flex justify-content-center mt-1">
-                        <Button variant="contained" className="theme-border bg-theme color-white" onClick={() => SetMode(true)}>Add Reference</Button>
+                        <Button className="theme-border bg-theme color-white" onClick={() => SetMode(true)}>Add Reference</Button>
                     </Box>
                 </CardContent>
             </Card>
-            <Dialog open={mode} onClose={() => SetMode(false)} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Add New Reference</DialogTitle>
+
+            <Dialog open={mode} onClose={() => SetMode(false)}>
+                <DialogTitle>Add New Reference</DialogTitle>
                 <DialogContent className="m-1" style={{overflow: "hidden"}}>
                     <Grid container spacing={3}>
                         <Grid item md={6} xs={12}>
@@ -158,8 +159,8 @@ export default function Profile() {
                     </Grid>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => SetMode(false)} variant="contained">Cancel</Button>
-                    <Button onClick={() => SetMode(false)} variant="contained" className="theme-border bg-theme color-white">Add</Button>
+                    <Button onClick={() => SetMode(false)}>Cancel</Button>
+                    <Button onClick={() => SetMode(false)} className="theme-border bg-theme color-white">Add</Button>
                 </DialogActions>
             </Dialog>
         </Container>

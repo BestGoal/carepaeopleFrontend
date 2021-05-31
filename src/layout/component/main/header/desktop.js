@@ -57,15 +57,7 @@ export default function Header() {
                                         <Menu
                                             id="menu-appbar"
                                             anchorEl={shiftMenu}
-                                            anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
                                             keepMounted
-                                            transformOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
                                             open={shiftKey}
                                             onClose={() => setShiftMenu(null)}
                                         >
@@ -89,8 +81,6 @@ export default function Header() {
                                             id="menu-appbar"
                                             open={billingKey}
                                             anchorEl={BillngMenu}
-                                            anchorOrigin={{ vertical: 'bottom', horizontal: 'right', }}
-                                            transformOrigin={{ vertical: 'bottom', horizontal: 'right', }}
                                             onClose={() => setBillngMenu(null)}
                                         >
                                             <MenuItem onClick={() => {
@@ -117,15 +107,7 @@ export default function Header() {
                                         <Menu
                                             id="menu-appbar"
                                             anchorEl={SettingMenu}
-                                            anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
                                             keepMounted
-                                            transformOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
                                             open={settingKey}
                                             onClose={() => setSettingMenu(null)}
                                         >

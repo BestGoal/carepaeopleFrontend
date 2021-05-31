@@ -17,7 +17,7 @@ export default function Invoices() {
             </Box>
             <Grid container spacing={2} className="mt-2">
                 <Grid item xs={12}>
-                    <Button variant="contained" className="bg-theme color-white" style={{ width: "100%" }}>Pay Unpaid Invoices</Button>
+                    <Button fullWidth variant="contained" className="bg-theme color-white">Pay Unpaid Invoices</Button>
                 </Grid>
                 <Grid item xs={12} className="billing-tabs d-flex">
                     <Button variant="contained" className={`billing-tab bg-transparent box-shadow-none ${value === 1 && "select-item"}`} onClick={()=>setValue(1)}>All</Button>

@@ -36,7 +36,7 @@ export default function WorkerJob() {
     ]
 
     return (
-        <Container className="mt-4 p-0 worker-job">
+        <Container className="mt-4 mb-1 p-0 worker-job">
             <Typography className="text-align-center font-weight-bold" variant="h5">AVAILABLE SHIFTS</Typography>
             <Grid container spacing={2} className="mt-1">
                 <Grid item md={6} xs={12}>
@@ -44,8 +44,8 @@ export default function WorkerJob() {
                 </Grid>
                 <Grid item md={6} xs={12}>
                     <Box className="worker-select-type d-flex align-items-center">
-                        <Button fullWidth className={mode && "bg-theme color-white"} onClick={() => setMode(true)}> SORT BY DISTANCE </Button>
-                        <Button fullWidth className={!mode && "bg-theme color-white"} onClick={() => setMode(false)}> SORT BY DATES </Button>
+                        <Button fullWidth className={mode ? "bg-theme color-white": ""} onClick={() => setMode(true)}> SORT BY DISTANCE </Button>
+                        <Button fullWidth className={!mode ? "bg-theme color-white": ""} onClick={() => setMode(false)}> SORT BY DATES </Button>
                     </Box>
                 </Grid>
             </Grid>
@@ -110,9 +110,7 @@ export default function WorkerJob() {
                     </Box>
                 ))
             }
-            <Box className="d-flex justify-content-center mt-2">
-                <Button variant="contained" fullWidth>Load More</Button>
-            </Box>
+            <Button variant="contained" fullWidth className="mt-2">Load More</Button>
         </Container>
     )
 }

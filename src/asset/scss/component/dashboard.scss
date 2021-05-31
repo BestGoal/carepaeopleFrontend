@@ -37,6 +37,20 @@
     }
 }
 
+.worker-billing{
+    .worker-billing-invoice{
+        .billing-tabs{
+            .billing-tab{
+                width: 100% !important;
+                border-radius: 0% !important;
+            }
+            .billing-tab:hover, .select-item{
+                border-bottom: 2px solid $theme-color !important;
+            }
+        }
+    }
+}
+
 .worker-referal {
     .referal-btn {
         width: 100%;
@@ -48,25 +62,6 @@
     }
     .width-100 {
         width: 100% !important;
-    }
-}
-.worker-shift-job-history{
-    .job-item-content{
-        background: #eee;
-    }
-    .job-item-btn{
-        width: 100%;
-    }
-}
-.worker-billing-invoice{
-    .billing-tabs{
-        .billing-tab{
-            width: 100% !important;
-            border-radius: 0% !important;
-        }
-        .billing-tab:hover, .select-item{
-            border-bottom: 2px solid $theme-color !important;
-        }
     }
 }
 .worker-billing-account-statement{

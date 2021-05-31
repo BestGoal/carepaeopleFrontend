@@ -16,8 +16,8 @@ export default function WorkerBillingPaymentHistory() {
     ]
 
     return (
-        <Box className="worker-billing-invoice">
-            <Container className="mt-3">
+        <Box className="worker-billing">
+            <Container className="mt-3 worker-billing-invoice">
                 <Box className="pb-1">
                     <Typography className="text-align-center font-weight-bold" variant="h5">INVOICES</Typography>
                 </Box>
@@ -32,14 +32,28 @@ export default function WorkerBillingPaymentHistory() {
                         <>
                             {
                                 paymentData.map((item, key) => (
-                                    <Grid item xs={12} clasName="theme-border theme-box-radius theme-box-shadow" ley={key}>
-                                        <Box className="d-flex justify-content-between">
-                                            <Typography>UHN - TORONTO WESTERN - ON</Typography>
+                                    <Grid item xs={12} className="theme-border theme-border-radius theme-box-shadow p-1" key={key}>
+                                        <Box className="d-flex justify-content-between m-1">
+                                            <Typography className="font-weight-bold">UHN - TORONTO WESTERN - ON</Typography>
                                             <Typography>Invoice No : 150923</Typography>
                                         </Box>
-                                        <Box className="text-align-center">
-                                            Hello
+                                        <Box className="d-flex justify-content-start m-1">
+                                            <Typography className="font-weight-bold">Description: </Typography>
+                                            <Typography className="ml-1">Innocent Udemba as personal care aide @ UHN - TORONTO WESTERN - ON Tuesday May 11th ( 11:30pm - 07:30am ) $22/hr</Typography>
                                         </Box>
+                                        <Box className="d-flex justify-content-between m-1">
+                                            <Typography className="font-weight-bold">Amount: </Typography>
+                                            <Typography className="ml-1">462 CAD</Typography>
+                                        </Box>
+                                        <Box className="d-flex justify-content-between m-1">
+                                            <Typography className="font-weight-bold">Time tracked: </Typography>
+                                            <Typography className="ml-1">7:31 Hours</Typography>
+                                        </Box>
+                                        <Box className="d-flex justify-content-between m-1">
+                                            <Typography className="font-weight-bold">Status: </Typography>
+                                            <Typography className="ml-1">Paid</Typography>
+                                        </Box>
+                                        <Button fullWidth className="bg-theme color-white">Download</Button>
                                     </Grid>
                                 ))
                             }
