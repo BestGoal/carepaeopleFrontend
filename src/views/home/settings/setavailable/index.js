@@ -59,39 +59,39 @@ export default function SetAvailable() {
     const data = [
         {
             name: "Today",
-            date: "May 30th 2021",   
+            date: "May 30th 2021",
         },
         {
             name: "Monday",
-            date: "May 31th 2021",   
+            date: "May 31th 2021",
         },
         {
             name: "Tuesday",
-            date: "June 1th 2021",   
+            date: "June 1th 2021",
         },
         {
             name: "Wednesday",
-            date: "June 2th 2021",   
+            date: "June 2th 2021",
         },
     ]
 
     return (
-        <Container className="mt-1 mb-1 worker-setting-available">
+        <Container className="mt-1 mb-1 worker-setting">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> SET YOUR AVAILABILITY </Typography>
             </Box>
             <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1">
                 <Typography>RECURRING WEEKLY SCHEDULE</Typography>
                 <Box className="btn-home">
-                    <Button onClick={() => SetMode(!mode)} className={!mode && "on-btn"}>On</Button>
-                    <Button onClick={() => SetMode(!mode)} className={mode && "bg-theme color-white off-btn"}>Off</Button>
+                    <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray" : ""}>On</Button>
+                    <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme" : ""}>Off</Button>
                 </Box>
             </Box>
             <Box className="mt-2">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> SELECT THE DAYS AND TIMING OF YOUR AVAILABILITY </Typography>
             </Box>
             {
-                data.map((item,key) => (
+                data.map((item, key) => (
                     <Grid key={key} container className="theme-border theme-border-radius p-1 mt-1">
                         <Grid item md={4} className="d-flex justify-content-between align-items-center">
                             <Box className="d-flex align-items-center">
@@ -99,8 +99,8 @@ export default function SetAvailable() {
                                 <Typography className="small-letter ml-1">{item.date}</Typography>
                             </Box>
                             <Box className="btn-home">
-                                <Button onClick={() => SetMode(!mode)} className={!mode && "on-btn"}>On</Button>
-                                <Button onClick={() => SetMode(!mode)} className={mode && "bg-theme color-white off-btn"}>Off</Button>
+                                <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray" : ""}>On</Button>
+                                <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme" : ""}>Off</Button>
                             </Box>
                         </Grid>
                         <Grid item md={6} className="d-flex justify-content-between align-items-center pl-1">

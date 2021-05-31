@@ -11,7 +11,7 @@ export default function WorkerNillingTax() {
     return (
         <Container className="mt-4 worker-billing">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5"> INSTANT PAY </Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5"> TAX </Typography>
             </Box>
             <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1">
                 <Typography>Enable Automatic InstantyPay</Typography>

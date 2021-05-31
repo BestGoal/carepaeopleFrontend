@@ -21,6 +21,8 @@ const ShiftAvailable = lazy(() => import("./views/home/worker/worker-shift/avail
 
 const WorkerBillingInvoice = lazy(() => import("./views/home/worker/worker-billing/invoice/index"));
 const WorkerBillingInstant = lazy(() => import("./views/home/worker/worker-billing/instant/index"));
+const WorkerBillingReport = lazy(() => import("./views/home/worker/worker-billing/report/index"));
+const WorkerBillingTax = lazy(() => import("./views/home/worker/worker-billing/tax/index"));
 
 const Faq = lazy(() => import("./views/home/faq/index"));
 const ContactUs = lazy(() => import("./views/home/contact-us/index"));
@@ -101,6 +103,8 @@ class AppRouter extends React.Component {
 
             <AppRoute path="/worker-billing-invoice" exact component={WorkerBillingInvoice} MainLayout />
             <AppRoute path="/worker-billing-instant" exact component={WorkerBillingInstant} MainLayout />
+            <AppRoute path="/worker-billing-report" exact component={WorkerBillingReport} MainLayout />
+            <AppRoute path="/worker-billing-tax" exact component={WorkerBillingTax} MainLayout />
 
             <AppRoute path="/faq" exact component={Faq} MainLayout />
             <AppRoute path="/contact-us" exact component={ContactUs} MainLayout />

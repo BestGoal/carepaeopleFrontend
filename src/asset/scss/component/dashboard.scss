@@ -49,44 +49,6 @@
             }
         }
     }
-}
-
-.worker-referal {
-    .referal-btn {
-        width: 100%;
-    }
-    .referal-item {
-        background: #eee !important;
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
-    }
-    .width-100 {
-        width: 100% !important;
-    }
-}
-.worker-billing-account-statement{
-    img{
-        width: 100px;
-    }
-    .pay-btn{
-        width: 100%;
-    }
-    .transaction-item{
-        background: #eee;
-    }
-}
-.faq-page{
-    .faq-item{
-        background: rgb(242, 246, 249);
-        margin-top: 0.1rem;
-    }
-}
-.contact-us{
-    .conbtact-btn{
-        width: 100%;
-    }
-}
-.worker-setting-available{
     .btn-home{
         background: #eee;
         padding: 0.3rem;
@@ -97,6 +59,26 @@
         .off-btn{
             color: $theme-color !important
         }
+    }
+}
+
+.worker-referal {
+    .referal-item {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+}
+
+.faq-page{
+    .faq-item{
+        background: rgb(242, 246, 249);
+        margin-top: 0.1rem;
+    }
+}
+
+.worker-setting{
+    .btn-home{
+        padding: 0.3rem;
     }
     .small-letter{
         font-size: 0.8rem !important;

@@ -75,6 +75,9 @@
 .bg-eee{
     background: #eee !important;
 }
+.bg-gray{
+    background: $gray !important;
+}
 .bg-snote{
     background: rgb(242, 246, 249) !important;
 }
@@ -291,7 +294,7 @@
     color: $white !important;
 }
 .color-gray{
-    color: $gray;
+    color: $gray !important;
 }
 .color-theme{
     color: $theme-color !important;

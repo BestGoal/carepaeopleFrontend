@@ -1,4 +1,5 @@
 import React from "react"
+import { useDispatch } from 'react-redux'
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import TextField from "@material-ui/core/TextField"
@@ -10,8 +11,17 @@ import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import Checkbox from '@material-ui/core/Checkbox'
 import Button from '@material-ui/core/Button'
+import { history } from "../../../history";
+import { Login_func } from "../../../redux/action/auth/loginActions"
 
 export default function ClientRegister() {
+
+    const dispatch = useDispatch();
+
+    const signUp = () => {
+        dispatch(Login_func(true, { permission: "client" }))
+        history.push("/client-home")
+    }
 
     return (
         <Container>
@@ -73,7 +83,7 @@ export default function ClientRegister() {
                             </Typography>
                         </Grid>
                         <Grid item md={12} xs={12}>
-                            <Button className="text-capitalize" fullWidth color="primary" variant="contained"> Sign Up </Button>
+                            <Button onClick={() => signUp()} className="text-capitalize" fullWidth color="primary" variant="contained"> Sign Up </Button>
                         </Grid>
                         <Grid item md={12} xs={12} className="d-flex justify-content-center p-0">
                             <Typography> Already have an account? </Typography>
