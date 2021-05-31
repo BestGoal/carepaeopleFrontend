@@ -11,13 +11,13 @@ import { Root } from "../../../../pre/config"
 
 export default function Profile() {
     return (
-        <Container className="mt-1">
+        <Container className="mt-1 worker-profile">
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Grid container spacing={2}>
                         <Grid item md={4} xs={12}>
                             <Box className="d-flex justify-content-center">
-                                <img className="profile-avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
+                                <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
                             </Box>
                         </Grid>
                         <Grid item md={8} xs={12}>

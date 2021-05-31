@@ -72,6 +72,12 @@
 .bg-theme{
     background: $theme-color !important;
 }
+.bg-eee{
+    background: #eee !important;
+}
+.bg-snote{
+    background: rgb(242, 246, 249) !important;
+}
 
 // box shadow
 .box-shadow-none{
@@ -213,6 +219,9 @@
 .mt-5{
     margin-top: 5rem;
 }
+.ml-0{
+    margin-left: 0rem !important;
+}
 .ml-1{
     margin-left: 1rem !important;
 }
@@ -290,4 +299,8 @@
 
 .flex-direction-column{
     flex-direction: column;
+}
+
+.border-radius-0{
+    border-radius: 0 !important;
 }

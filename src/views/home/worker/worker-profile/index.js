@@ -7,7 +7,7 @@ import Skill from "./skill.js"
 
 export default function Dashboard() {
   return (
-    <Box className="worker-profile">
+    <Box className="worker-home">
         <Profile />
         <Contact />
         <Educate />

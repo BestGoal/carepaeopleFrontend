@@ -1,10 +1,10 @@
 import React from "react"
 import Box from "@material-ui/core/Box"
-import Shifts from "../../worker-dashboard/job"
+import Shifts from "../../worker-home/job"
 
 export default function AvailableShifts() {
   return (
-    <Box className="worker-dashboard">
+    <Box className="worker-home">
         <Shifts />
     </Box>
   )

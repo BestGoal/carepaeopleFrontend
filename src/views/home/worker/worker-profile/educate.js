@@ -25,28 +25,28 @@ export default function Profile() {
                             <Box className="ml-1">
                                 <Typography>School: University of Tronto</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <Rotate90DegreesCcw /> </Box>
                             <Box className="ml-1">
                                 <Typography> Degree/Diploma/Certificate: Degree</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <Contactless /> </Box>
                             <Box className="ml-1">
                                 <Typography>Filed Of Study: Nursing</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <DateRange /> </Box>
                             <Box className="ml-1">
                                 <Typography> Year Of Study: 2015 - 2019</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
                         </Box>
                     </Box>
                 </CardContent>

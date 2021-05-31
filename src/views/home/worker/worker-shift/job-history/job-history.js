@@ -13,7 +13,7 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "../../worker-dashboard/job/ShiftNote"
+import ShiftNote from "../../worker-home/job/ShiftNote"
 import { Root } from "../../../../../pre/config"
 
 export default function Job() {
@@ -38,17 +38,6 @@ export default function Job() {
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5">JOB HISTORY</Typography>
             </Box>
-            {/* <Grid container spacing={2} className="mt-2">
-                <Grid item md={6} xs={12}>
-                    <TextField fullWidth variant="outlined" label="Search by company name" />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                    <Box className="worker-select-type">
-                        <Button className={mode ? "enable-item" : ""} onClick={() => setMode(true)}> SORT BY DISTANCE </Button>
-                        <Button className={!mode ? "enable-item" : ''} onClick={() => setMode(false)}> SORT BY DATES </Button>
-                    </Box>
-                </Grid>
-            </Grid> */}
             {
                 data.map((item, key) => (
                     <Box className="job-item mt-1 theme-border theme-box-shadow" key={key}>

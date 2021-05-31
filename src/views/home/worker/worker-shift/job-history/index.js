@@ -6,7 +6,7 @@ import JobHistory from "./job-history.js"
 
 const ShiftJobHistory = () => {
     return (
-        <Box className="worker-dashboard">
+        <Box className="worker-home">
             <JobHistory />
         </Box>
     )

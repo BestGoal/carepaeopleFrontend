@@ -85,40 +85,30 @@ export default function Header() {
                                         </Menu>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
                                         <Menu
-                                            id="menu-appbar"
-                                            anchorEl={BillngMenu}
-                                            anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
                                             keepMounted
-                                            transformOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
+                                            id="menu-appbar"
                                             open={billingKey}
+                                            anchorEl={BillngMenu}
+                                            anchorOrigin={{ vertical: 'bottom', horizontal: 'right', }}
+                                            transformOrigin={{ vertical: 'bottom', horizontal: 'right', }}
                                             onClose={() => setBillngMenu(null)}
                                         >
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
-                                                history.push("/billing-payment-history")
-                                            }}>Payment History</MenuItem>
-                                            <MenuItem onClick={() => {
-                                                setBillngMenu(null)
-                                                history.push("/billing-invoices")
+                                                history.push("/worker-billing-invoice")
                                             }}>Invoices</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
-                                                history.push("/billing-credit-note")
-                                            }}>Credit Notes</MenuItem>
+                                                history.push("/worker-billing-instant")
+                                            }}>Instant Pay</MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
-                                                history.push("/billing-credit-cards")
-                                            }}>Credit Cards</MenuItem>
+                                                history.push("/worker-billing-report")
+                                            }}>Report </MenuItem>
                                             <MenuItem onClick={() => {
                                                 setBillngMenu(null)
-                                                history.push("/billing-account-statement")
-                                            }}>Account Statement</MenuItem>
+                                                history.push("/worker-billing-tax")
+                                            }}>Tax</MenuItem>
                                         </Menu>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/faq")}>Faq</Button>
                                         <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/contact-us")}>Contact Us</Button>

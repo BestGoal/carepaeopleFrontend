@@ -14,10 +14,10 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "./job/ShiftNote"
-import { Root } from "../../../../pre/config"
+import ShiftNote from "./ShiftNote"
+import { Root } from "../../../../../pre/config"
 
-export default function Job() {
+export default function WorkerJob() {
 
     const [mode, setMode] = React.useState(true)
     const data = [
@@ -36,24 +36,22 @@ export default function Job() {
     ]
 
     return (
-        <Container className="mt-3">
-            <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5">AVAILABLE SHIFTS</Typography>
-            </Box>
-            <Grid container spacing={2} className="mt-2">
+        <Container className="mt-4 p-0 worker-job">
+            <Typography className="text-align-center font-weight-bold" variant="h5">AVAILABLE SHIFTS</Typography>
+            <Grid container spacing={2} className="mt-1">
                 <Grid item md={6} xs={12}>
                     <TextField fullWidth variant="outlined" label="Search by company name" />
                 </Grid>
                 <Grid item md={6} xs={12}>
-                    <Box className="worker-select-type">
-                        <Button className={mode ? "enable-item" : ""} onClick={() => setMode(true)}> SORT BY DISTANCE </Button>
-                        <Button className={!mode ? "enable-item" : ''} onClick={() => setMode(false)}> SORT BY DATES </Button>
+                    <Box className="worker-select-type d-flex align-items-center">
+                        <Button fullWidth className={mode && "bg-theme color-white"} onClick={() => setMode(true)}> SORT BY DISTANCE </Button>
+                        <Button fullWidth className={!mode && "bg-theme color-white"} onClick={() => setMode(false)}> SORT BY DATES </Button>
                     </Box>
                 </Grid>
             </Grid>
             {
                 data.map((item, key) => (
-                    <Box className="job-item mt-1 theme-border theme-box-shadow" key={key}>
+                    <Box className="mt-1 theme-border theme-box-shadow" key={key}>
                         <Box className="p-2">
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
@@ -66,7 +64,7 @@ export default function Job() {
                                 <Grid item md={8} xs={12}>
                                     <Grid container spacing={3}>
                                         <Grid item md={6} xs={12}>
-                                            <Box className="p-1 height-100">
+                                            <Box className="p-1">
                                                 <Box className="d-flex align-items-center">
                                                     <DateRange />
                                                     <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
@@ -97,31 +95,23 @@ export default function Job() {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="pb-0 mt-1">
-                            <Box className="p-1 height-100 text-align-center" style={{ background: "#eee" }}>
-                                <Box className="d-flex justify-content-center">
-                                    <LocationOn />
-                                    <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
-                                </Box>
-                                <Box className="d-flex justify-content-center">
-                                    <Explore />
-                                    <Typography className="ml-1">Distance: 13.61 km </Typography>
-                                </Box>
+                        <Box className="p-1 text-align-center bg-eee">
+                            <Box className="d-flex justify-content-center">
+                                <LocationOn />
+                                <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
+                            </Box>
+                            <Box className="d-flex justify-content-center">
+                                <Explore />
+                                <Typography className="ml-1">Distance: 13.61 km </Typography>
                             </Box>
                         </Box>
-
-                        <Box className="pt-0">
-                            <ShiftNote />
-                        </Box>
-
-                        <Box className="d-flex justify-content-center">
-                            <Button variant="contained" className="accept">Accept Shift</Button>
-                        </Box>
+                        <ShiftNote />
+                        <Button fullWidth variant="contained" className="bg-theme color-white border-radius-0 accept">Accept Shift</Button>
                     </Box>
                 ))
             }
             <Box className="d-flex justify-content-center mt-2">
-                <Button variant="contained" style={{width: "100%"}}>Load More</Button>
+                <Button variant="contained" fullWidth>Load More</Button>
             </Box>
         </Container>
     )

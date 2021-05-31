@@ -31,21 +31,21 @@ export default function Profile() {
                             <Box className="ml-1">
                                 <Typography> Phone: +1 647 895 6543</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="crusor-pointer" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <Email /> </Box>
                             <Box className="ml-1">
                                 <Typography>Email: udembainno@gmail.com</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="crusor-pointer" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <Drafts /> </Box>
                             <Box className="ml-1">
                                 <Typography> Mailing: 20 Park Ave, Etobicock, Toronto, ON M8W 2G4, Canada</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit /> </Box>
+                            <Box className="ml-1"> <Edit className="crusor-pointer" /> </Box>
                         </Box>
                     </Box>
                 </CardContent>

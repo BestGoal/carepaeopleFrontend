@@ -1,99 +1,42 @@
-.worker-dashboard {
-    .profile-avatar {
-        width: 300px;
-        height: 300px;
-        border-radius: 10%;
-    }
-    .profile-count {
-        color: #4fb55d;
-    }
-    .profile-item {
-        padding: 0.5rem;
-        width: 100%;
-        margin: 0.2rem;
-    }
-    .worker-select-type {
-        background-color: #ecf1f4;
-        padding: 3px;
-        border-radius: 5px;
-        button {
-            width: 50%;
+.worker-home {
+    .worker-profile{
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 10%;
         }
-        .enable-item {
-            background: $theme-color;
-            color: $white !important;
-            box-shadow: 3px 3px 3px gray;
-            text-align: center;
-        }
-        .disable-item {
-            background: $white;
-            box-shadow: 3px 3px 3px gray;
-            text-align: center;
+        .profile-count {
+            color: #4fb55d;
         }
     }
-    .job-item {
+    .worker-schedule, .worker-job{
         img {
             width: 200px;
             height: 200px;
             border-radius: 10%;
         }
-        button {
-            width: 40%;
-        }
         .accept {
-            background: $theme-color;
-            color: $white !important;
-            box-shadow: 3px 3px 3px gray;
-            text-align: center;
             width: 100%;
             height: 80px;
-        }
-        .height-100 {
-            height: 100% !important;
-        }
-        .shift-note {
-            background: rgb(242, 246, 249);
+            font-size: 1.25rem;
         }
     }
-    .border1 {
-        border: 1px solid rgba(0, 0, 0, 0.23);
+    .worker-job{
+        .worker-select-type {
+            background-color: #eee;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
     }
 }
 
-.worker-profile {
-    .profile-avatar {
-        width: 300px;
-        height: 300px;
-        border-radius: 10%;
-    }
-}
-
-.worker-document {
-    .item {
-        button {
-            width: 100% !important;
-        }
-        .upload {
-            background: $theme-color;
-            color: $white;
-        }
-        .uploaded {
-            background: #eee;
-            border: 1px solid $theme-color;
-        }
-        .notuploaded {
-            background: #eee;
-        }
-    }
-}
 .worker-reference {
     .border-botton-1 {
         border-bottom: 1px solid #eee;
     }
-    .width-100 {
-        width: 100% !important;
-    }
 }
+
 .worker-referal {
     .referal-btn {
         width: 100%;
