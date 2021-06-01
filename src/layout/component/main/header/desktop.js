@@ -37,23 +37,23 @@ export default function Header() {
                         {
                             !isAuthorized ?
                                 <>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Post Shifts</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Work Shifts</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">How it works</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Download</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">About Us</Button>
-                                    <Button className="header-signup-item text-capitalize" variant="contained" onClick={() => history.push("/register")}>Sign Up</Button>
-                                    <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Sign In</Button>
+                                    <Button className="header-btn-item bg-transparent color-white text-capitalize">Post Shifts</Button>
+                                    <Button className="header-btn-item bg-transparent color-white text-capitalize">Work Shifts</Button>
+                                    <Button className="header-btn-item bg-transparent color-white text-capitalize">How it works</Button>
+                                    <Button className="header-btn-item bg-transparent color-white text-capitalize">Download</Button>
+                                    <Button className="header-btn-item bg-transparent color-white text-capitalize">About Us</Button>
+                                    <Button className="header-signup-item text-capitalize" onClick={() => history.push("/register")}>Sign Up</Button>
+                                    <Button className="header-btn-item bg-transparent color-white text-capitalize">Sign In</Button>
                                 </>
                                 :
                                 (
                                     userData.permission === "worker" ?
                                         <>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-home")}>Home</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-profile")}>Profile</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-document")}>Documents</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-reference")}>References</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={(e) => setShiftMenu(e.currentTarget)}>Shifts</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/worker-home")}>Home</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/worker-profile")}>Profile</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/worker-document")}>Documents</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/worker-reference")}>References</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setShiftMenu(e.currentTarget)}>Shifts</Button>
                                             <Menu
                                                 id="menu-appbar"
                                                 anchorEl={shiftMenu}
@@ -75,7 +75,7 @@ export default function Header() {
                                                 }}>Availiable Shifts</MenuItem>
                                                 <MenuItem onClick={() => setShiftMenu(null)}>Dedicated Pool</MenuItem>
                                             </Menu>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
                                             <Menu
                                                 keepMounted
                                                 id="menu-appbar"
@@ -100,10 +100,10 @@ export default function Header() {
                                                     history.push("/worker-billing-tax")
                                                 }}>Tax</MenuItem>
                                             </Menu>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/faq")}>Faq</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/contact-us")}>Contact Us</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => history.push("/worker-refferal")}>Referral</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={(e) => setSettingMenu(e.currentTarget)}>Setting</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>Faq</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/contact-us")}>Contact Us</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/worker-refferal")}>Referral</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Setting</Button>
                                             <Menu
                                                 id="menu-appbar"
                                                 anchorEl={SettingMenu}
@@ -132,21 +132,37 @@ export default function Header() {
                                                     history.push("/set-nitification")
                                                 }}>Push Notification</MenuItem>
                                             </Menu>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained" onClick={() => window.location.reload()}>Sign Out</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => window.location.reload()}>Sign Out</Button>
                                         </>
                                         :
                                         <>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Home</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Company Profile</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Post Shifts</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Shifts</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Billing</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Wallet</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Previous Workers</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">FAQ</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Contact Us</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Settings</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" variant="contained">Logout</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-home")}>Home</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-profile")}>Profile</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-post")}>Post Shifts</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Shifts</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Billing</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Wallet</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Previous Workers</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>FAQ</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/contact-us")}>Contact Us</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Settings</Button>
+                                            <Menu
+                                                id="menu-appbar"
+                                                anchorEl={SettingMenu}
+                                                keepMounted
+                                                open={settingKey}
+                                                onClose={() => setSettingMenu(null)}
+                                            >
+                                                <MenuItem onClick={() => {
+                                                    setSettingMenu(null)
+                                                    history.push("/set-password")
+                                                }}>Change Password</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setSettingMenu(null)
+                                                    history.push("/set-nitification")
+                                                }}>Push Notification</MenuItem>
+                                            </Menu>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => window.location.reload()}>Logout</Button>
                                         </>
                                 )
                         }

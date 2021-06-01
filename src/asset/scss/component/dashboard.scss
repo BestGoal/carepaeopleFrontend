@@ -84,3 +84,25 @@
         font-size: 0.8rem !important;
     }
 }
+
+.client-home{
+    .client-profile{
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 10%;
+        }
+    }
+    .client-rate{
+        .noexist-icon{
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+
+
+    .autocomplete{
+        width: 100% !important;
+    }
+}

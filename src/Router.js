@@ -33,6 +33,10 @@ const SetDistance = lazy(() => import("./views/home/settings/setdistance/index")
 const SetPassword = lazy(() => import("./views/home/settings/setpassword/index"));
 const SetNotification = lazy(() => import("./views/home/settings/setnotification/index"));
 
+const ClientHome = lazy(() => import("./views/home/client/client-home/index"));
+const ClientProfile = lazy(() => import("./views/home/client/client-profile/index"));
+const ClientPost = lazy(() => import("./views/home/client/client-post/index"));
+
 // const BillingPaymentHistory = lazy(() => import("./views/home/worker/worker-billings/payment-history/index"));
 // const BillingPaymentInvoices = lazy(() => import("./views/home/worker/worker-billings/invoice/index"));
 // const BillingCreditCards = lazy(() => import("./views/home/worker/worker-billings/creditcards/index"));
@@ -114,6 +118,10 @@ class AppRouter extends React.Component {
             <AppRoute path="/set-distance" exact component={SetDistance} MainLayout />
             <AppRoute path="/set-password" exact component={SetPassword} MainLayout />
             <AppRoute path="/set-nitification" exact component={SetNotification} MainLayout />
+
+            <AppRoute path="/client-home" exact component={ClientHome} MainLayout />
+            <AppRoute path="/client-profile" exact component={ClientProfile} MainLayout />
+            <AppRoute path="/client-post" exact component={ClientPost} MainLayout />
 
             {/* <AppRoute path="/billing-payment-history" exact component={BillingPaymentHistory} MainLayout />
             <AppRoute path="/billing-invoices" exact component={BillingPaymentInvoices} MainLayout />
