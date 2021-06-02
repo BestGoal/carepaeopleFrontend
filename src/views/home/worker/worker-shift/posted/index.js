@@ -36,7 +36,7 @@ export default function WorkerJobHistory() {
     return (
         <Container className="mt-3 mb-1 worker-home">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5">JOB HISTORY</Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5">POSTED SHIFTS</Typography>
             </Box>
             {
                 data.map((item, key) => (

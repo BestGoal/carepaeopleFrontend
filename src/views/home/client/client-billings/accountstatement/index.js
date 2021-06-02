@@ -4,7 +4,7 @@ import AccountStatement from "./accountstatement"
 
 export default function WorkerBillingAccountStatement() {
   return (
-    <Box className="worker-billing-account-statement">
+    <Box className="client-billing">
         <AccountStatement />
     </Box>
   )

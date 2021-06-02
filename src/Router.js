@@ -15,9 +15,11 @@ const WorkerDocument = lazy(() => import("./views/home/worker/worker-document/in
 const WorkerReference = lazy(() => import("./views/home/worker/worker-reference/index"));
 const WorkerRefferal = lazy(() => import("./views/home/worker/worker-refferal/index"));
 
-const ShiftCurrent = lazy(() => import("./views/home/worker/worker-shift/current/index"));
-const ShiftJobHistory = lazy(() => import("./views/home/worker/worker-shift/job-history/index"));
+const ShiftProgress = lazy(() => import("./views/home/worker/worker-shift/progress/index"));
+const ShiftSchedule = lazy(() => import("./views/home/worker/worker-shift/schedule/index"));
+const ShiftHistory = lazy(() => import("./views/home/worker/worker-shift/history/index"));
 const ShiftAvailable = lazy(() => import("./views/home/worker/worker-shift/available/index"));
+const ShiftPosted = lazy(() => import("./views/home/worker/worker-shift/posted/index"));
 
 const WorkerBillingInvoice = lazy(() => import("./views/home/worker/worker-billing/invoice/index"));
 const WorkerBillingInstant = lazy(() => import("./views/home/worker/worker-billing/instant/index"));
@@ -36,11 +38,13 @@ const SetNotification = lazy(() => import("./views/home/settings/setnotification
 const ClientHome = lazy(() => import("./views/home/client/client-home/index"));
 const ClientProfile = lazy(() => import("./views/home/client/client-profile/index"));
 const ClientPost = lazy(() => import("./views/home/client/client-post/index"));
+const ClientPrevious = lazy(() => import("./views/home/client/client-previous/index"));
+const ClientWallet = lazy(() => import("./views/home/client/client-wallet/index"));
 
-// const BillingPaymentHistory = lazy(() => import("./views/home/worker/worker-billings/payment-history/index"));
-// const BillingPaymentInvoices = lazy(() => import("./views/home/worker/worker-billings/invoice/index"));
-// const BillingCreditCards = lazy(() => import("./views/home/worker/worker-billings/creditcards/index"));
-// const BillingAccountStatement = lazy(() => import("./views/home/worker/worker-billings/accountstatement/index"));
+const ClientBillingHistory = lazy(() => import("./views/home/client/client-billings/payment-history/index"));
+const ClientBillingInvoice = lazy(() => import("./views/home/client/client-billings/invoice/index"));
+const ClientBillingCard = lazy(() => import("./views/home/client/client-billings/creditcards/index"));
+const ClientBillingStatement = lazy(() => import("./views/home/client/client-billings/accountstatement/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -101,9 +105,11 @@ class AppRouter extends React.Component {
             <AppRoute path="/worker-reference" exact component={WorkerReference} MainLayout />
             <AppRoute path="/worker-refferal" exact component={WorkerRefferal} MainLayout />
 
-            <AppRoute path="/shift-current" exact component={ShiftCurrent} MainLayout />
-            <AppRoute path="/shift-job-history" exact component={ShiftJobHistory} MainLayout />
+            <AppRoute path="/shifts-schedule" exact component={ShiftSchedule} MainLayout />
+            <AppRoute path="/shift-history" exact component={ShiftHistory} MainLayout />
             <AppRoute path="/shift-available" exact component={ShiftAvailable} MainLayout />
+            <AppRoute path="/shift-posted" exact component={ShiftPosted} MainLayout />
+            <AppRoute path="/shift-progress" exact component={ShiftProgress} MainLayout />
 
             <AppRoute path="/worker-billing-invoice" exact component={WorkerBillingInvoice} MainLayout />
             <AppRoute path="/worker-billing-instant" exact component={WorkerBillingInstant} MainLayout />
@@ -122,11 +128,13 @@ class AppRouter extends React.Component {
             <AppRoute path="/client-home" exact component={ClientHome} MainLayout />
             <AppRoute path="/client-profile" exact component={ClientProfile} MainLayout />
             <AppRoute path="/client-post" exact component={ClientPost} MainLayout />
+            <AppRoute path="/previous-workers" exact component={ClientPrevious} MainLayout />
+            <AppRoute path="/client-wallet" exact component={ClientWallet} MainLayout />
 
-            {/* <AppRoute path="/billing-payment-history" exact component={BillingPaymentHistory} MainLayout />
-            <AppRoute path="/billing-invoices" exact component={BillingPaymentInvoices} MainLayout />
-            <AppRoute path="/billing-credit-cards" exact component={BillingCreditCards} MainLayout />
-            <AppRoute path="/billing-account-statement" exact component={BillingAccountStatement} MainLayout /> */}
+            <AppRoute path="/client-billing-history" exact component={ClientBillingHistory} MainLayout />
+            <AppRoute path="/client-invoice" exact component={ClientBillingInvoice} MainLayout />
+            <AppRoute path="/client-add-card" exact component={ClientBillingCard} MainLayout />
+            <AppRoute path="/client-statement" exact component={ClientBillingStatement} MainLayout />
 
             <AppRoute exact component={Dashboard} MainLayout />
           </RequireAuth>

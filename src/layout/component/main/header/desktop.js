@@ -63,17 +63,20 @@ export default function Header() {
                                             >
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-current")
-                                                }}>Current Schedule</MenuItem>
+                                                    history.push("/shift-progress")
+                                                }}>Shifts In Progress</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-job-history")
-                                                }}>Job History</MenuItem>
+                                                    history.push("/shifts-schedule")
+                                                }}>Shifts Schedule</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setShiftMenu(null)
+                                                    history.push("/shift-history")
+                                                }}>Shifts History</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
                                                     history.push("/shift-available")
-                                                }}>Availiable Shifts</MenuItem>
-                                                <MenuItem onClick={() => setShiftMenu(null)}>Dedicated Pool</MenuItem>
+                                                }}>Shifts Available</MenuItem>
                                             </Menu>
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
                                             <Menu
@@ -139,10 +142,58 @@ export default function Header() {
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-home")}>Home</Button>
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-profile")}>Profile</Button>
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-post")}>Post Shifts</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Shifts</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Billing</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Wallet</Button>
-                                            <Button className="header-btn-item bg-transparent color-white text-capitalize">Previous Workers</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setShiftMenu(e.currentTarget)}>Shifts</Button>
+                                            <Menu
+                                                id="menu-appbar"
+                                                anchorEl={shiftMenu}
+                                                keepMounted
+                                                open={shiftKey}
+                                                onClose={() => setShiftMenu(null)}
+                                            >
+                                                <MenuItem onClick={() => {
+                                                    setShiftMenu(null)
+                                                    history.push("/shift-progress")
+                                                }}>Shifts In Progress</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setShiftMenu(null)
+                                                    history.push("/shifts-schedule")
+                                                }}>Shifts Schedule</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setShiftMenu(null)
+                                                    history.push("/shift-posted")
+                                                }}>Shifts Posted</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setShiftMenu(null)
+                                                    history.push("/shift-history")
+                                                }}>Shifts History</MenuItem>
+                                            </Menu>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
+                                            <Menu
+                                                keepMounted
+                                                id="menu-appbar"
+                                                open={billingKey}
+                                                anchorEl={BillngMenu}
+                                                onClose={() => setBillngMenu(null)}
+                                            >
+                                                <MenuItem onClick={() => {
+                                                    setBillngMenu(null)
+                                                    history.push("/client-billing-history")
+                                                }}>Payment History</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setBillngMenu(null)
+                                                    history.push("/client-invoice")
+                                                }}>Invoices</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setBillngMenu(null)
+                                                    history.push("/client-add-card")
+                                                }}>Add Credit Card</MenuItem>
+                                                <MenuItem onClick={() => {
+                                                    setBillngMenu(null)
+                                                    history.push("/client-statement")
+                                                }}>Account Statement</MenuItem>
+                                            </Menu>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/client-wallet")}>Wallet</Button>
+                                            <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/previous-workers")}>Previous Workers</Button>
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>FAQ</Button>
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={() => history.push("/contact-us")}>Contact Us</Button>
                                             <Button className="header-btn-item bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Settings</Button>

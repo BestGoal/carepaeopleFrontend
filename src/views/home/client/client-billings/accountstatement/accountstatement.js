@@ -25,7 +25,7 @@ export default function AccountStatement() {
                         <Typography className="ml-1 font-weight-bold">23 Etobicoke Creek Trail, Mississauga, ON L4W 5N3, Canada</Typography>
                     </Grid>
                 </Grid>
-                <Button className="pay-btn bg-theme color-white"> Pay unpaid invoices </Button>
+                <Button fullWidth className="pay-btn bg-theme color-white"> Pay unpaid invoices </Button>
             </Box>
 
             <Box className="mt-1">
@@ -50,7 +50,7 @@ export default function AccountStatement() {
                         <Typography className="text-align-center">0.00 CAD</Typography>
                     </Grid>
                 </Grid>
-                <Button className="pay-btn bg-theme color-white"> Pay unpaid invoices </Button>
+                <Button fullWidth className="pay-btn bg-theme color-white"> Pay unpaid invoices </Button>
             </Box>
 
             <Box className="mt-1">
@@ -75,7 +75,7 @@ export default function AccountStatement() {
                         <Typography className="text-align-center">0.00 CAD</Typography>
                     </Grid>
                 </Grid>
-                <Button className="pay-btn bg-theme color-white"> Pay unpaid invoices </Button>
+                <Button fullWidth className="pay-btn bg-theme color-white"> Pay unpaid invoices </Button>
             </Box>
         </Container>
     )
