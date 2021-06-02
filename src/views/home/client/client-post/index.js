@@ -40,9 +40,9 @@ export default function ClientPost() {
     const [mode, setMode] = React.useState(false);
 
     return (
-        <Container className="client-home mt-4">
+        <Container className="client-home mt-4 mb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> POST SHIFTS </Typography>
-            <Box className="p-3 mt-1 theme-border theme-box-shadow client-profile">
+            <Box className="p-3 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
 
                 <Grid container spacing={3}>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>

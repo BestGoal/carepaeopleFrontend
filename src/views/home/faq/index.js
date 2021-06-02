@@ -20,12 +20,12 @@ export default function Faq() {
     ]
 
     return (
-        <Container className="mt-1 mb-1 faq-page">
-            <Card className="p-2 theme-border theme-box-shadow">
+        <Container className="mt-4 mb-1 faq-page">
+            <Box className="pb-1">
+                <Typography className="text-align-center font-weight-bold" variant="h5"> FAQS </Typography>
+            </Box>
+            <Card className="p-2 theme-border theme-box-shadow theme-border-radius">
                 <CardContent>
-                    <Box className="pb-1">
-                        <Typography className="text-align-center font-weight-bold" variant="h5"> FAQS </Typography>
-                    </Box>
                     <Box className="mt-2">
                         <Typography className="font-weight-bold">The Contractors</Typography>
                         {

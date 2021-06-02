@@ -10,7 +10,7 @@ import { Root } from "../../../../pre/config"
 
 export default function WorkerProfile() {
     return (
-        <Container className="p-2 theme-border theme-box-shadow client-profile">
+        <Container className="p-2 theme-border theme-box-shadow theme-border-radius client-profile">
             <Grid container spacing={2}>
                 <Grid item md={4} xs={12}>
                     <Box className="d-flex justify-content-center">

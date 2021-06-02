@@ -4,13 +4,17 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
+import { Root } from "../../../../pre/config"
 
 export default function ClientProfile() {
     return (
-        <Container className="client-home mt-4">
+        <Container className="client-home mt-4 mb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> EDIT COMPANY PROFILE </Typography>
-            <Box className="p-3 mt-1 theme-border theme-box-shadow client-profile">
-                <Box>
+            <Box className="p-3 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
+                <Box className="d-flex justify-content-center">
+                    <img className="avatar crusor-pointer" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
+                </Box>
+                <Box className="mt-1">
                     <TextField fullWidth variant="outlined" label="User Name" value="CAREHOLD" />
                 </Box>
                 <Box className="mt-1">
