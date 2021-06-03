@@ -21,7 +21,7 @@ export default function WorkerSchedule() {
 
     return (
         <Container className="p-1 mt-4 worker-schedule">
-            <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS SCHEDULE</Typography>
+            <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
             <Box className="theme-border theme-box-shadow mt-1">
                 <Box className="p-2">
                     <Grid container spacing={2}>

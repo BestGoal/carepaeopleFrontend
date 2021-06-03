@@ -16,7 +16,7 @@ import Warning from "@material-ui/icons/Warning"
 import ShiftNote from "../../worker/worker-home/job/ShiftNote"
 import { Root } from "../../../../pre/config"
 
-export default function WorkerJobHistory() {
+export default function ClientProgresShifts() {
 
     const data = [
         {
@@ -26,26 +26,26 @@ export default function WorkerJobHistory() {
     ]
 
     return (
-        <Container className="mt-3 mb-1 worker-home p-0">
-            <Box className="pb-1">
+        <Container className="mt-4 mb-1 worker-home">
+            <Box>
                 <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS INPROGRESS</Typography>
             </Box>
             {
                 data.map((item, key) => (
-                    <Box className="worker-job mt-1 theme-border theme-box-shadow theme-border-radius" key={key}>
+                    <Box className="worker-job mt-1 theme-border theme-box-shadow" key={key}>
                         <Box className="p-2">
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <Typography className="text-align-center" variant="h5"> {item.shiftName} </Typography>
                                     <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
                                 </Grid>
-                                <Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
+                                <Grid item sm={3} xs={12} className="d-flex justify-content-center theme-border-radius">
                                     <img src={Root.adminUrl + item.avatar} alt="" />
                                 </Grid>
-                                <Grid item sm={8} xs={12}>
-                                    <Grid container spacing={3}>
+                                <Grid item sm={9} xs={12}>
+                                    <Grid container>
                                         <Grid item md={6} xs={12}>
-                                            <Box className="p-1 height-100">
+                                            <Box className="p-1">
                                                 <Box className="d-flex align-items-center">
                                                     <DateRange />
                                                     <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
@@ -72,12 +72,23 @@ export default function WorkerJobHistory() {
                                                 </Box>
                                             </Box>
                                         </Grid>
+                                        <Grid item md={6} xs={12} className="d-flex align-items-center">
+                                            <Box className="theme-border p-1 d-flex theme-border-radius" style={{width: "100%"}}>
+                                                <Box>
+                                                    <img src={Root.adminUrl + item.avatar} alt="" style={{width: "100px", height: "100px"}} />
+                                                </Box>
+                                                <Box className="ml-1">
+                                                    <Typography>Shift Accepted By : </Typography>
+                                                    <Typography>Denis postnykhdo(PSW / PCA)</Typography>
+                                                </Box>
+                                            </Box>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </Box>
                         <Box className="pb-0 mt-1">
-                            <Box className="p-1 height-100 text-align-center bg-eee">
+                            <Box className="p-1 text-align-center bg-eee">
                                 <Box className="d-flex justify-content-center">
                                     <LocationOn />
                                     <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
@@ -89,10 +100,7 @@ export default function WorkerJobHistory() {
                             </Box>
                         </Box>
                         <ShiftNote />
-                        <Box className="d-flex">
-                            <Button variant="contained" fullWidth className="bg-theme color-white m-1">Time Tracking</Button>
-                            <Button variant="contained" fullWidth className="m-1">CLOCK OUT</Button>
-                        </Box>
+                        <Button variant="contained" fullWidth className="bg-theme color-white">Time Tracking&nbsp;:&nbsp; 05:28</Button>
                     </Box>
                 ))
             }
