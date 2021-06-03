@@ -11,7 +11,6 @@ import { Root } from "../../../../pre/config"
 import ProgressShifts from "../../shift/progress/clientProgress"
 import ScheduleShifts from "../../shift/schedule/index"
 import PostedShifts from "../../shift/posted/index"
-import HistoryShifts from "../../shift/history/index"
 
 export default function ClientHome() {
     return (
@@ -51,7 +50,6 @@ export default function ClientHome() {
             <ProgressShifts />
             <ScheduleShifts />
             <PostedShifts />
-            <HistoryShifts />
         </>
     )
 }

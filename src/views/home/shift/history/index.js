@@ -11,7 +11,6 @@ import AvTimer from "@material-ui/icons/AvTimer"
 import Payment from "@material-ui/icons/Payment"
 import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
-import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
 import ShiftNote from "../../worker/worker-home/job/ShiftNote"
 import { Root } from "../../../../pre/config"
@@ -84,17 +83,9 @@ export default function WorkerJobHistory() {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="pb-0 mt-1">
-                            <Box className="p-1 height-100 text-align-center bg-eee">
-                                <Box className="d-flex justify-content-center">
-                                    <LocationOn />
-                                    <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
-                                </Box>
-                                <Box className="d-flex justify-content-center">
-                                    <Explore />
-                                    <Typography className="ml-1">Distance: 13.61 km </Typography>
-                                </Box>
-                            </Box>
+                        <Box className="p-1 d-flex justify-content-center bg-eee">
+                            <LocationOn />
+                            <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
                         </Box>
                         <ShiftNote />
                         <Button variant="contained" className="bg-theme color-white accept">Time Worked: 06:43:44</Button>
