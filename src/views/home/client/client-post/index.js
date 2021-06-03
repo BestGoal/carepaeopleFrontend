@@ -40,13 +40,12 @@ export default function ClientPost() {
     const [mode, setMode] = React.useState(false);
 
     return (
-        <Container className="client-home mt-4 mb-1">
+        <Container className="mt-4 mb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> POST SHIFTS </Typography>
-            <Box className="p-3 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
-
+            <Box className="p-2 mt-1 theme-border theme-box-shadow theme-border-radius">
                 <Grid container spacing={3}>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <Grid item sm={4} xs={6}>
+                        <Grid item md={4} sm={6} xs={12}>
                             <Autocomplete
                                 className="autocomplete"
                                 options={locationData}
@@ -55,10 +54,10 @@ export default function ClientPost() {
                                 renderInput={(params) => <TextField {...params} label="Job Position" variant="outlined" />}
                             />
                         </Grid>
-                        <Grid item sm={4} xs={6}>
+                        <Grid item md={4} sm={6} xs={12}>
                             <TextField fullWidth variant="outlined" label="NO. OF VACANCIES" type="Number" value="1" />
                         </Grid>
-                        <Grid item sm={4} xs={6}>
+                        <Grid item md={4} sm={6} xs={12}>
                             <Autocomplete
                                 className="autocomplete"
                                 options={rateData}
@@ -67,7 +66,7 @@ export default function ClientPost() {
                                 renderInput={(params) => <TextField {...params} label="Hourly Rate" variant="outlined" />}
                             />
                         </Grid>
-                        <Grid item sm={4} xs={6}>
+                        <Grid item md={4} sm={6} xs={12}>
                             <Autocomplete
                                 className="autocomplete"
                                 options={typeData}
@@ -79,7 +78,7 @@ export default function ClientPost() {
                         </Grid>
                         {
                             type.value === 1 ?
-                                <Grid item sm={4} xs={6}>
+                                <Grid item md={4} sm={6} xs={12}>
                                     <DatePicker
                                         fullWidth
                                         className="m-0"
@@ -94,7 +93,7 @@ export default function ClientPost() {
                                 </Grid>
                                 :
                                 <>
-                                    <Grid item sm={4} xs={6}>
+                                    <Grid item md={4} sm={6} xs={12}>
                                         <DatePicker
                                             fullWidth
                                             className="m-0"
@@ -107,7 +106,7 @@ export default function ClientPost() {
                                             label="Start Date"
                                         />
                                     </Grid>
-                                    <Grid item sm={4} xs={6}>
+                                    <Grid item md={4} sm={6} xs={12}>
                                         <DatePicker
                                             fullWidth
                                             className="m-0"
@@ -122,7 +121,7 @@ export default function ClientPost() {
                                     </Grid>
                                 </>
                         }
-                        <Grid item sm={4} xs={6}>
+                        <Grid item md={4} sm={6} xs={12}>
                             <KeyboardTimePicker
                                 fullWidth
                                 label="Start Time"
@@ -130,7 +129,7 @@ export default function ClientPost() {
                                 onChange={setSelectedDate}
                             />
                         </Grid>
-                        <Grid item sm={4} xs={6}>
+                        <Grid item md={4} sm={6} xs={12}>
                             <KeyboardTimePicker
                                 fullWidth
                                 label="End Time"
@@ -149,10 +148,10 @@ export default function ClientPost() {
                 {
                     mode ?
                         <Grid container className="mt-1" spacing={3}>
-                            <Grid item sm={4} xs={6}>
+                            <Grid item md={4} sm={6} xs={12}>
                                 <TextField fullWidth variant="outlined" label="Add Event Name" />
                             </Grid>
-                            <Grid item sm={4} xs={6}>
+                            <Grid item md={4} sm={6} xs={12}>
                                 <Autocomplete
                                     className="autocomplete"
                                     options={typeData}
@@ -162,7 +161,7 @@ export default function ClientPost() {
                                     onChange={(e, v) => setType(v)}
                                 />
                             </Grid>
-                            <Grid item sm={4} xs={6}>
+                            <Grid item md={4} sm={6} xs={12}>
                                 <Autocomplete
                                     className="autocomplete"
                                     options={typeData}

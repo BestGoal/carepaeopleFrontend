@@ -10,7 +10,7 @@ export default function ClientProfile() {
     return (
         <Container className="client-home mt-4 mb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> EDIT COMPANY PROFILE </Typography>
-            <Box className="p-3 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
+            <Box className="p-2 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
                 <Box className="d-flex justify-content-center">
                     <img className="avatar crusor-pointer" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
                 </Box>

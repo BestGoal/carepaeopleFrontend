@@ -24,74 +24,70 @@ export default function ClientRegister() {
     }
 
     return (
-        <Container>
-            <Box className="auth-client-register d-flex p-1">
-                <Box className="register-client-card text-align-center">
-                    <Typography className="font-weight-bold register-header m-2 pb-2" variant="h5"> SIGN UP TO HIRE </Typography>
-                    <Grid container spacing={2}>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="First Name" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Last Name" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Company Name" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Company Website" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Address" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Email" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <FormControl fullWidth>
-                                <InputLabel variant="outlined" htmlFor="phone-number">Phone Number</InputLabel>
-                                <OutlinedInput
-                                    name="textmask"
-                                    id="phone-number"
-                                    label="Phone Number"
-                                    inputComponent={TextMaskCustom}
-                                />
-                            </FormControl>
-                        </Grid>
-                        <Grid item md={6} xs={12} >
-                            <TextField fullWidth variant="outlined" label="Company Type" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Password" />
-                        </Grid>
-                        <Grid item md={6} xs={12}>
-                            <TextField fullWidth variant="outlined" label="Confirm Password" />
-                        </Grid>
-                        <Grid item md={12} xs={12}>
-                            <TextField
-                                label="Company Description"
-                                multiline
-                                fullWidth
-                                rows={3}
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item md={12} xs={12} className="p-0">
-                            <Typography>
-                                <Checkbox color="primary" inputProps={{ 'aria-label': 'secondary checkbox' }} />
-                                By clicking signup, you agree to Healthcare Terms of Service and Privacy Policy.
-                            </Typography>
-                        </Grid>
-                        <Grid item md={12} xs={12}>
-                            <Button onClick={() => signUp()} className="text-capitalize" fullWidth color="primary" variant="contained"> Sign Up </Button>
-                        </Grid>
-                        <Grid item md={12} xs={12} className="d-flex justify-content-center p-0">
-                            <Typography> Already have an account? </Typography>
-                            &nbsp;
-                            <Typography className="font-weight-bold crusor-pointer"> Please Signin. </Typography>
-                        </Grid>
+        <Container className="d-flex p-1 auth">
+            <Box className="register-client-card theme-box-shadow bg-white text-align-center p-2 m-auto">
+                <Typography className="font-weight-bold mt-1" variant="h5"> SIGN UP TO HIRE </Typography>
+                <Grid container spacing={2} className="mt-1">
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="First Name" />
                     </Grid>
-                </Box>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Last Name" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Company Name" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Company Website" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Address" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Email" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <FormControl fullWidth>
+                            <InputLabel variant="outlined" htmlFor="phone-number">Phone Number</InputLabel>
+                            <OutlinedInput
+                                name="textmask"
+                                id="phone-number"
+                                label="Phone Number"
+                                inputComponent={TextMaskCustom}
+                            />
+                        </FormControl>
+                    </Grid>
+                    <Grid item md={6} xs={12} >
+                        <TextField fullWidth variant="outlined" label="Company Type" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Password" />
+                    </Grid>
+                    <Grid item md={6} xs={12}>
+                        <TextField fullWidth variant="outlined" label="Confirm Password" />
+                    </Grid>
+                    <Grid item md={12} xs={12}>
+                        <TextField
+                            label="Company Description"
+                            multiline
+                            fullWidth
+                            rows={3}
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item md={12} xs={12} className="p-0">
+                        <Typography>
+                            <Checkbox color="primary" />
+                            By clicking signup, you agree to Healthcare Terms of Service and Privacy Policy.
+                        </Typography>
+                    </Grid>
+                    <Grid item md={12} xs={12}>
+                        <Button onClick={() => signUp()} className="text-capitalize" fullWidth color="primary" variant="contained"> Sign Up </Button>
+                    </Grid>
+                    <Grid item md={12} xs={12} className="d-flex justify-content-center p-0">
+                        <Box> Already have an account?&nbsp;<Typography className="font-weight-bold crusor-pointer"> Please Signin. </Typography></Box>
+                    </Grid>
+                </Grid>
             </Box>
         </Container>
     )
