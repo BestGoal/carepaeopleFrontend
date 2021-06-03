@@ -20,7 +20,7 @@ import { Root } from "../../../../pre/config"
 export default function WorkerSchedule() {
 
     return (
-        <Container className="p-0 mt-4 worker-schedule">
+        <Container className="p-1 mt-4 worker-schedule">
             <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS SCHEDULE</Typography>
             <Box className="theme-border theme-box-shadow mt-1">
                 <Box className="p-2">
@@ -29,10 +29,10 @@ export default function WorkerSchedule() {
                             <Typography className="text-align-center" variant="h5"> UHN-TORONTO WESTERN-ON </Typography>
                             <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
                         </Grid>
-                        <Grid item md={4} xs={12} className="d-flex justify-content-center theme-border-radius">
+                        <Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
                             <img src={Root.adminUrl + "avatar/1.jpg"} alt="" />
                         </Grid>
-                        <Grid item md={8} xs={12}>
+                        <Grid item sm={8} xs={12}>
                             <Grid container spacing={3}>
                                 <Grid item md={6} xs={12}>
                                     <Box className="p-1">

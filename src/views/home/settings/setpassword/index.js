@@ -12,7 +12,7 @@ export default function SetDistance() {
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> CHANGE PASSWORD </Typography>
             </Box>
-            <Box className="theme-border theme-box-shadow theme-border-radius p-3">
+            <Box className="theme-border theme-box-shadow theme-border-radius p-2">
                 <Box className="mt-1">
                     <TextField label="Last password" variant="outlined" fullWidth />
                 </Box>

@@ -71,17 +71,8 @@
 
 .faq-page{
     .faq-item{
-        background: rgb(242, 246, 249);
+        background: $d-s-color;
         margin-top: 0.1rem;
-    }
-}
-
-.worker-setting{
-    .btn-home{
-        padding: 0.3rem;
-    }
-    .small-letter{
-        font-size: 0.8rem !important;
     }
 }
 
@@ -99,18 +90,22 @@
             }
         }
     }
-    .client-rate{
-        .noexist-icon{
-            width: 100px;
-            height: 100px;
+    .noexist-icon{
+        width: 100px;
+        height: 100px;
+    }
+    .billing-tabs{
+        .billing-tab{
+            width: 100% !important;
+            border-radius: 0% !important;
+        }
+        .billing-tab:hover, .select-item{
+            border-bottom: 2px solid $theme-color !important;
         }
     }
-    .autocomplete{
-        width: 100% !important;
-    }
-}
-.client-billing{
-    img{
-        width: 100px;
+    .client-billing{
+        img{
+            width: 100px;
+        }
     }
 }

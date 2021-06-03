@@ -10,7 +10,7 @@ export default function ClientProfile() {
             <Typography variant="h5" className="text-align-center font-weight-bold"> PREVIOUS WORKERS </Typography>
             <Box className="p-3 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
                 <Box className="text-align-center">
-                    <CancelPresentation style={{ width: "100px", height: "100px" }} />
+                    <CancelPresentation className="noexist-icon" />
                     <Typography>No workers found.</Typography>
                 </Box>
             </Box>

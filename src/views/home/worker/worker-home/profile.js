@@ -12,8 +12,8 @@ import { Root } from "../../../../pre/config"
 
 export default function WorkerProfile() {
     return (
-        <Container className="p-2 theme-border theme-box-shadow worker-profile">
-            <Grid container spacing={2}>
+        <Container className="p-2">
+            <Grid container spacing={2} className="theme-border theme-box-shadow worker-profile theme-border-radius p-1">
                 <Grid item md={4} xs={12}>
                     <Box className="d-flex justify-content-center">
                         <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
@@ -32,7 +32,7 @@ export default function WorkerProfile() {
                     </Box>
                 </Grid>
                 <Grid item md={8} xs={12}>
-                    <Box className="theme-box-shadow p-2">
+                    <Box className="p-2">
                         <Box className="d-flex align-items-center">
                             <Typography variant="h4"> Denis postnykhdo </Typography>
                             <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>

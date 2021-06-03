@@ -15,19 +15,27 @@ const WorkerDocument = lazy(() => import("./views/home/worker/worker-document/in
 const WorkerReference = lazy(() => import("./views/home/worker/worker-reference/index"));
 const WorkerRefferal = lazy(() => import("./views/home/worker/worker-refferal/index"));
 
-const ShiftProgress = lazy(() => import("./views/home/worker/worker-shift/progress/index"));
-const ShiftSchedule = lazy(() => import("./views/home/worker/worker-shift/schedule/index"));
-const ShiftHistory = lazy(() => import("./views/home/worker/worker-shift/history/index"));
-const ShiftAvailable = lazy(() => import("./views/home/worker/worker-shift/available/index"));
-const ShiftPosted = lazy(() => import("./views/home/worker/worker-shift/posted/index"));
-
 const WorkerBillingInvoice = lazy(() => import("./views/home/worker/worker-billing/invoice/index"));
 const WorkerBillingInstant = lazy(() => import("./views/home/worker/worker-billing/instant/index"));
 const WorkerBillingReport = lazy(() => import("./views/home/worker/worker-billing/report/index"));
 const WorkerBillingTax = lazy(() => import("./views/home/worker/worker-billing/tax/index"));
 
-const Faq = lazy(() => import("./views/home/faq/index"));
-const ContactUs = lazy(() => import("./views/home/contact-us/index"));
+const ClientHome = lazy(() => import("./views/home/client/client-home/index"));
+const ClientProfile = lazy(() => import("./views/home/client/client-profile/index"));
+const ClientPost = lazy(() => import("./views/home/client/client-post/index"));
+const ClientWallet = lazy(() => import("./views/home/client/client-wallet/index"));
+const ClientPrevious = lazy(() => import("./views/home/client/client-previous/index"));
+
+const ClientBillingHistory = lazy(() => import("./views/home/client/client-billings/payment-history/index"));
+const ClientBillingInvoice = lazy(() => import("./views/home/client/client-billings/invoice/index"));
+const ClientBillingCard = lazy(() => import("./views/home/client/client-billings/creditcards/index"));
+const ClientBillingStatement = lazy(() => import("./views/home/client/client-billings/accountstatement/index"));
+
+const ShiftProgress = lazy(() => import("./views/home/shift/progress/index"));
+const ShiftSchedule = lazy(() => import("./views/home/shift/schedule/index"));
+const ShiftPosted = lazy(() => import("./views/home/shift/posted/index"));
+const ShiftHistory = lazy(() => import("./views/home/shift/history/index"));
+const ShiftAvailable = lazy(() => import("./views/home/shift/available/index"));
 
 const SetAvailable = lazy(() => import("./views/home/settings/setavailable/index"));
 const SetRate = lazy(() => import("./views/home/settings/setrate/index"));
@@ -35,16 +43,8 @@ const SetDistance = lazy(() => import("./views/home/settings/setdistance/index")
 const SetPassword = lazy(() => import("./views/home/settings/setpassword/index"));
 const SetNotification = lazy(() => import("./views/home/settings/setnotification/index"));
 
-const ClientHome = lazy(() => import("./views/home/client/client-home/index"));
-const ClientProfile = lazy(() => import("./views/home/client/client-profile/index"));
-const ClientPost = lazy(() => import("./views/home/client/client-post/index"));
-const ClientPrevious = lazy(() => import("./views/home/client/client-previous/index"));
-const ClientWallet = lazy(() => import("./views/home/client/client-wallet/index"));
-
-const ClientBillingHistory = lazy(() => import("./views/home/client/client-billings/payment-history/index"));
-const ClientBillingInvoice = lazy(() => import("./views/home/client/client-billings/invoice/index"));
-const ClientBillingCard = lazy(() => import("./views/home/client/client-billings/creditcards/index"));
-const ClientBillingStatement = lazy(() => import("./views/home/client/client-billings/accountstatement/index"));
+const Faq = lazy(() => import("./views/home/faq/index"));
+const ContactUs = lazy(() => import("./views/home/contact-us/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route

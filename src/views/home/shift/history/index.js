@@ -13,8 +13,8 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "../../worker-home/job/ShiftNote"
-import { Root } from "../../../../../pre/config"
+import ShiftNote from "../../worker/worker-home/job/ShiftNote"
+import { Root } from "../../../../pre/config"
 
 export default function WorkerJobHistory() {
 
@@ -47,10 +47,10 @@ export default function WorkerJobHistory() {
                                     <Typography className="text-align-center" variant="h5"> {item.shiftName} </Typography>
                                     <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
                                 </Grid>
-                                <Grid item md={4} xs={12} className="d-flex justify-content-center theme-border-radius">
+                                <Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
                                     <img src={Root.adminUrl + item.avatar} alt="" />
                                 </Grid>
-                                <Grid item md={8} xs={12}>
+                                <Grid item sm={8} xs={12}>
                                     <Grid container spacing={3}>
                                         <Grid item md={6} xs={12}>
                                             <Box className="p-1 height-100">

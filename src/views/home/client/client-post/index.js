@@ -47,7 +47,7 @@ export default function ClientPost() {
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <Grid item md={4} sm={6} xs={12}>
                             <Autocomplete
-                                className="autocomplete"
+                                fullWidth
                                 options={locationData}
                                 getOptionLabel={(option) => option.title}
                                 value={locationData[0]}
@@ -59,7 +59,7 @@ export default function ClientPost() {
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
                             <Autocomplete
-                                className="autocomplete"
+                                fullWidth
                                 options={rateData}
                                 getOptionLabel={(option) => option.title}
                                 value={rateData[0]}
@@ -68,7 +68,7 @@ export default function ClientPost() {
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
                             <Autocomplete
-                                className="autocomplete"
+                                fullWidth
                                 options={typeData}
                                 getOptionLabel={(option) => option.title}
                                 value={type}
@@ -153,7 +153,7 @@ export default function ClientPost() {
                             </Grid>
                             <Grid item md={4} sm={6} xs={12}>
                                 <Autocomplete
-                                    className="autocomplete"
+                                    fullWidth
                                     options={typeData}
                                     getOptionLabel={(option) => option.title}
                                     value={type}
@@ -163,7 +163,7 @@ export default function ClientPost() {
                             </Grid>
                             <Grid item md={4} sm={6} xs={12}>
                                 <Autocomplete
-                                    className="autocomplete"
+                                    fullWidth
                                     options={typeData}
                                     getOptionLabel={(option) => option.title}
                                     value={type}

@@ -76,13 +76,13 @@ export default function SetAvailable() {
     ]
 
     return (
-        <Container className="mt-1 mb-1 worker-setting">
+        <Container className="mt-1 mb-1">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> SET YOUR AVAILABILITY </Typography>
             </Box>
             <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1">
                 <Typography>RECURRING WEEKLY SCHEDULE</Typography>
-                <Box className="btn-home">
+                <Box>
                     <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray" : ""}>On</Button>
                     <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme" : ""}>Off</Button>
                 </Box>
@@ -96,9 +96,9 @@ export default function SetAvailable() {
                         <Grid item md={4} className="d-flex justify-content-between align-items-center">
                             <Box className="d-flex align-items-center">
                                 <Typography className="font-weight-bold">{item.name}</Typography>
-                                <Typography className="small-letter ml-1">{item.date}</Typography>
+                                <Typography className="ml-1">{item.date}</Typography>
                             </Box>
-                            <Box className="btn-home">
+                            <Box>
                                 <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray" : ""}>On</Button>
                                 <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme" : ""}>Off</Button>
                             </Box>
