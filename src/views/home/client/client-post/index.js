@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Checkbox from '@material-ui/core/Checkbox'
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { DatePicker, MuiPickersUtilsProvider, KeyboardTimePicker } from '@material-ui/pickers';
+import { DatePicker, MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import ArrowDownward from "@material-ui/icons/ArrowDownward"
 
@@ -79,44 +79,41 @@ export default function ClientPost() {
                         {
                             type.value === 1 ?
                                 <Grid item md={4} sm={6} xs={12}>
-                                    <DatePicker
+                                    <KeyboardDatePicker
                                         fullWidth
-                                        className="m-0"
-                                        disableToolbar
+                                        label="Select Date"
                                         format="MM/dd/yyyy"
-                                        variant="inline"
                                         value={selectedDate}
                                         onChange={setSelectedDate}
-                                        margin="normal"
-                                        label="Select Date"
+                                        KeyboardButtonProps={{
+                                            'aria-label': 'change date',
+                                        }}
                                     />
                                 </Grid>
                                 :
                                 <>
                                     <Grid item md={4} sm={6} xs={12}>
-                                        <DatePicker
+                                        <KeyboardDatePicker
                                             fullWidth
-                                            className="m-0"
-                                            disableToolbar
+                                            label="Start Date"
                                             format="MM/dd/yyyy"
-                                            variant="inline"
                                             value={selectedDate}
                                             onChange={setSelectedDate}
-                                            margin="normal"
-                                            label="Start Date"
+                                            KeyboardButtonProps={{
+                                                'aria-label': 'change date',
+                                            }}
                                         />
                                     </Grid>
                                     <Grid item md={4} sm={6} xs={12}>
-                                        <DatePicker
+                                        <KeyboardDatePicker
                                             fullWidth
-                                            className="m-0"
-                                            disableToolbar
+                                            label="Last Date"
                                             format="MM/dd/yyyy"
-                                            variant="inline"
                                             value={selectedDate}
                                             onChange={setSelectedDate}
-                                            margin="normal"
-                                            label="End Date"
+                                            KeyboardButtonProps={{
+                                                'aria-label': 'change date',
+                                            }}
                                         />
                                     </Grid>
                                 </>
