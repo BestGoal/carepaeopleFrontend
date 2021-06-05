@@ -13,14 +13,14 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Warning from "@material-ui/icons/Warning"
 
-import ShiftNote from "../../worker/worker-home/job/ShiftNote"
-import { Root } from "../../../../pre/config"
+import ShiftNote from "../../../worker/worker-home/job/ShiftNote"
+import { Root } from "../../../../../pre/config"
 
 export default function WorkerCurrentShift() {
 	return (
 		<Box className="worker-home">
 			<Container className="p-1 mt-4 worker-schedule">
-				<Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
+				<Typography className="text-align-center font-weight-bold" variant="h5">UPCOMING SHIFTS</Typography>
 				<Box className="theme-border theme-box-shadow mt-1">
 					<Box className="p-2">
 						<Grid container spacing={2}>
@@ -58,6 +58,17 @@ export default function WorkerCurrentShift() {
 											<Box className="d-flex align-items-center">
 												<Warning />
 												<Typography className="ml-1">Covid-19 Negative</Typography>
+											</Box>
+										</Box>
+									</Grid>
+									<Grid item md={6} xs={12} className="d-flex align-items-center">
+										<Box className="theme-border p-1 d-flex theme-border-radius" style={{ width: "100%" }}>
+											<Box>
+												<img src={Root.adminUrl + "avatar/1.jpg"} alt="" style={{ width: "100px", height: "100px" }} />
+											</Box>
+											<Box className="ml-1">
+												<Typography>Shift Accepted By : </Typography>
+												<Typography>Denis postnykhdo(PSW / PCA)</Typography>
 											</Box>
 										</Box>
 									</Grid>

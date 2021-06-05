@@ -10,10 +10,10 @@ export default function SetNotification() {
     return (
         <Container className="mt-4 mb-1">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5"> PUSH NOTIFICATION </Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5"> NOTIFICATIONS </Typography>
             </Box>
             <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1">
-                <Typography>NOTIFICATIONS</Typography>
+                <Typography>PUSH NOTIFICATIONS</Typography>
                 <Box className="bg-eee">
                     <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray": ""}>On</Button>
                     <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme": ""}>Off</Button>
@@ -21,6 +21,13 @@ export default function SetNotification() {
             </Box>
             <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1 mt-1">
                 <Typography>SMS</Typography>
+                <Box className="bg-eee">
+                    <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray": ""}>On</Button>
+                    <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme": ""}>Off</Button>
+                </Box>
+            </Box>
+            <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1 mt-1">
+                <Typography>EMAIL</Typography>
                 <Box className="bg-eee">
                     <Button onClick={() => SetMode(!mode)} className={!mode ? "bg-gray color-gray": ""}>On</Button>
                     <Button onClick={() => SetMode(!mode)} className={mode ? "bg-theme color-theme": ""}>Off</Button>

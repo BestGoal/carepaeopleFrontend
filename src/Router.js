@@ -6,6 +6,7 @@ import { ContextLayout } from "./layout";
 
 const Dashboard = lazy(() => import("./views/dashboard/index"));
 const Register = lazy(() => import("./views/auth/register/index"));
+const Login = lazy(() => import("./views/auth/login/index"));
 const ClientRegister = lazy(() => import("./views/auth/register/client"));
 const WorkerRegister = lazy(() => import("./views/auth/register/worker"));
 
@@ -15,6 +16,12 @@ const WorkerDocument = lazy(() => import("./views/home/worker/worker-document/in
 const WorkerReference = lazy(() => import("./views/home/worker/worker-reference/index"));
 const WorkerRefferal = lazy(() => import("./views/home/worker/worker-refferal/index"));
 
+const ShiftProgress = lazy(() => import("./views/home/shift/progress/index"));
+const ShiftSchedule = lazy(() => import("./views/home/shift/schedule/index"));
+const ShiftPosted = lazy(() => import("./views/home/shift/posted/index"));
+const ShiftHistory = lazy(() => import("./views/home/shift/history/index"));
+const ShiftAvailable = lazy(() => import("./views/home/shift/available/index"));
+
 const WorkerBillingInvoice = lazy(() => import("./views/home/worker/worker-billing/invoice/index"));
 const WorkerBillingInstant = lazy(() => import("./views/home/worker/worker-billing/instant/index"));
 const WorkerBillingReport = lazy(() => import("./views/home/worker/worker-billing/report/index"));
@@ -23,6 +30,12 @@ const WorkerBillingTax = lazy(() => import("./views/home/worker/worker-billing/t
 const ClientHome = lazy(() => import("./views/home/client/client-home/index"));
 const ClientProfile = lazy(() => import("./views/home/client/client-profile/index"));
 const ClientPost = lazy(() => import("./views/home/client/client-post/index"));
+
+const ClientShiftProgress = lazy(() => import("./views/home/client/client-shift/progress/index"));
+const ClientShiftSchedule = lazy(() => import("./views/home/client/client-shift/schedule/index"));
+const ClientShiftPosted = lazy(() => import("./views/home/client/client-shift/posted/index"));
+const ClientShiftHistory = lazy(() => import("./views/home/client/client-shift/history/index"));
+
 const ClientWallet = lazy(() => import("./views/home/client/client-wallet/index"));
 const ClientPrevious = lazy(() => import("./views/home/client/client-previous/index"));
 
@@ -30,12 +43,6 @@ const ClientBillingHistory = lazy(() => import("./views/home/client/client-billi
 const ClientBillingInvoice = lazy(() => import("./views/home/client/client-billings/invoice/index"));
 const ClientBillingCard = lazy(() => import("./views/home/client/client-billings/creditcards/index"));
 const ClientBillingStatement = lazy(() => import("./views/home/client/client-billings/accountstatement/index"));
-
-const ShiftProgress = lazy(() => import("./views/home/shift/progress/index"));
-const ShiftSchedule = lazy(() => import("./views/home/shift/schedule/index"));
-const ShiftPosted = lazy(() => import("./views/home/shift/posted/index"));
-const ShiftHistory = lazy(() => import("./views/home/shift/history/index"));
-const ShiftAvailable = lazy(() => import("./views/home/shift/available/index"));
 
 const SetAvailable = lazy(() => import("./views/home/settings/setavailable/index"));
 const SetRate = lazy(() => import("./views/home/settings/setrate/index"));
@@ -95,6 +102,7 @@ class AppRouter extends React.Component {
         {/* { this.props.loading && <Loading /> } */}
         <Switch>
           <AppRoute path="/" exact component={Dashboard} MainLayout />
+          <AppRoute path="/login" exact component={Login} MainLayout />
           <AppRoute path="/register" exact component={Register} MainLayout />
           <AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
           <AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
@@ -105,11 +113,11 @@ class AppRouter extends React.Component {
             <AppRoute path="/worker-reference" exact component={WorkerReference} MainLayout />
             <AppRoute path="/worker-refferal" exact component={WorkerRefferal} MainLayout />
 
+            <AppRoute path="/shift-progress" exact component={ShiftProgress} MainLayout />
             <AppRoute path="/shifts-schedule" exact component={ShiftSchedule} MainLayout />
+            <AppRoute path="/shift-posted" exact component={ShiftPosted} MainLayout />
             <AppRoute path="/shift-history" exact component={ShiftHistory} MainLayout />
             <AppRoute path="/shift-available" exact component={ShiftAvailable} MainLayout />
-            <AppRoute path="/shift-posted" exact component={ShiftPosted} MainLayout />
-            <AppRoute path="/shift-progress" exact component={ShiftProgress} MainLayout />
 
             <AppRoute path="/worker-billing-invoice" exact component={WorkerBillingInvoice} MainLayout />
             <AppRoute path="/worker-billing-instant" exact component={WorkerBillingInstant} MainLayout />
@@ -127,6 +135,12 @@ class AppRouter extends React.Component {
 
             <AppRoute path="/client-home" exact component={ClientHome} MainLayout />
             <AppRoute path="/client-profile" exact component={ClientProfile} MainLayout />
+
+            <AppRoute path="/client-shift-progress" exact component={ClientShiftProgress} MainLayout />
+            <AppRoute path="/client-shifts-schedule" exact component={ClientShiftSchedule} MainLayout />
+            <AppRoute path="/client-shift-posted" exact component={ClientShiftPosted} MainLayout />
+            <AppRoute path="/client-shift-history" exact component={ClientShiftHistory} MainLayout />
+
             <AppRoute path="/client-post" exact component={ClientPost} MainLayout />
             <AppRoute path="/previous-workers" exact component={ClientPrevious} MainLayout />
             <AppRoute path="/client-wallet" exact component={ClientWallet} MainLayout />

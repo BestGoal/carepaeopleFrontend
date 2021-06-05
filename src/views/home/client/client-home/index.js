@@ -8,9 +8,9 @@ import Group from "@material-ui/icons/Group"
 import LocationOn from "@material-ui/icons/LocationOn"
 import { Root } from "../../../../pre/config"
 
-import ProgressShifts from "../../shift/progress/clientProgress"
-import ScheduleShifts from "../../shift/schedule/clientCurrentSchedule"
-import PostedShifts from "../../shift/posted/index"
+import ProgressShifts from "../client-shift/progress/index"
+import ScheduleShifts from "../client-shift/schedule/index"
+import PostedShifts from "../client-shift/posted/index"
 
 export default function ClientHome() {
     return (

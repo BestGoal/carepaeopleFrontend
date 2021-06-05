@@ -12,22 +12,30 @@ import Payment from "@material-ui/icons/Payment"
 import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "../../worker/worker-home/job/ShiftNote"
-import { Root } from "../../../../pre/config"
+import ShiftNote from "../../../worker/worker-home/job/ShiftNote"
+import { Root } from "../../../../../pre/config"
 
-export default function ClientProgresShifts() {
+export default function WorkerJobHistory() {
 
     const data = [
         {
             shiftName: "UHN-TORONTO WESTERN-ON",
             avatar: "avatar/1.jpg"
+        },
+        {
+            shiftName: "Winner's LifeCare center brantford-on",
+            avatar: "avatar/2.jpg"
+        },
+        {
+            shiftName: "Denis's LifeCare center brantford-on",
+            avatar: "avatar/3.jpg"
         }
     ]
 
     return (
-        <Container className="mt-4 mb-1 worker-home">
-            <Box>
-                <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS INPROGRESS</Typography>
+        <Container className="mt-3 mb-1 worker-home">
+            <Box className="pb-1">
+                <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS HISTORY</Typography>
             </Box>
             {
                 data.map((item, key) => (
@@ -38,13 +46,13 @@ export default function ClientProgresShifts() {
                                     <Typography className="text-align-center" variant="h5"> {item.shiftName} </Typography>
                                     <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
                                 </Grid>
-                                <Grid item sm={3} xs={12} className="d-flex justify-content-center theme-border-radius">
+                                <Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
                                     <img src={Root.adminUrl + item.avatar} alt="" />
                                 </Grid>
-                                <Grid item sm={9} xs={12}>
-                                    <Grid container>
+                                <Grid item sm={8} xs={12}>
+                                    <Grid container spacing={3}>
                                         <Grid item md={6} xs={12}>
-                                            <Box className="p-1">
+                                            <Box className="p-1 height-100">
                                                 <Box className="d-flex align-items-center">
                                                     <DateRange />
                                                     <Typography className="ml-1"> Mon. May 10, 2021 </Typography>
@@ -91,10 +99,13 @@ export default function ClientProgresShifts() {
                             <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
                         </Box>
                         <ShiftNote />
-                        <Button variant="contained" fullWidth className="bg-theme color-white">Time Tracking&nbsp;:&nbsp; 05:28</Button>
+                        <Button variant="contained" className="bg-theme color-white accept">Time Worked: 06:43:44</Button>
                     </Box>
                 ))
             }
+            <Box className="d-flex justify-content-center mt-2">
+                <Button variant="contained" fullWidth>Load More</Button>
+            </Box>
         </Container>
     )
 }

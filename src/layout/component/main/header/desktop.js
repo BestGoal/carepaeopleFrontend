@@ -42,7 +42,7 @@ export default function DesktopHeader() {
                                     <Button className="bg-transparent color-white text-capitalize">Download</Button>
                                     <Button className="bg-transparent color-white text-capitalize">About Us</Button>
                                     <Button className="bg-eee text-capitalize" onClick={() => history.push("/register")}>Sign Up</Button>
-                                    <Button className="bg-transparent color-white text-capitalize">Sign In</Button>
+                                    <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/login")}>Sign In</Button>
                                 </>
                                 :
                                 (
@@ -151,19 +151,19 @@ export default function DesktopHeader() {
                                             >
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-progress")
+                                                    history.push("/client-shift-progress")
                                                 }}>Shifts In Progress</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shifts-schedule")
-                                                }}>Shifts Schedule</MenuItem>
+                                                    history.push("/client-shifts-schedule")
+                                                }}>Upcoming Shifts </MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-posted")
-                                                }}>Shifts Posted</MenuItem>
+                                                    history.push("/client-shift-posted")
+                                                }}>Posted Shifts</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-history")
+                                                    history.push("/client-shift-history")
                                                 }}>Shifts History</MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
@@ -192,8 +192,8 @@ export default function DesktopHeader() {
                                                 }}>Account Statement</MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/client-wallet")}>Wallet</Button>
-                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/previous-workers")}>Previous Workers</Button>
-                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>FAQ</Button>
+                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/previous-workers")}>Hired Workers</Button>
+                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>Faq</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/contact-us")}>Contact Us</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Settings</Button>
                                             <Menu
@@ -210,7 +210,7 @@ export default function DesktopHeader() {
                                                 <MenuItem onClick={() => {
                                                     setSettingMenu(null)
                                                     history.push("/set-nitification")
-                                                }}>Push Notification</MenuItem>
+                                                }}>Notifications</MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => window.location.reload()}>Logout</Button>
                                         </>

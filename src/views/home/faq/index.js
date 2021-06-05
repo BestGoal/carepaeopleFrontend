@@ -16,34 +16,29 @@ export default function Faq() {
         {
         },
         {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
         }
     ]
 
     return (
         <Container className="mt-4 mb-1 faq-page">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5"> FAQS </Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5"> FAQ </Typography>
             </Box>
             <Card className="p-2 theme-border theme-box-shadow theme-border-radius">
                 <CardContent>
-                    <Box className="mt-2">
-                        <Typography className="font-weight-bold">The Contractors</Typography>
-                        {
-                            data.map((item,key) => (
-                                <Item key={key} />
-                            ))
-                        }
-                    </Box>
-                    <Box className="mt-2">
-                        <Typography className="font-weight-bold">The Contractors</Typography>
-                        {
-                            data.map((item,key) => (
-                                <Item key={key} />
-                            ))
-                        }
-                    </Box>
-                    <Box className="mt-2">
-                        <Typography className="font-weight-bold">The Contractors</Typography>
+                    <Box>
                         {
                             data.map((item,key) => (
                                 <Item key={key} />
