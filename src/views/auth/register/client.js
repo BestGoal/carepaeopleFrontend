@@ -24,7 +24,7 @@ export default function ClientRegister() {
     }
 
     return (
-        <Container className="d-flex p-1 auth">
+        <Container className="p-1 auth">
             <Box className="register-client-card theme-box-shadow bg-white text-align-center p-2 m-auto">
                 <Typography className="font-weight-bold mt-1" variant="h5"> SIGN UP TO HIRE </Typography>
                 <Grid container spacing={2} className="mt-1">

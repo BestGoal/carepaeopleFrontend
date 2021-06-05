@@ -1,5 +1,22 @@
+.container {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    .main-container{
+        padding: 3rem;
+        margin-top: 1rem;
+    }
+}
+@media (max-width: 500px) {
+    .container {
+        margin-top: 1rem;
+        .main-container{
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    }
+}
 .worker-home {
-    .worker-profile{
+    .worker-profile {
         .avatar {
             width: 300px;
             height: 300px;
@@ -9,7 +26,8 @@
             color: #4fb55d;
         }
     }
-    .worker-schedule, .worker-job{
+    .worker-schedule,
+    .worker-job {
         img {
             width: 200px;
             height: 200px;
@@ -21,89 +39,118 @@
             font-size: 1.25rem;
         }
     }
-    .worker-job{
+    .worker-job {
         .worker-select-type {
             background-color: #eee;
             padding: 3px;
             border-radius: 5px;
         }
-
     }
 }
-
 .worker-reference {
     .border-botton-1 {
         border-bottom: 1px solid #eee;
     }
 }
-
-.worker-billing{
-    .worker-billing-invoice{
-        .billing-tabs{
-            .billing-tab{
+.worker-billing {
+    .worker-billing-invoice {
+        .billing-tabs {
+            .billing-tab {
                 width: 100% !important;
                 border-radius: 0% !important;
             }
-            .billing-tab:hover, .select-item{
+            .billing-tab:hover,
+            .select-item {
                 border-bottom: 2px solid $theme-color !important;
             }
         }
     }
-    .btn-home{
+    .btn-home {
         background: #eee;
         padding: 0.3rem;
-        .on-btn{
+        .on-btn {
             background: gray;
             color: gray !important;
         }
-        .off-btn{
-            color: $theme-color !important
+        .off-btn {
+            color: $theme-color !important;
         }
     }
 }
-
 .worker-referal {
     .referal-item {
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
     }
 }
-
-.faq-page{
-    .faq-item{
+.faq-page {
+    .faq-item {
         background: $d-s-color;
         margin-top: 0.1rem;
     }
 }
-
-.client-home{
+.client-home {
     .avatar {
         position: relative;
         width: 300px;
         height: 300px;
         border-radius: 10%;
     }
-    @media(max-width: 500px) {
+    @media (max-width: 500px) {
         .avatar {
             width: 100%;
             height: 100%;
         }
     }
-    .noexist-icon{
+    .noexist-icon {
         width: 100px;
         height: 100px;
     }
-    .billing-tabs{
-        .billing-tab{
+
+    .client-post{
+        .post-item-header{
+            background: #e9f3f5;
+            padding: 0.3rem;
+            padding-left: 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .modify-tbl{
+            .date-num{
+                width: 40px;
+                height: 40px;
+                margin: 0.1rem;
+            }
+            .disable-num{
+                color: $gray;
+                cursor: default !important;
+                &:hover{
+                    background: $white;
+                }
+            }
+            .enable-item{
+                background: $theme-color;
+                color: $white;
+            }
+            td{
+                padding: 0;
+            }
+        }
+    }
+
+
+    .billing-tabs {
+        .billing-tab {
             width: 100% !important;
             border-radius: 0% !important;
         }
-        .billing-tab:hover, .select-item{
+        .billing-tab:hover,
+        .select-item {
             border-bottom: 2px solid $theme-color !important;
         }
     }
-    .client-billing{
-        img{
+    .client-billing {
+        img {
             width: 100px;
         }
     }
