@@ -3,13 +3,8 @@ import { useDispatch } from 'react-redux'
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import TextField from "@material-ui/core/TextField"
-import InputLabel from '@material-ui/core/InputLabel';
-import TextMaskCustom from "../../baseComponent/TextMaskCustom"
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
-import FormControl from '@material-ui/core/FormControl';
-import OutlinedInput from "@material-ui/core/OutlinedInput";
-import Checkbox from '@material-ui/core/Checkbox'
 import Button from '@material-ui/core/Button'
 import { history } from "../../../history";
 import { Login_func } from "../../../redux/action/auth/loginActions"

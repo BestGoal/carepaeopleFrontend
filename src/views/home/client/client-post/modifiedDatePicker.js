@@ -14,6 +14,7 @@ import ArrowLeft from "@material-ui/icons/ArrowLeft"
 import ArrowRight from "@material-ui/icons/ArrowRight"
 import ModifyClocks from "./modifyClock"
 import clsx from "clsx"
+import { toast } from 'react-toastify';
 
 const monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -22,13 +23,23 @@ export default function ClientPost({ status }) {
     const [cDate, setCDate] = useState(String(new Date()))
     const [dateNums, setDateNums] = useState([])
     const [dateData, setDateData] = useState([])
+    const [multiClock, setMultiClock] = useState(false)
 
-    useEffect( async () => {
+    useEffect(() => {
         makeDateNums(new Date().valueOf())
-        if(status && dateData.length !== 1) {
-            await setDateData([])
-            makeDateData(new Date().getDate())
-        }
+        setMultiClock(false)
+        let cd = new Date();
+        let cy = cd.getFullYear();
+        let cm = cd.getMonth();
+        let day = cd.getDate();
+        let date = new Date(`${cy} ${cm} ${day}`).toLocaleDateString()
+        setDateData([
+            { 
+                date,
+                start: new Date(date+" 06:00:00 AM").toLocaleTimeString(),
+                end: new Date(date+" 10:00:00 AM").toLocaleTimeString(),
+            }
+        ])
     }, [status])
 
     const makeDateNums = (date) => {
@@ -53,10 +64,8 @@ export default function ClientPost({ status }) {
         if (key) {
             if (m < 12) {
                 date = new Date(`${d.getFullYear()} ${m + 1}`)
-                console.log(date)
             } else {
                 date = new Date(`${d.getFullYear() + 1} 1`)
-                console.log(date)
             }
         } else {
             if (m > 1) {
@@ -101,6 +110,7 @@ export default function ClientPost({ status }) {
         let index = tempDateData.findIndex(item => item.date === date)
         if(index > -1) {
             let dtData = []
+            tempDateData = tempDateData.slice(index, 1)
             for(let i = 0 ; i < dateData.length ; i ++) {
                 if(index !== i) {
                     dtData.push(dateData[i])
@@ -109,11 +119,62 @@ export default function ClientPost({ status }) {
             setDateData(dtData)
         } else {
             if(status) {
-                setDateData([{ date }])
+                setDateData([
+                    { 
+                        date,
+                        start: new Date(date+" 06:00:00 AM").toLocaleTimeString(),
+                        end: new Date(date+" 10:00:00 AM").toLocaleTimeString(),
+                    }
+                ])
             } else {
-                console.log([ ...tempDateData, ...[{ date }] ], date)
-                setDateData([ ...tempDateData, ...[{ date }] ])
+                setDateData([ ...tempDateData, ...[
+                    {
+                        date,
+                        start: new Date(date+" 06:00:00 AM").toLocaleTimeString(),
+                        end: new Date(date+" 10:00:00 AM").toLocaleTimeString(),
+                    }
+                ]])
             }
+        }
+    }
+
+    const makeMultiClick = () => {
+        let tempDateData = dateData;
+        if(multiClock) {
+            for (let i = 0 ; i < tempDateData.length ; i ++) {
+                tempDateData[i].start = new Date(tempDateData[i].date + " 06:00:00 AM").toLocaleTimeString()
+                tempDateData[i].end = new Date(tempDateData[i].date + " 10:00:00 AM").toLocaleTimeString()
+            }
+        }
+
+        console.log(tempDateData)
+
+        setDateData([ ...tempDateData ])
+        setMultiClock(!multiClock)
+    }
+
+    const changeTimeFunc = (item = false, start, end) => {
+        let cs = new Date(new Date().toLocaleDateString() + " " + start).valueOf()
+        let ce = new Date(new Date().toLocaleDateString() + " " + end).valueOf()
+        if(cs < ce) {
+            if(item) {
+                let tempDateData = dateData;
+                let index = tempDateData.findIndex(it => it.date === item.date);
+                if(index > -1) {
+                    tempDateData[index].start = start;
+                    tempDateData[index].end = end;
+                }
+                setDateData([ ...tempDateData ])
+            } else {
+                let tempDateData = dateData;
+                for(let i = 0 ; i < tempDateData.length ; i ++) {
+                    tempDateData[i].start = start;
+                    tempDateData[i].end = end;
+                }
+                setDateData([ ...tempDateData ])
+            }
+        } else {
+            toast.error("End time have to big than start time.");
         }
     }
 
@@ -127,8 +188,13 @@ export default function ClientPost({ status }) {
                 </Grid>
                 {
                     !status &&
-                        <Grid item xs={6} className="d-flex align-items-center justify-content-center">
-                            <Checkbox color="primary" />
+                        <Grid 
+                            xs={6} 
+                            item 
+                            className="d-flex align-items-center justify-content-center crusor-pointer" 
+                            onClick={()=>makeMultiClick()}
+                        >
+                            <Checkbox color="primary" checked={multiClock} />
                             <Typography>Select different timings for each day</Typography>
                         </Grid>
                 }
@@ -154,7 +220,7 @@ export default function ClientPost({ status }) {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <ModifyClocks status={true} />
+            <ModifyClocks multiClock={multiClock} dateData={dateData} changeTimeFunc={changeTimeFunc} />
         </Box>
     )
 }

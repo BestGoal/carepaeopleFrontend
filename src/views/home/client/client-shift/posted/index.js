@@ -90,7 +90,7 @@ export default function ClientShiftsPosts() {
                         <ShiftNote />
                         <Box className="d-flex">
                             <Button fullWidth variant="contained" className="accept bg-theme color-white border-radius-0">EDIT</Button>
-                            <Button fullWidth variant="contained" className="accept border-radius-0" variant="contained">Cancel</Button>
+                            <Button fullWidth variant="contained" className="accept border-radius-0">Cancel</Button>
                         </Box>
                     </Box>
                 ))

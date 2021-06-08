@@ -9,6 +9,7 @@ import configureStore from "./redux/store";
 import reportWebVitals from './reportWebVitals';
 import { sessionCheck } from "./redux/action/auth/loginActions";
 import './asset/scss/index.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 const renderApp = preloadedState => {
 
