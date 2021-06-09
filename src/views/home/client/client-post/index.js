@@ -5,12 +5,15 @@ import Typography from "@material-ui/core/Typography"
 import TextField from "@material-ui/core/TextField"
 import Grid from "@material-ui/core/Grid"
 import Checkbox from '@material-ui/core/Checkbox'
+import Button from '@material-ui/core/Button'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import ModifiedDatePicker from "./modifiedDatePicker"
+import ArrowDownward from "@material-ui/icons/ArrowDownward"
 
 export default function ClientPost() {
 
-    const [ dayType, SetDayType] = React.useState(true) 
+    const [dayType, SetDayType] = React.useState(true)
+    const [mode, setMode] = React.useState(false);
 
     const locationData = [
         { title: 'A city', value: 25 },
@@ -68,18 +71,25 @@ export default function ClientPost() {
                     <Grid item xs={12}>
                         <Typography className="post-item-header">EVENT TYPE</Typography>
                         <Grid container>
-                            <Grid item sm={4} xs={6} className="d-flex justify-content-between align-items-center p-1 crusor-pointer" onClick={()=>SetDayType(true)}>
+                            <Grid item sm={4} xs={6} className="d-flex justify-content-between align-items-center p-1 crusor-pointer" onClick={() => SetDayType(true)}>
                                 <Typography className="font-weight-bold">Single Day</Typography>
                                 <Checkbox checked={dayType} color="primary" />
                             </Grid>
-                            <Grid item sm={4} xs={6} className="d-flex justify-content-between align-items-center p-1 crusor-pointer" onClick={()=>SetDayType(false)}>
+                            <Grid item sm={4} xs={6} className="d-flex justify-content-between align-items-center p-1 crusor-pointer" onClick={() => SetDayType(false)}>
                                 <Typography className="font-weight-bold">Multi Day</Typography>
                                 <Checkbox checked={!dayType} color="primary" />
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item xs={12}>
-                        <ModifiedDatePicker status = {dayType} />
+                        <ModifiedDatePicker status={dayType} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography className="post-item-header">ADD SHIFT NOTES</Typography>
+                        <TextField className="mt-1" fullWidth variant="outlined" multiline rows={3} />
+                    </Grid>
+                    <Grid item xs={12} className="mt-1">
+                        <Button fullWidth variant="contained" onClick={() => setMode(!mode)}> <ArrowDownward /> Mods </Button>
                     </Grid>
                 </Grid>
             </Box>

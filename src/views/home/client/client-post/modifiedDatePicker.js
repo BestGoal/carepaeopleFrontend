@@ -101,7 +101,11 @@ export default function ClientPost({ status }) {
         }
     }
 
-    const makeDateData = (day) => {
+    const makeDateData = async (day) => {
+        let flag = await checkDate(day);
+        if(flag === "disable-num") {
+            return;
+        }
         let tempDateData = dateData;
         let cd = new Date(cDate);
         let cy = cd.getFullYear();
@@ -208,7 +212,11 @@ export default function ClientPost({ status }) {
                                     {
                                         dateItem.map((dtItem, dtkey) => (
                                             <TableCell align="center" key={dtkey}>
-                                                <IconButton className={clsx("date-num", checkDate(dtItem))} color="inherit" onClick={() => makeDateData(dtItem)}>
+                                                <IconButton 
+                                                    className={clsx("date-num", checkDate(dtItem))} 
+                                                    color="inherit" 
+                                                    onClick={() => makeDateData(dtItem)}
+                                                >
                                                     <Typography className="fs-1 font-weight-bold">{dtItem}</Typography>
                                                 </IconButton>
                                             </TableCell>
