@@ -92,6 +92,9 @@ export default function ClientPost({ status }) {
         let cd = new Date(cDate);
         let cy = cd.getFullYear();
         let cm = cd.getMonth();
+
+        console.log(y, cy, m, cm, cd.getDate(), day)
+
         if(y === cy && m === cm && cd.getDate() > day) {
             return "disable-num"
         } else if (dateData.findIndex(item => item.date === new Date(`${cy} ${cm} ${day}`).toLocaleDateString()) > -1){
@@ -191,7 +194,7 @@ export default function ClientPost({ status }) {
                     <IconButton className="p-0" color="inherit" onClick={() => setCurrentDate(true)}><ArrowRight /></IconButton>
                 </Grid>
                 {
-                    !status &&
+                    (!status && dateData.length > 1) &&
                         <Grid 
                             xs={6} 
                             item 

@@ -93,10 +93,6 @@ const RequireAuth = (data) => {
 
 class AppRouter extends React.Component {
 
-	componentDidMount() {
-
-	}
-
 	render() {
 		return (
 			<Router history={history}>
