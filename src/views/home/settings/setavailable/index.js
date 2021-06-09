@@ -1,4 +1,4 @@
-import React from "react"
+import React , { useEffect, useState } from "react"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
@@ -53,9 +53,20 @@ const AirbnbSlider = withStyles({
     },
 })(Slider);
 
+
 export default function SetAvailable() {
 
-    const [mode, SetMode] = React.useState(true)
+    const [mode, SetMode] = useState(true)
+    // const [data, SetData] = useState([])
+
+    useEffect(() => {
+        let temp = [];
+        temp.push({
+            name: "",
+            date: new Date().toLocaleDateString()
+        })
+    }, [])
+
     const data = [
         {
             name: "Today",

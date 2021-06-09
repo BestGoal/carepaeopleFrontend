@@ -62,20 +62,20 @@ export default function DesktopHeader() {
                                             >
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-progress")
+                                                    history.push("/worker-shift-progress")
                                                 }}>Shifts In Progress</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shifts-schedule")
-                                                }}>Shifts Schedule</MenuItem>
+                                                    history.push("/worker-upcoming-shifts")
+                                                }}>Upcoming Shifts</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-history")
+                                                    history.push("/worker-shift-history")
                                                 }}>Shifts History</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
-                                                    history.push("/shift-available")
-                                                }}>Shifts Available</MenuItem>
+                                                    history.push("/worker-shift-available")
+                                                }}>Available Shifts </MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
                                             <Menu
@@ -104,7 +104,6 @@ export default function DesktopHeader() {
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>Faq</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/contact-us")}>Contact Us</Button>
-                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/worker-refferal")}>Referral</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Setting</Button>
                                             <Menu
                                                 id="menu-appbar"

@@ -7,12 +7,12 @@ import Button from "@material-ui/core/Button"
 export default function SetDistance() {
 
     return (
-        <Container className="mt-1 mb-1">
+        <Container className="mt-3 mb-1">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5"> SET DISTANCE </Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5"> SET DISTANCE FILTER </Typography>
             </Box>
             <Box className="d-flex justify-content-between align-items-center theme-border theme-box-shadow theme-border-radius p-1">
-                <Typography>work with 100kms</Typography>
+                <Typography>Show shifts within 100 kms of your postal code M8W1H8</Typography>
                 <Button className="bg-theme color-white">EDIT</Button>
             </Box>
         </Container>

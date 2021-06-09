@@ -9,7 +9,8 @@ import LocationOn from "@material-ui/icons/LocationOn"
 import PhoneAndroid from "@material-ui/icons/PhoneAndroid"
 import Email from "@material-ui/icons/Email"
 import Drafts from "@material-ui/icons/Drafts"
-import Edit from "@material-ui/icons/Edit"
+
+import { Edit } from 'react-feather';
 
 export default function Profile() {
     return (

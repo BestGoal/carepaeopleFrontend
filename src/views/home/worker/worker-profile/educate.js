@@ -9,7 +9,7 @@ import School from "@material-ui/icons/School"
 import Rotate90DegreesCcw from "@material-ui/icons/Rotate90DegreesCcw"
 import Contactless from "@material-ui/icons/Contactless"
 import DateRange from "@material-ui/icons/DateRange"
-import Edit from "@material-ui/icons/Edit"
+import { Edit } from 'react-feather';
 
 export default function Profile() {
     return (
@@ -25,28 +25,28 @@ export default function Profile() {
                             <Box className="ml-1">
                                 <Typography>School: University of Tronto</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <Rotate90DegreesCcw /> </Box>
                             <Box className="ml-1">
                                 <Typography> Degree/Diploma/Certificate: Degree</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <Contactless /> </Box>
                             <Box className="ml-1">
                                 <Typography>Filed Of Study: Nursing</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
                         </Box>
                         <Box className="d-flex">
                             <Box> <DateRange /> </Box>
                             <Box className="ml-1">
                                 <Typography> Year Of Study: 2015 - 2019</Typography>                                
                             </Box>
-                            <Box className="ml-1"> <Edit className="d-flex" /> </Box>
+                            <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
                         </Box>
                     </Box>
                 </CardContent>

@@ -13,8 +13,8 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Explore from "@material-ui/icons/Explore"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "../../worker/worker-home/job/ShiftNote"
-import { Root } from "../../../../pre/config"
+import ShiftNote from "../../worker-home/available/ShiftNote"
+import { Root } from "../../../../../pre/config"
 
 export default function WorkerJobHistory() {
 
@@ -28,11 +28,11 @@ export default function WorkerJobHistory() {
     return (
         <Container className="mt-3 mb-1 worker-home p-0">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS INPROGRESS</Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS IN PROGRESS</Typography>
             </Box>
             {
                 data.map((item, key) => (
-                    <Box className="worker-job mt-1 theme-border theme-box-shadow theme-border-radius" key={key}>
+                    <Box className="worker-job m-1 theme-border theme-box-shadow theme-border-radius" key={key}>
                         <Box className="p-2">
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>

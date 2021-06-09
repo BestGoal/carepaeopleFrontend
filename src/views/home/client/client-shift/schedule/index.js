@@ -13,14 +13,14 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Warning from "@material-ui/icons/Warning"
 
-import ShiftNote from "../../../worker/worker-home/job/ShiftNote"
+import ShiftNote from "../../../worker/worker-home/available/ShiftNote"
 import { Root } from "../../../../../pre/config"
 
 export default function WorkerCurrentShift() {
 	return (
 		<Box className="worker-home">
 			<Container className="p-1 mt-4 worker-schedule">
-				<Typography className="text-align-center font-weight-bold" variant="h5">UPCOMING SHIFTS</Typography>
+				<Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
 				<Box className="theme-border theme-box-shadow mt-1">
 					<Box className="p-2">
 						<Grid container spacing={2}>

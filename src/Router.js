@@ -15,13 +15,11 @@ const WorkerHome = lazy(() => import("./views/home/worker/worker-home/index"));
 const WorkerProfile = lazy(() => import("./views/home/worker/worker-profile/index"));
 const WorkerDocument = lazy(() => import("./views/home/worker/worker-document/index"));
 const WorkerReference = lazy(() => import("./views/home/worker/worker-reference/index"));
-const WorkerRefferal = lazy(() => import("./views/home/worker/worker-refferal/index"));
 
-const ShiftProgress = lazy(() => import("./views/home/shift/progress/index"));
-const ShiftSchedule = lazy(() => import("./views/home/shift/schedule/index"));
-const ShiftPosted = lazy(() => import("./views/home/shift/posted/index"));
-const ShiftHistory = lazy(() => import("./views/home/shift/history/index"));
-const ShiftAvailable = lazy(() => import("./views/home/shift/available/index"));
+const WorkerShiftProgress = lazy(() => import("./views/home/worker/worker-shift/progress/index"));
+const WorkerUpcomingShift = lazy(() => import("./views/home/worker/worker-shift/upcoming/index"));
+const WorkerShiftHistory = lazy(() => import("./views/home/worker/worker-shift/history/index"));
+const WorkerShiftAvailable = lazy(() => import("./views/home/worker/worker-shift/available/index"));
 
 const WorkerBillingInvoice = lazy(() => import("./views/home/worker/worker-billing/invoice/index"));
 const WorkerBillingInstant = lazy(() => import("./views/home/worker/worker-billing/instant/index"));
@@ -108,13 +106,11 @@ class AppRouter extends React.Component {
 						<AppRoute path="/worker-profile" exact component={WorkerProfile} MainLayout />
 						<AppRoute path="/worker-document" exact component={WorkerDocument} MainLayout />
 						<AppRoute path="/worker-reference" exact component={WorkerReference} MainLayout />
-						<AppRoute path="/worker-refferal" exact component={WorkerRefferal} MainLayout />
 
-						<AppRoute path="/shift-progress" exact component={ShiftProgress} MainLayout />
-						<AppRoute path="/shifts-schedule" exact component={ShiftSchedule} MainLayout />
-						<AppRoute path="/shift-posted" exact component={ShiftPosted} MainLayout />
-						<AppRoute path="/shift-history" exact component={ShiftHistory} MainLayout />
-						<AppRoute path="/shift-available" exact component={ShiftAvailable} MainLayout />
+						<AppRoute path="/worker-shift-progress" exact component={WorkerShiftProgress} MainLayout />
+						<AppRoute path="/worker-upcoming-shifts" exact component={WorkerUpcomingShift} MainLayout />
+						<AppRoute path="/worker-shift-history" exact component={WorkerShiftHistory} MainLayout />
+						<AppRoute path="/worker-shift-available" exact component={WorkerShiftAvailable} MainLayout />
 
 						<AppRoute path="/worker-billing-invoice" exact component={WorkerBillingInvoice} MainLayout />
 						<AppRoute path="/worker-billing-instant" exact component={WorkerBillingInstant} MainLayout />

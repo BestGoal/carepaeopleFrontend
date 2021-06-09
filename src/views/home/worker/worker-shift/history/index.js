@@ -12,8 +12,8 @@ import Payment from "@material-ui/icons/Payment"
 import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Warning from "@material-ui/icons/Warning"
-import ShiftNote from "../../worker/worker-home/job/ShiftNote"
-import { Root } from "../../../../pre/config"
+import ShiftNote from "../../worker-home/available/ShiftNote"
+import { Root } from "../../../../../pre/config"
 
 export default function WorkerJobHistory() {
 
@@ -35,7 +35,7 @@ export default function WorkerJobHistory() {
     return (
         <Container className="mt-3 mb-1 worker-home">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5">POSTED SHIFTS</Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS HISTORY</Typography>
             </Box>
             {
                 data.map((item, key) => (

@@ -7,25 +7,25 @@ import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography"
 import Badge from "@material-ui/core/Badge"
 import StarRatings from 'react-star-ratings';
+import PhotoCamera from "@material-ui/icons/PhotoCamera"
 import { Root } from "../../../../pre/config"
 
 export default function Profile() {
     return (
         <Container className="mt-1 worker-profile">
-            <Card className="p-2 theme-border theme-box-shadow">
+            <Card className="p-2 theme-border theme-box-shadow theme-border-radius">
                 <CardContent>
                     <Grid container spacing={2}>
                         <Grid item md={4} xs={12}>
-                            <Box className="d-flex justify-content-center">
+                            <Box className="d-flex justify-content-center avatar">
                                 <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
+                                <PhotoCamera className="crusor-pointer" style={{position: "absolute", right: "16px", bottom: "16px"}} />
                             </Box>
                         </Grid>
                         <Grid item md={8} xs={12}>
                             <Box className="theme-box-shadow p-2">
-                                <Box className="d-flex align-items-center">
-                                    <Typography variant="h4"> Denis postnykhdo </Typography>
-                                    <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>
-                                </Box>
+                                <Typography className="ml-1" variant="h4"> Denis </Typography>
+                                <Typography variant="h6" className="ml-1"> Personal Support Worker </Typography>
                                 <Grid container className="mt-2">
                                     <Grid item xs={6} className="d-flex align-items-center pl-3">
                                         <Badge badgeContent={"APPROVED"} color="primary"></Badge>

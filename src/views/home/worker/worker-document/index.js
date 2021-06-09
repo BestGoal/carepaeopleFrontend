@@ -93,7 +93,7 @@ export default function WorkerDocument() {
           </Box>
           {
             data.map((item, key) => (
-              <Box key={key}>
+              <Box key={key} className="mt-1">
                 <Typography>{item.name}</Typography>
                 <Grid container className="item" spacing={3}>
                   <Grid item xs={6}>

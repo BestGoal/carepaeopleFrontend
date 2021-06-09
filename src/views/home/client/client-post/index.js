@@ -47,12 +47,61 @@ export default function ClientPost() {
     }, [])
 
     const locationData = [
-        { title: 'A city', value: 25 },
-        { title: 'B city', value: 24 },
-        { title: 'C city', value: 23 },
-        { title: 'D city', value: 22 },
-        { title: 'E city', value: 21 },
-        { title: 'F city', value: 20 },
+        { title: 'Chiropractor', value: 25 },
+        { title: 'Chiropractic  Assistant', value: 25 },
+        { title: 'Dietary Aide', value: 25 },
+        { title: 'Dentist', value: 25 },
+        { title: 'Dental Hygienist', value: 25 },
+        { title: 'Dental Assistant', value: 25 },
+        { title: 'Health Care Aide', value: 25 },
+        { title: 'Home Health Aide', value: 25 },
+        { title: 'Laboratory Technician', value: 25 },
+        { title: 'Massage Therapist', value: 25 },
+        { title: 'Nurse Practitioner', value: 25 },
+        { title: 'Occupational Therapist', value: 25 },
+        { title: 'Occupational Therapy Assistant', value: 25 },
+        { title: 'Osteopath', value: 25 },
+        { title: 'Physical Therapist', value: 25 },
+        { title: 'Physical Therapy Assistant', value: 25 },
+        { title: 'Psychiatrist', value: 25 },
+        { title: 'Psychiatry Physician Assistant', value: 25 },
+        { title: 'Psychologist', value: 25 },
+        { title: 'Physician ', value: 25 },
+        { title: 'Physician Assistant', value: 25 },
+        { title: 'Pharmacist', value: 25 },
+        { title: 'Pharmacy Assistant', value: 25 },
+        { title: 'Physiotherapist', value: 25 },
+        { title: 'Physiotherapy Assistant', value: 25 },
+        { title: 'Personal Support Worker ', value: 25 },
+        { title: 'Personal Care Aide', value: 25 },
+        { title: 'Registered Nurse', value: 25 },
+        { title: 'Registered Practical Nurse', value: 25 },
+        { title: 'Radiologist', value: 25 },
+        { title: 'Radiographer', value: 25 },
+        { title: 'Residential Care Aide', value: 25 },
+        { title: 'Speech Language Therapist', value: 25 },
+    ]
+
+    const breakData = [
+        { title: 'No Break', value: 0 },
+        { title: '30 Minute', value: 1 },
+        { title: '45 Minute', value: 2 },
+        { title: '60 Minute', value: 3 },
+        { title: '120 Minute', value: 4 },
+    ]
+
+    const transitData = [
+        { title: 'None', value: 0 },        
+        { title: '1 Hour', value: 1 },        
+        { title: '2 Hour', value: 2 },        
+        { title: '3 Hour', value: 3 },        
+        { title: '4 Hour', value: 4 },        
+        { title: '5 Hour', value: 5 },        
+        { title: '6 Hour', value: 6 },        
+        { title: '7 Hour', value: 7 },        
+        { title: '8 Hour', value: 8 },        
+        { title: '9 Hour', value: 9 },        
+        { title: '10 Hour', value: 10 },        
     ]
     
     return (
@@ -136,30 +185,23 @@ export default function ClientPost() {
                                     <Box className="p-1">
                                         <Autocomplete
                                             fullWidth
-                                            options={rateData}
+                                            options={breakData}
                                             getOptionLabel={(option) => option.title}
-                                            value={rateData[0]}
+                                            value={breakData[0]}
                                             renderInput={(params) => <TextField {...params} variant="outlined" />}
                                         />
                                     </Box>
                                 </Grid>
                                 <Grid item sm={4} xs={12} className="mt-1">
-                                    <Typography className="post-item-header">TRANSIT ALLOWNCE</Typography>
+                                    <Typography className="post-item-header">TRANSIT ALLOWANCE</Typography>
                                     <Box className="p-1">
                                         <Autocomplete
                                             fullWidth
-                                            options={rateData}
+                                            options={transitData}
                                             getOptionLabel={(option) => option.title}
-                                            value={rateData[0]}
+                                            value={transitData[0]}
                                             renderInput={(params) => <TextField {...params} variant="outlined" />}
                                         />
-                                    </Box>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography className="post-item-header">BROADCAST TO TEAM</Typography>
-                                    <Box className="p-1 d-flex justify-content-between align-items-center">
-                                        <Typography className="font-weight-bold">BROADCAST TO TEAM</Typography>
-                                        <Checkbox color="primary" />
                                     </Box>
                                 </Grid>
                                 <Grid item xs={12}>
@@ -191,9 +233,8 @@ export default function ClientPost() {
                                 </Grid>
                             </> : <></>
                     }
-                    <Button fullWidth className="bg-theme color-white mt-1">SEND REQUEST</Button>
-                    <Button fullWidth className="bg-theme color-white mt-1">SHIFT TO BROADCAST</Button>
-                    <Typography className="mt-1 text-align-center">Please note Staffy's 30% admin fee will be added to the rate.</Typography>
+                    <Button fullWidth className="bg-theme color-white mt-1">POST SHIFTS</Button>
+                    <Typography className="mt-1 text-align-center">Please note that 15% admin fee will be added to the rate.</Typography>
                 </Grid>
             </Box>
         </Container>
