@@ -153,9 +153,6 @@ export default function ClientPost({ status }) {
                 tempDateData[i].end = new Date(tempDateData[i].date + " 10:00:00 AM").toLocaleTimeString()
             }
         }
-
-        console.log(tempDateData)
-
         setDateData([ ...tempDateData ])
         setMultiClock(!multiClock)
     }
@@ -231,7 +228,12 @@ export default function ClientPost({ status }) {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <ModifyClocks multiClock={multiClock} dateData={dateData} changeTimeFunc={changeTimeFunc} />
+            <ModifyClocks 
+                multiClock={multiClock} 
+                dateData={dateData} 
+                changeTimeFunc={changeTimeFunc} 
+                makeMultiClick={makeMultiClick}
+            />
         </Box>
     )
 }

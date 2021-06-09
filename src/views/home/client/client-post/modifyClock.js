@@ -2,10 +2,11 @@ import React from "react"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardTimePicker } from '@material-ui/pickers';
 
-export default function ClientPost({ multiClock, dateData, changeTimeFunc }) {
+export default function ClientPost({ multiClock, dateData, changeTimeFunc, makeMultiClick }) {
 
     const getDateString = (item = false) => {
         let string = "";
@@ -65,7 +66,7 @@ export default function ClientPost({ multiClock, dateData, changeTimeFunc }) {
                     !multiClock ?
                         <Grid container>
                             <Grid item sm={4} xs={12}>
-                                <Typography className="post-item-header">DATE</Typography>
+                                <Typography className="post-item-header">DAY</Typography>
                                 <Box className="p-1">
                                     {getDateString(false)}
                                 </Box>
@@ -95,7 +96,7 @@ export default function ClientPost({ multiClock, dateData, changeTimeFunc }) {
                         dateData.map((item, i) => (
                             <Grid container key={i}>
                                 <Grid item sm={4} xs={12}>
-                                    <Typography className="post-item-header">DATE</Typography>
+                                    <Typography className="post-item-header">{`DAY ${i+1}`}</Typography>
                                     <Box className="p-1 pl-0">
                                         {item.date}
                                     </Box>
@@ -124,6 +125,12 @@ export default function ClientPost({ multiClock, dateData, changeTimeFunc }) {
                         ))
                 }
             </MuiPickersUtilsProvider>
+            {
+                multiClock &&
+                    <Box className="d-flex justify-content-end mb-1">
+                        <Button onClick={()=>makeMultiClick()} className="bg-theme color-white">DISCARD</Button>
+                    </Box>
+            }
         </Box>
     )
 }
