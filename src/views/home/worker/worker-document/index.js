@@ -11,11 +11,11 @@ export default function WorkerDocument() {
 
   const data = [
     {
-      name: "Government Photo Id",
+      name: "Government Photo ID",
       count: 2
     },
     {
-      name: "Degree / Dipolma / Certificate",
+      name: "Degree / Diploma / Certificate",
       count: 0
     },
     {

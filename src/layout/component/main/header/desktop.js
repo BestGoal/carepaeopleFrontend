@@ -67,7 +67,7 @@ export default function DesktopHeader() {
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
                                                     history.push("/worker-upcoming-shifts")
-                                                }}>Upcoming Shifts</MenuItem>
+                                                }}>Current Schedule</MenuItem>
                                                 <MenuItem onClick={() => {
                                                     setShiftMenu(null)
                                                     history.push("/worker-shift-history")
