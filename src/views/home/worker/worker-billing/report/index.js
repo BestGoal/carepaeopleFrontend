@@ -30,9 +30,9 @@ export default function WorkerBillingReport() {
                     getOptionLabel={(option) => option.title}
                     fullWidth
                     value={data[0]}
-                    renderInput={(params) => <TextField {...params} label="Rate" variant="outlined" />}
+                    renderInput={(params) => <TextField {...params} label="Year" variant="outlined" />}
                 />
-                <Button fullWidth onClick={() => SetMode(!mode)} className="ml-1 bg-theme color-white">Download</Button>
+                <Button fullWidth onClick={() => SetMode(!mode)} className="ml-1 bg-theme color-white">Generate Report</Button>
             </Box>
         </Container>
     )

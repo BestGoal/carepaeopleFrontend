@@ -19,13 +19,13 @@ export default function Profile() {
                         <Grid item md={4} xs={12}>
                             <Box className="d-flex justify-content-center avatar">
                                 <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
-                                <PhotoCamera className="crusor-pointer" style={{position: "absolute", right: "16px", bottom: "16px"}} />
+                                <PhotoCamera className="crusor-pointer" style={{ position: "absolute", right: "16px", bottom: "16px" }} />
                             </Box>
                         </Grid>
                         <Grid item md={8} xs={12}>
                             <Box className="theme-box-shadow p-2">
-                                <Typography className="ml-1" variant="h4"> Denis </Typography>
-                                <Typography variant="h6" className="ml-1"> Personal Support Worker </Typography>
+                                <Typography variant="h4"> Denis postnykhdo </Typography>
+                                <Typography variant="h6"> (Personal Support Worker) </Typography>
                                 <Grid container className="mt-2">
                                     <Grid item xs={6} className="d-flex align-items-center pl-3">
                                         <Badge badgeContent={"APPROVED"} color="primary"></Badge>

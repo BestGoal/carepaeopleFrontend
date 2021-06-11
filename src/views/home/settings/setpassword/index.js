@@ -77,7 +77,7 @@ export default function InputAdornments() {
                     />
                 </FormControl>
                 <FormControl fullWidth className="mt-1">
-                    <InputLabel htmlFor="standard-adornment-password">Confrim Password</InputLabel>
+                    <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
                     <Input
                         fullWidth
                         type={values.showPassword ? 'text' : 'password'}

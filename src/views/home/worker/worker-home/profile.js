@@ -33,9 +33,9 @@ export default function WorkerProfile() {
                 </Grid>
                 <Grid item md={8} xs={12}>
                     <Box className="p-2">
-                        <Box className="d-flex align-items-center">
+                        <Box className="">
                             <Typography variant="h4"> Denis postnykhdo </Typography>
-                            <Typography variant="h6" className="ml-1"> (PSW / PCA) </Typography>
+                            <Typography variant="h6"> (Personal Support Worker) </Typography>
                         </Box>
                         <Box className="d-flex mt-2">
                             <Box className="d-flex align-items-center">

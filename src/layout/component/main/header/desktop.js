@@ -104,7 +104,7 @@ export default function DesktopHeader() {
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/faq")}>Faq</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/contact-us")}>Contact Us</Button>
-                                            <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Setting</Button>
+                                            <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setSettingMenu(e.currentTarget)}>Settings</Button>
                                             <Menu
                                                 id="menu-appbar"
                                                 anchorEl={SettingMenu}
@@ -131,7 +131,7 @@ export default function DesktopHeader() {
                                                 <MenuItem onClick={() => {
                                                     setSettingMenu(null)
                                                     history.push("/set-nitification")
-                                                }}>Push Notification</MenuItem>
+                                                }}>Notifications</MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => window.location.reload()}>Sign Out</Button>
                                         </>
