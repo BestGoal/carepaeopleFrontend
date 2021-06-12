@@ -23,7 +23,7 @@ export default function ClientHome() {
                         </Box>
                     </Grid>
                     <Grid item md={8} xs={12}>
-                        <Box className="m-1">
+                        <Box className="p-1 theme-border">
                             <Box className="d-flex align-items-center">
                                 <Typography variant="h4"> Denis postnykhdo </Typography>
                             </Box>

@@ -141,29 +141,12 @@ export default function DesktopHeader() {
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/client-profile")}>Profile</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/client-post")}>Post Shifts</Button>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setShiftMenu(e.currentTarget)}>Shifts</Button>
-                                            <Menu
-                                                id="menu-appbar"
-                                                anchorEl={shiftMenu}
-                                                keepMounted
-                                                open={shiftKey}
-                                                onClose={() => setShiftMenu(null)}
-                                            >
-                                                <MenuItem onClick={() => {
-                                                    setShiftMenu(null)
-                                                    history.push("/client-shift-progress")
-                                                }}>Shifts In Progress</MenuItem>
-                                                <MenuItem onClick={() => {
-                                                    setShiftMenu(null)
-                                                    history.push("/client-shifts-schedule")
-                                                }}>Upcoming Shifts </MenuItem>
-                                                <MenuItem onClick={() => {
-                                                    setShiftMenu(null)
-                                                    history.push("/client-shift-posted")
-                                                }}>Posted Shifts</MenuItem>
-                                                <MenuItem onClick={() => {
-                                                    setShiftMenu(null)
-                                                    history.push("/client-shift-history")
-                                                }}>Shifts History</MenuItem>
+                                            <Menu id="menu-appbar" anchorEl={shiftMenu} keepMounted open={shiftKey} onClose={() => setShiftMenu(null)} >
+                                                <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shift-progress") }}>Shifts In Progress</MenuItem>
+                                                <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shifts-schedule") }}>Current Schedule</MenuItem>
+                                                <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shift-posted") }}>Posted Direct Shifts</MenuItem>
+                                                <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-dedicated-posted") }}>Dedicated Pool Request</MenuItem>
+                                                <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shift-history") }}>Shifts History</MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>
                                             <Menu

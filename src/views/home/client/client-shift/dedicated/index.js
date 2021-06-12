@@ -35,7 +35,7 @@ export default function ClientShiftsPosts() {
     return (
         <Container className="mt-3 mb-1 worker-home p-1">
             <Box className="pb-1">
-                <Typography className="text-align-center font-weight-bold" variant="h5">POSTED DIRECT SHIFTS</Typography>
+                <Typography className="text-align-center font-weight-bold" variant="h5">DEDICATED DIRECT SHIFTS</Typography>
             </Box>
             {
                 data.map((item, key) => (
