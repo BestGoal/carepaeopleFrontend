@@ -17,12 +17,12 @@ export default function ClientPost() {
     const [dayType, SetDayType] = useState(true)
     const [mode, setMode] = useState(false);
     const [addressFlag, setAddressFlag] = useState(false);
-    const [vacancieData, setVacaniceData] = useState([{title: "1", value: "1"}]);
-    const [rateData, setRateData] = useState([{title: '$15 per hour', value: 15 }]);
+    const [vacancieData, setVacaniceData] = useState([{ title: "1", value: "1" }]);
+    const [rateData, setRateData] = useState([{ title: '$15 per hour', value: 15 }]);
 
     useEffect(() => {
         let tempVacineData = [];
-        for(let i = 1; i <= 50 ; i ++) {
+        for (let i = 1; i <= 50; i++) {
             let temp = {
                 title: String(i), value: i
             }
@@ -34,7 +34,7 @@ export default function ClientPost() {
         setVacaniceData(tempVacineData);
 
         let tempRateData = [];
-        for(let i = 15; i <= 100 ; i ++) {
+        for (let i = 15; i <= 100; i++) {
             let temp = {
                 title: `${i} per hour`, value: i
             }
@@ -91,19 +91,19 @@ export default function ClientPost() {
     ]
 
     const transitData = [
-        { title: 'None', value: 0 },        
-        { title: '1 Hour', value: 1 },        
-        { title: '2 Hour', value: 2 },        
-        { title: '3 Hour', value: 3 },        
-        { title: '4 Hour', value: 4 },        
-        { title: '5 Hour', value: 5 },        
-        { title: '6 Hour', value: 6 },        
-        { title: '7 Hour', value: 7 },        
-        { title: '8 Hour', value: 8 },        
-        { title: '9 Hour', value: 9 },        
-        { title: '10 Hour', value: 10 },        
+        { title: 'None', value: 0 },
+        { title: '1 Hour', value: 1 },
+        { title: '2 Hour', value: 2 },
+        { title: '3 Hour', value: 3 },
+        { title: '4 Hour', value: 4 },
+        { title: '5 Hour', value: 5 },
+        { title: '6 Hour', value: 6 },
+        { title: '7 Hour', value: 7 },
+        { title: '8 Hour', value: 8 },
+        { title: '9 Hour', value: 9 },
+        { title: '10 Hour', value: 10 },
     ]
-    
+
     return (
         <Container className="container client-home">
             <Typography variant="h5" className="text-align-center font-weight-bold"> POST SHIFTS </Typography>
@@ -233,7 +233,10 @@ export default function ClientPost() {
                                 </Grid>
                             </> : <></>
                     }
-                    <Button fullWidth className="bg-theme color-white mt-1">POST SHIFTS</Button>
+                    <Grid item xs={12} className="d-flex justify-content-between mt-1">
+                        <Button fullWidth className="bg-theme color-white">REQUEST DEDICATED POOL</Button>
+                        <Button fullWidth className="bg-theme color-white ml-1">POST DIRECT SHIFTS</Button>
+                    </Grid>
                     <Typography className="mt-1 text-align-center">Please note that 15% admin fee will be added to the rate.</Typography>
                 </Grid>
             </Box>
