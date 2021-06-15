@@ -1,12 +1,9 @@
 import axios from "axios";
-import { setLoading } from "../redux/action/base/loading";
+import { setLoading } from "../redux/action/base";
+import { Root } from "./config"
 
 const Axios = async (method, data, url, dispatch, loading = false) => {
-    const options = {
-        method,
-        url,
-        data
-    };
+    const options = { method, url: Root.adminUrl + url, data };
     if(loading) {
         dispatch(setLoading(true))
     }
@@ -17,7 +14,7 @@ const Axios = async (method, data, url, dispatch, loading = false) => {
     if (rdata.status === 200 && rdata.data) {
         return rdata.data
     } else {
-        return { status: false }
+        return { status: false, data: "connect error" }
     }
 }
 

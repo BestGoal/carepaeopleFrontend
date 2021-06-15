@@ -1,6 +1,9 @@
 .auth{
+    height: calc(100% - 80px);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     .auth-register {
-        height: calc(100vh - 80px);
         .register-main-card {
             width: 400px;
             margin: auto;

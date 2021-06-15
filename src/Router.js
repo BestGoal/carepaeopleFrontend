@@ -53,6 +53,8 @@ const SetNotification = lazy(() => import("./views/home/settings/setnotification
 const Faq = lazy(() => import("./views/home/faq/index"));
 const ContactUs = lazy(() => import("./views/home/contact-us/index"));
 
+const Loading = lazy(() => import("./views/baseComponent/Loading"));
+
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
 	<Route
 		{...rest}
@@ -95,7 +97,7 @@ class AppRouter extends React.Component {
 	render() {
 		return (
 			<Router history={history}>
-				{/* { this.props.loading && <Loading /> } */}
+				{ this.props.loading && <Loading /> }
 				<Switch>
 					<AppRoute path="/" exact component={Dashboard} MainLayout />
 					<AppRoute path="/login" exact component={Login} MainLayout />
