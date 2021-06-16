@@ -1,8 +1,14 @@
+.header-app-bar{
+    button{
+        box-shadow: none;
+    }
+}
 .header-card{
     position: fixed;
     top: 10px;
     right: 10px;
     max-width: 500px;
+
     .border-solid-1{
         border-bottom: 1px solid #f0f2f7;
     }

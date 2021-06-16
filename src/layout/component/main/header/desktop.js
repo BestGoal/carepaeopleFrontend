@@ -27,22 +27,20 @@ export default function DesktopHeader() {
         <AppBar position="static" className="header-app-bar">
             <Container>
                 <Box className="d-flex justify-content-between pt-1 pb-1">
-                    <Box className="d-flex align-items-center crusor-pointer" onClick={() => window.location.reload()}>
-                        <Typography className="font-weight-bold color-white" variant="h4">
-                            CarePeople
-                        </Typography>
+                    <Box className="d-flex align-items-center crusor-pointer" onClick={() => history.push("/")}>
+                        <Typography className="font-weight-bold color-white" variant="h4"> CareShifts </Typography>
                     </Box>
                     <Box className="d-flex justify-content-right align-items-center">
                         {
                             !isAuthorized ?
                                 <>
-                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/client-register")}>Post Shifts</Button>
-                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/worker-register")}>Work Shifts</Button>
-                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/how-it-works")}>How it works</Button>
-                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/downloads")}>Download</Button>
-                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/about-us")}>About Us</Button>
-                                    <Button className="bg-eee text-capitalize" onClick={() => history.push("/register")}>Sign Up</Button>
-                                    <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/login")}>Sign In</Button>
+                                    <Button variant="contained" className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/client-register")}>Post Shifts</Button>
+                                    <Button variant="contained" className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/worker-register")}>Work Shifts</Button>
+                                    <Button variant="contained" className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/how-it-works")}>How it works</Button>
+                                    <Button variant="contained" className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/downloads")}>Download</Button>
+                                    <Button variant="contained" className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/about-us")}>About Us</Button>
+                                    <Button variant="contained" className="bg-eee text-capitalize" onClick={() => history.push("/register")}>Sign Up</Button>
+                                    <Button variant="contained" className="bg-transparent color-white text-capitalize" onClick={() => history.push("/login")}>Sign In</Button>
                                 </>
                                 :
                                 (
