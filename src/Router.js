@@ -10,6 +10,8 @@ const Register = lazy(() => import("./views/auth/register/index"));
 const Login = lazy(() => import("./views/auth/login/index"));
 const ClientRegister = lazy(() => import("./views/auth/register/client"));
 const WorkerRegister = lazy(() => import("./views/auth/register/worker"));
+const RecoverPassword = lazy(() => import("./views/auth/recovery/index"));
+const ConfirmUser = lazy(() => import("./views/auth/confirm-user/index"));
 
 const WorkerHome = lazy(() => import("./views/home/worker/worker-home/index"));
 const WorkerProfile = lazy(() => import("./views/home/worker/worker-profile/index"));
@@ -104,6 +106,8 @@ class AppRouter extends React.Component {
 					<AppRoute path="/" exact component={Dashboard} MainLayout />
 					<AppRoute path="/login" exact component={Login} MainLayout />
 					<AppRoute path="/register" exact component={Register} MainLayout />
+					<AppRoute path="/recover-password" exact component={RecoverPassword} MainLayout />
+					<AppRoute path="/confirm-user" exact component={ConfirmUser} MainLayout />
 					<AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
 					<AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
 					<AppRoute path="/how-it-works" exact component={HowItWorks} MainLayout />

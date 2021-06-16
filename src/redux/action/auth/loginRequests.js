@@ -11,3 +11,14 @@ export const SignUpRequest = async (sendData, dispatch) => {
         return false;
     }
 }
+
+export const SignInRequest = async (sendData, dispatch) => {
+    let rdata = await Axios("POST", sendData, "api/auth/signin", dispatch, true)
+    if(rdata.status) {
+        toast.success(rdata.data)
+        return rdata.userInfo
+    } else {
+        toast.error(rdata.data)
+        return false;
+    }
+}

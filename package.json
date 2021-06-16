@@ -28,6 +28,7 @@
     "react-star-ratings": "^2.3.0",
     "react-text-mask": "^5.4.3",
     "react-toastify": "^7.0.4",
+    "react-verification-code-input": "^1.2.9",
     "redux-debounced": "^0.5.0",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.11",

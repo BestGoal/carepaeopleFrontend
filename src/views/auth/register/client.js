@@ -17,7 +17,8 @@ import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { history } from "../../../history";
 import { SignUpRequest } from "../../../redux/action/auth/loginRequests"
-import { Login_func } from "../../../redux/action/auth/loginActions"
+import { LoginAction } from "../../../redux/action/auth/loginActions"
+import { permissionData } from "../../../configs/index"
 
 export default function ClientRegister() {
 
@@ -92,11 +93,11 @@ export default function ClientRegister() {
         if (flag === true) {
             let sendData = { 
                 firstName, lastName, companyName, companyWebsite, streetNumber, streetName, city, province, country, zipcode, email, 
-                phoneNumber, password: password.value, companyDescription, permission: "client"
+                phoneNumber, password: password.value, companyDescription, permission: permissionData.client
             }
             let rdata = await SignUpRequest(sendData, dispatch);
             if(rdata) {
-                dispatch(Login_func(true, rdata))
+                dispatch(LoginAction(true, rdata))
                 history.push("/client-home")
             }
         } else {

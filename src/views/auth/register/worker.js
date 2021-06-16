@@ -18,8 +18,8 @@ import Button from '@material-ui/core/Button'
 import { toast } from "react-toastify"
 import { history } from "../../../history";
 import { SignUpRequest } from "../../../redux/action/auth/loginRequests"
-import { locationData } from "../../../configs/index"
-import { Login_func } from "../../../redux/action/auth/loginActions"
+import { locationData, permissionData } from "../../../configs/index"
+import { LoginAction } from "../../../redux/action/auth/loginActions"
 
 export default function WorkerRegister() {
 
@@ -90,12 +90,12 @@ export default function WorkerRegister() {
         if (flag === true) {
             let sendData = {
                 firstName, lastName, email, streetNumber, streetName, apartNumber, city, province, country, zipcode, phoneNumber, 
-                password: password.value, jobPosition: jobPosition.value, permission: "worker"
+                password: password.value, jobPosition: jobPosition.value, permission: permissionData.worker
             }
             let rdata = await SignUpRequest(sendData, dispatch);
             
             if(rdata) {
-                dispatch(Login_func(true, rdata))
+                dispatch(LoginAction(true, rdata))
                 history.push("/worker-home")
             }
         } else {

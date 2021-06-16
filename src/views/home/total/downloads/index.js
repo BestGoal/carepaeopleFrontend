@@ -17,9 +17,9 @@ export default function Faq() {
                 <CardContent>
                     <Typography className="text-align-center" variant="h6">Please download  CARESHIFTS App from Google playstore or App Store and Sign Up</Typography>
                     <Box className="d-flex justify-content-center align-items-center mt-1">
-                        <img className="crusor-pointer register-app-img" src={Root.adminUrl + "app/appstore.png"} alt="" />
-                        <img className="crusor-pointer register-app-img" src={Root.adminUrl + "app/googlestore.png"} alt="" />
-                        <img className="crusor-pointer register-app-img-qr" src={Root.adminUrl + "app/qrcode.png"} alt="" />
+                        <img style={{width: "100px"}} className="crusor-pointer register-app-img" src={Root.adminUrl + "app/appstore.png"} alt="" />
+                        <img style={{width: "100px"}} className="crusor-pointer register-app-img" src={Root.adminUrl + "app/googlestore.png"} alt="" />
+                        <img style={{width: "100px"}} className="crusor-pointer register-app-img-qr" src={Root.adminUrl + "app/qrcode.png"} alt="" />
                     </Box>
                 </CardContent>
             </Card>

@@ -32,3 +32,8 @@ export const locationData = [
     { title: 'Residential Care Aide', value: 31 },
     { title: 'Speech Language Therapist', value: 32 },
 ]
+
+export const permissionData = {
+    client: "client",
+    worker: "worker"
+}
