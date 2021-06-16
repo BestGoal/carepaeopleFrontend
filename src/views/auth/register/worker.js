@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useDispatch } from 'react-redux'
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
@@ -15,94 +15,150 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button'
+import { toast } from "react-toastify"
 import { history } from "../../../history";
-import { Login_func } from "../../../redux/action/auth/loginActions"
+import { SignUpRequest } from "../../../redux/action/auth/loginRequests"
 import { locationData } from "../../../configs/index"
+import { Login_func } from "../../../redux/action/auth/loginActions"
 
 export default function WorkerRegister() {
 
     const dispatch = useDispatch();
 
-    const signUp = () => {
-        dispatch(Login_func(true, { permission: "worker" }))
-        history.push("/worker-home")
-    }
-
-    const [values, setValues] = React.useState({
-        password: '',
-        showPassword: false,
+    const [firstName, SetFirstName] = useState("");
+    const [lastName, SetLastname] = useState("");
+    const [email, SetEmail] = useState("");
+    const [streetNumber, SetStreetNumber] = useState("");
+    const [streetName, SetStreetName] = useState("");
+    const [apartNumber, SetApartName] = useState("");
+    const [city, SetCity] = useState("");
+    const [province, SetProvince] = useState("");
+    const [country, SetCountry] = useState("");
+    const [zipcode, SetZipcode] = useState("");
+    const [phoneNumber, SetPhoneNumber] = useState("");
+    const [jobPosition, SetJobPosition] = useState(locationData[0]);
+    const [password, SetPassword] = useState({
+        value: "",
+        show: false
     });
+    const [repassword, SetRePassword] = useState({
+        value: "",
+        show: false
+    });
+    const [isAccept, setIsAccept] = useState(false)
 
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+    const handlePasswordChange = (prop) => (event) => {
+        SetPassword({ ...password, [prop]: event.target.value });
     };
-
     const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
+        SetPassword({ ...password, show: !password.show });
     };
-
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+    const handleRePasswordChange = (prop) => (event) => {
+        SetRePassword({ ...repassword, [prop]: event.target.value });
+    };
+    const handleClickShowRePassword = () => {
+        SetRePassword({ ...repassword, show: !repassword.show });
+    };
+    const handleMouseDownRePassword = (event) => {
+        event.preventDefault();
+    };
+
+    const signUp = async () => {
+        const validator = () => {
+            if (!firstName) return "Please Input firstname correct";
+            if (!lastName) return "Please Input lastname correct";
+            if (!email) return "Please Input email correct";
+            if (!streetNumber) return "Please Input streetNumber correct";
+            if (!streetName) return "Please Input streetName correct";
+            if (!apartNumber) return "Please Input apartNumber  correct";
+            if (!city) return "Please Input city correct";
+            if (!province) return "Please Input province correct";
+            if (!country) return "Please Input country correct";
+            if (!zipcode) return "Please Input zipcode correct";
+            if (!phoneNumber) return "Please Input phonenumber correct";
+            if (!password.value) return "Please Input password correct";
+            if (!repassword.value) return "Please Input repassword correct";
+            if (password.value !== repassword.value) return "Please Input password correctly";
+            if (!isAccept) return "You have to accept our term of service"
+            return true;
+        }
+
+        let flag = validator();
+        if (flag === true) {
+            let sendData = {
+                firstName, lastName, email, streetNumber, streetName, apartNumber, city, province, country, zipcode, phoneNumber, 
+                password: password.value, jobPosition: jobPosition.value, permission: "worker"
+            }
+            let rdata = await SignUpRequest(sendData, dispatch);
+            
+            if(rdata) {
+                dispatch(Login_func(true, rdata))
+                history.push("/worker-home")
+            }
+        } else {
+            toast.error(flag);
+        }
+    }
 
     return (
         <Container className="d-flex p-1 auth">
-            <Box className="register-client-card theme-box-shadow bg-white text-align-center p-2 m-auto">
+            <Box className="register-client-card theme-box-shadow bg-white text-align-center p-3 m-auto">
                 <Typography className="font-weight-bold register-header m-2" variant="h5"> SIGN UP TO WORK </Typography>
                 <Grid container spacing={2} className="mt-2">
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="First Name" />
+                        <TextField fullWidth variant="outlined" label="First Name" value={firstName} onChange={(e) => SetFirstName(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Last Name" />
+                        <TextField fullWidth variant="outlined" label="Last Name" value={lastName} onChange={(e) => SetLastname(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Email" />
+                        <TextField fullWidth variant="outlined" label="Email" value={email} onChange={(e) => SetEmail(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Address" />
+                        <TextField fullWidth variant="outlined" label="Street Number" value={streetNumber} onChange={(e) => SetStreetNumber(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Street Number" />
+                        <TextField fullWidth variant="outlined" label="Street Name" value={streetName} onChange={(e) => SetStreetName(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Street Name" />
+                        <TextField fullWidth variant="outlined" label="Apartment Number" value={apartNumber} onChange={(e) => SetApartName(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Apartment Number" />
+                        <TextField fullWidth variant="outlined" label="City" value={city} onChange={(e) => SetCity(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="City" />
+                        <TextField fullWidth variant="outlined" label="Province" value={province} onChange={(e) => SetProvince(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Province" />
+                        <TextField fullWidth variant="outlined" label="Country" value={country} onChange={(e) => SetCountry(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Country" />
+                        <TextField fullWidth variant="outlined" label="ZipCode" value={zipcode} onChange={(e) => SetZipcode(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="ZipCode" />
+                        <TextField fullWidth variant="outlined" label="Phone Number" value={phoneNumber} onChange={(e) => SetPhoneNumber(e.currentTarget.value)} />
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <TextField fullWidth variant="outlined" label="Phone Number" />
-                    </Grid>
-                    <Grid item xs={12}>
                         <Autocomplete
                             fullWidth
                             options={locationData}
                             getOptionLabel={(option) => option.title}
-                            value={locationData[0]}
+                            value={locationData.find(item => item.value === jobPosition.value)}
                             renderInput={(params) => <TextField {...params} variant="outlined" />}
+                            onChange={(e, v) => SetJobPosition(v)}
                         />
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <FormControl variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                            <InputLabel htmlFor="password">Password</InputLabel>
                             <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
+                                id="password"
+                                type={password.show ? 'text' : 'password'}
+                                value={password.value}
+                                onChange={handlePasswordChange('value')}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
@@ -111,43 +167,39 @@ export default function WorkerRegister() {
                                             onMouseDown={handleMouseDownPassword}
                                             edge="end"
                                         >
-                                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                                            {password.show ? <Visibility /> : <VisibilityOff />}
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                labelWidth={70}
                             />
                         </FormControl>
-                        {/* <TextField fullWidth variant="outlined" label="Password" /> */}
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <FormControl variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
+                            <InputLabel htmlFor="re-password">Confirm Password</InputLabel>
                             <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
+                                id="re-password"
+                                type={repassword.show ? 'text' : 'password'}
+                                value={repassword.value}
+                                onChange={handleRePasswordChange('value')}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
                                             aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
+                                            onClick={handleClickShowRePassword}
+                                            onMouseDown={handleMouseDownRePassword}
                                             edge="end"
                                         >
-                                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                                            {repassword.show ? <Visibility /> : <VisibilityOff />}
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                labelWidth={70}
                             />
                         </FormControl>
-                        {/* <TextField fullWidth variant="outlined" label="Password" /> */}
                     </Grid>
                     <Grid item md={12} xs={12} className="p-0">
-                        <Typography>
-                            <Checkbox color="primary" />
+                        <Typography className="crusor-pointer" onClick={() => setIsAccept(!isAccept)}>
+                            <Checkbox color="primary" checked={isAccept} />
                             By clicking Sign Up, you agree to CARESHIFTS' Terms of Service and Privacy Policy.
                         </Typography>
                     </Grid>
@@ -155,7 +207,8 @@ export default function WorkerRegister() {
                         <Button onClick={() => signUp()} className="text-capitalize" fullWidth color="primary" variant="contained"> Sign Up </Button>
                     </Grid>
                     <Grid item md={12} xs={12} className="d-flex justify-content-center p-0">
-                        <Box> Already have an account?&nbsp;<Typography className="font-weight-bold crusor-pointer"> Please Sign In. </Typography></Box>
+                        <Typography>Already have an account?&nbsp;&nbsp;&nbsp;</Typography>
+                        <Typography className="font-weight-bold crusor-pointer" onClick={() => history.push("/login")}> Please Sign In. </Typography>
                     </Grid>
                 </Grid>
             </Box>

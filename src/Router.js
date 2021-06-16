@@ -44,15 +44,17 @@ const ClientBillingInvoice = lazy(() => import("./views/home/client/client-billi
 const ClientBillingCard = lazy(() => import("./views/home/client/client-billings/creditcards/index"));
 const ClientBillingStatement = lazy(() => import("./views/home/client/client-billings/accountstatement/index"));
 
-const SetAvailable = lazy(() => import("./views/home/settings/setavailable/index"));
-const SetRate = lazy(() => import("./views/home/settings/setrate/index"));
-const SetDistance = lazy(() => import("./views/home/settings/setdistance/index"));
-const SetPassword = lazy(() => import("./views/home/settings/setpassword/index"));
-const SetNotification = lazy(() => import("./views/home/settings/setnotification/index"));
+const SetAvailable = lazy(() => import("./views/home/total/settings/setavailable/index"));
+const SetRate = lazy(() => import("./views/home/total/settings/setrate/index"));
+const SetDistance = lazy(() => import("./views/home/total/settings/setdistance/index"));
+const SetPassword = lazy(() => import("./views/home/total/settings/setpassword/index"));
+const SetNotification = lazy(() => import("./views/home/total/settings/setnotification/index"));
 
-const Faq = lazy(() => import("./views/home/faq/index"));
-const ContactUs = lazy(() => import("./views/home/contact-us/index"));
-
+const Faq = lazy(() => import("./views/home/total/faq/index"));
+const ContactUs = lazy(() => import("./views/home/total/contact-us/index"));
+const HowItWorks = lazy(() => import("./views/home/total/how-it-works/index"));
+const Downloads = lazy(() => import("./views/home/total/downloads/index"));
+const AboutUs = lazy(() => import("./views/home/total/about-us/index"));
 const Loading = lazy(() => import("./views/baseComponent/Loading"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
@@ -82,14 +84,14 @@ const AppRoute = connect(null)(RouteConfig)
 const RequireAuth = (data) => {
 	const isAuthorized = useSelector((state) => state.auth.isAuth);
 	if (!isAuthorized) {
-		return <Redirect to={"/"} />;
+		return <Redirect to={"/"} />
 	}
 	for (let i in data.children) {
 		if (data.children[i].props.path === data.location.pathname) {
-			return data.children.slice(0, data.children.length - 1);
+			return data.children.slice(0, data.children.length - 1)
 		}
 	}
-	return data.children.slice(data.children.length - 1, data.children.length);
+	return data.children.slice(data.children.length - 1, data.children.length)
 };
 
 class AppRouter extends React.Component {
@@ -104,6 +106,9 @@ class AppRouter extends React.Component {
 					<AppRoute path="/register" exact component={Register} MainLayout />
 					<AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
 					<AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
+					<AppRoute path="/how-it-works" exact component={HowItWorks} MainLayout />
+					<AppRoute path="/downloads" exact component={Downloads} MainLayout />
+					<AppRoute path="/about-us" exact component={AboutUs} MainLayout />
 					<RequireAuth>
 						<AppRoute path="/worker-home" exact component={WorkerHome} MainLayout />
 						<AppRoute path="/worker-profile" exact component={WorkerProfile} MainLayout />

@@ -36,11 +36,11 @@ export default function DesktopHeader() {
                         {
                             !isAuthorized ?
                                 <>
-                                    <Button className="bg-transparent color-white text-capitalize">Post Shifts</Button>
-                                    <Button className="bg-transparent color-white text-capitalize">Work Shifts</Button>
-                                    <Button className="bg-transparent color-white text-capitalize">How it works</Button>
-                                    <Button className="bg-transparent color-white text-capitalize">Download</Button>
-                                    <Button className="bg-transparent color-white text-capitalize">About Us</Button>
+                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/client-register")}>Post Shifts</Button>
+                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/worker-register")}>Work Shifts</Button>
+                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/how-it-works")}>How it works</Button>
+                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/downloads")}>Download</Button>
+                                    <Button className="bg-transparent color-white text-capitalize" onClick={()=>history.push("/about-us")}>About Us</Button>
                                     <Button className="bg-eee text-capitalize" onClick={() => history.push("/register")}>Sign Up</Button>
                                     <Button className="bg-transparent color-white text-capitalize" onClick={() => history.push("/login")}>Sign In</Button>
                                 </>

@@ -11,11 +11,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import MenuIcon from '@material-ui/icons/Menu'
 import Clear from "@material-ui/icons/Clear"
-
-import AppStore from "../../../../asset/image/appstore.png"
-import GoogleStore from "../../../../asset/image/googlestore.png"
-import QrCode from "../../../../asset/image/qrcode.png"
-
+import { Root } from "../../../../pre/config"
 
 export default function Header() {
 
@@ -68,9 +64,9 @@ export default function Header() {
                             <Button className="login bg-transparent text-capitalize" variant="contained" onClick={() => gotoPage("/login")}> Sign In </Button>
                         </CardActions>
                         <CardActions className="d-flex justify-content-center header-auth-button">
-                            <img className="header-card-image" src={AppStore} alt="" />
-                            <img className="header-card-image" src={GoogleStore} alt="" />
-                            <img className="header-card-image" src={QrCode} alt="" />
+                            <img className="header-card-image" src={Root.adminUrl + "app/appstore.png"} alt="" />
+                            <img className="header-card-image" src={Root.adminUrl + "app/googlestore.png"} alt="" />
+                            <img className="header-card-image" src={Root.adminUrl + "app/qrcode.png"} alt="" />
                         </CardActions>
                     </Card>
                 }
