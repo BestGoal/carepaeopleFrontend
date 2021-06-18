@@ -106,7 +106,7 @@ export default function ClientRegister() {
     }
 
     return (
-        <Container className="p-1 auth">
+        <Container className="container pt-2 auth">
             <Box className="register-client-card theme-box-shadow bg-white text-align-center p-3 m-auto">
                 <Typography className="font-weight-bold mt-1" variant="h5"> SIGN UP TO POST SHIFTS </Typography>
                 <Grid container spacing={2} className="mt-1">

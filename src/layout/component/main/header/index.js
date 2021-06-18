@@ -7,7 +7,7 @@ import Mobile from "./mobile"
 export default function Header() {
 
     return (
-        <Box className="position-realative z-index-999">
+        <Box fullWidth className="header position-fixed z-index-999">
 			<Media
 				queries={{Mobile : "(max-width: 1099px)", Tablet : "(min-width: 1100px)"}}>
 				{matches => (

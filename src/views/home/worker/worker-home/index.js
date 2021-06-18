@@ -7,7 +7,7 @@ import Message from "./message.js"
 
 export default function WorkerHome() {
   return (
-    <Box className="worker-home pt-4">
+    <Box className="worker-home container pt-2">
       <Profile />
       <Upcoming />
       <Available />

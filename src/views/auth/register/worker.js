@@ -104,7 +104,7 @@ export default function WorkerRegister() {
     }
 
     return (
-        <Container className="d-flex p-1 auth">
+        <Container className="d-flex container pt-2 auth">
             <Box className="register-client-card theme-box-shadow bg-white text-align-center p-3 m-auto">
                 <Typography className="font-weight-bold register-header m-2" variant="h5"> SIGN UP TO WORK </Typography>
                 <Grid container spacing={2} className="mt-2">

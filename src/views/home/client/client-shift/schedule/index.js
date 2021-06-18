@@ -18,7 +18,7 @@ import { Root } from "../../../../../pre/config"
 
 export default function WorkerCurrentShift() {
 	return (
-		<Box className="worker-home">
+		<Box className="worker-home container">
 			<Container className="p-1 mt-4 worker-schedule">
 				<Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
 				<Box className="theme-border theme-box-shadow mt-1">

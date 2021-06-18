@@ -8,7 +8,7 @@ export default function SetNotification() {
     const [mode, SetMode] = React.useState(true)
 
     return (
-        <Container className="mt-4 mb-1">
+        <Container className="container pt-2 mb-1">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> NOTIFICATIONS </Typography>
             </Box>

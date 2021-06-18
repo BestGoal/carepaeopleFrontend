@@ -21,10 +21,6 @@ export default function SelectionOne() {
                             <Typography className="ml-1">Instagram</Typography>
                         </Box>
                         <Box className="d-flex align-items-center mt-1 crusor-pointer">
-                            <img src={Root.adminUrl + "social/linkdin.png"} alt="" style={{ width: "24px" }} />
-                            <Typography className="ml-1">LinkdIn</Typography>
-                        </Box>
-                        <Box className="d-flex align-items-center mt-1 crusor-pointer">
                             <img src={Root.adminUrl + "social/twitter.png"} alt="" style={{ width: "24px" }} />
                             <Typography className="ml-1">Twitter</Typography>
                         </Box>
@@ -36,8 +32,7 @@ export default function SelectionOne() {
                     </Grid>
                     <Grid item md={4}>
                         <Typography variant="h6" className="font-weight-bold">Information</Typography>
-                        <Typography className="mt-1 crusor-pointer">About Us</Typography>
-                        <Typography className="mt-1 crusor-pointer">Terms of service</Typography>
+                        <Typography className="mt-1 crusor-pointer">Terms of Service</Typography>
                         <Typography className="mt-1 crusor-pointer">Privacy Policy</Typography>
                     </Grid>
                     <Grid item md={12}>

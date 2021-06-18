@@ -4,7 +4,7 @@ import Shifts from "../../worker-home/upcoming"
 
 export default function WorkerCurrentShift() {
   return (
-    <Box className="worker-home">
+    <Box className="worker-home container">
       <Shifts />
     </Box>
   )

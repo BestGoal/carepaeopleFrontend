@@ -16,7 +16,7 @@ export default function Profile() {
     const [mode, setmode] = useState(false)
 
     return (
-        <Container className="mt-1 client-home">
+        <Container className="client-home container pt-2">
             {
                 !mode ?
                     <>

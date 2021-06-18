@@ -12,7 +12,7 @@ import { Root } from "../../../../pre/config"
 
 export default function ClientProfile() {
     return (
-        <Container className="client-home mt-4 mb-1">
+        <Container className="client-home container pt-2 mb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> HIRED WORKERS </Typography>
             <Grid container spacing={2} className="theme-border theme-box-shadow worker-profile theme-border-radius p-1 mt-2">
                 <Grid item md={3} xs={12}>

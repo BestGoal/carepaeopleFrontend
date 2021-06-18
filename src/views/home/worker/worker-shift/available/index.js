@@ -4,7 +4,7 @@ import Available from "../../worker-home/available/index"
 
 export default function AvailableShifts() {
 	return (
-		<Box className="worker-home">
+		<Box className="worker-home container">
 			<Available />
 		</Box>
 	)

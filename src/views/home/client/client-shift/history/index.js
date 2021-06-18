@@ -33,7 +33,7 @@ export default function WorkerJobHistory() {
     ]
 
     return (
-        <Container className="mt-3 mb-1 worker-home">
+        <Container className="container pt-2 mb-1 worker-home">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS HISTORY</Typography>
             </Box>

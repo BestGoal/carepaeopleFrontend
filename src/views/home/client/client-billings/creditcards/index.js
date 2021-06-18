@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button"
 
 export default function ClientCreditCard() {
 	return (
-		<Container className="mt-3">
+		<Container className="container pt-2">
 			<Box className="pb-1">
 				<Typography className="text-align-center font-weight-bold" variant="h5">CREDIT CARDS</Typography>
 			</Box>

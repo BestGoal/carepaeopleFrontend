@@ -103,7 +103,7 @@ export default function SetAvailable() {
     }
 
     return (
-        <Container className="mt-3 mb-1">
+        <Container className="container pt-2 mb-1">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> SET YOUR AVAILABILITY </Typography>
             </Box>

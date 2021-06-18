@@ -10,7 +10,7 @@ import LocationOn from "@material-ui/icons/LocationOn"
 export default function AccountStatement() {
 
 	return (
-		<Container className="mt-3 client-home">
+		<Container className="container pt-2 client-home">
 			<Box>
 				<Box className="pb-1">
 					<Typography className="text-align-center font-weight-bold" variant="h5">ACCOUNT STATEMENT</Typography>

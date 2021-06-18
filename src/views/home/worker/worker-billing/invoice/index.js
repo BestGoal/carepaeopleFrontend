@@ -16,7 +16,7 @@ export default function WorkerBillingPaymentHistory() {
     ]
 
     return (
-        <Box className="worker-billing">
+        <Box className="worker-billing container">
             <Container className="mt-3 worker-billing-invoice">
                 <Box className="pb-1">
                     <Typography className="text-align-center font-weight-bold" variant="h5">INVOICES</Typography>

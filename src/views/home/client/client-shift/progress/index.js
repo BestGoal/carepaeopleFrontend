@@ -25,7 +25,7 @@ export default function ClientProgresShifts() {
     ]
 
     return (
-        <Container className="mt-4 mb-1 worker-home p-1">
+        <Container className="container pt-2 mb-1 worker-home p-1">
             <Box>
                 <Typography className="text-align-center font-weight-bold" variant="h5">SHIFTS IN PROGRESS</Typography>
             </Box>

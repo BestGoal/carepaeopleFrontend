@@ -9,7 +9,7 @@ export default function WorkerNillingTax() {
     const [mode, SetMode] = React.useState(true)
 
     return (
-        <Container className="mt-4 worker-billing">
+        <Container className="container pt-2 worker-billing">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> TAX </Typography>
             </Box>

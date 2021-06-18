@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button"
 
 export default function ClientWallet() {
     return (
-        <Container className="client-home mt-4 mb-1">
+        <Container className="client-home container pt-2 mb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> WALLET </Typography>
             <Box className="p-3 mt-1 theme-border theme-box-shadow theme-border-radius client-profile">
                 <Box>

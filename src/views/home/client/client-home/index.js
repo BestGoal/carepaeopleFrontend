@@ -15,8 +15,8 @@ import PostedShifts from "../client-shift/posted/index"
 export default function ClientHome() {
     return (
         <>
-            <Container className="client-home">
-                <Grid container spacing={2} className="client-profile theme-border theme-box-shadow theme-border-radius p-2 mt-2">
+            <Container className="client-home container pt-2">
+                <Grid container spacing={2} className="client-profile theme-border theme-box-shadow theme-border-radius p-2">
                     <Grid item md={4} xs={12}>
                         <Box className="d-flex justify-content-center">
                             <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />

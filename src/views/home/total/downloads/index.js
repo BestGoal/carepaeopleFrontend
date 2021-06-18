@@ -9,7 +9,7 @@ import { Root } from "../../../../pre/config"
 export default function Downloads() {
 
     return (
-        <Container className="mt-4 mb-1 downloads">
+        <Container className="container pt-2 mb-1 downloads">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> Downloads </Typography>
             </Box>

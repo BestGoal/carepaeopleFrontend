@@ -105,7 +105,7 @@ export default function ClientPost() {
     ]
 
     return (
-        <Container className="container client-home">
+        <Container className="container pt-2 client-home">
             <Typography variant="h5" className="text-align-center font-weight-bold"> POST SHIFTS </Typography>
             <Box className="main-container theme-border theme-box-shadow theme-border-radius client-post">
                 <Grid container>
