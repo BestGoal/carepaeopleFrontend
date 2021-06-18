@@ -5,6 +5,7 @@ export const SignUpRequest = async (sendData, dispatch) => {
     let rdata = await Axios("POST", sendData, "api/auth/signup", dispatch, true)
     if(rdata.status) {
         toast.success(rdata.data)
+        localStorage.setItem("careshifts-token", rdata.token)
         return rdata.userInfo
     } else {
         toast.error(rdata.data)

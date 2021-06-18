@@ -9,7 +9,7 @@ import { Root } from "../../pre/config"
 export default function SelectionOne() {
     return (
         <Box className="selection-tone">
-            <Container>
+            <Container style={{marginTop: "30px"}}>
                 <Box className="d-flex justify-content-center align-items-center selection-one">
                     <Grid container spacing={3}>
                         <Grid item md={5} xs={12}>
@@ -29,11 +29,11 @@ export default function SelectionOne() {
                                 <li><Typography className="fs-1">Excellent and friendly customer service.</Typography></li>
                             </ul>
                         </Grid>
-                        <Grid item xs={12} className="d-flex justify-content-center mt-3">
+                        <Box style={{position: "absolute", bottom: "10px", left: "50%"}}>
                             <a href="#section-two" className="section-arrow">
                                 <KeyboardArrowDown className="crusor-pointer arrow-bottom" />
                             </a>
-                        </Grid>
+                        </Box>
                     </Grid>
                 </Box>
             </Container>
