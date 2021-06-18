@@ -4,6 +4,7 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 export default function SetAvailable() {
 
@@ -29,22 +30,21 @@ export default function SetAvailable() {
                 <Typography className="text-align-center font-weight-bold" variant="h5"> SET YOUR RATE </Typography>
             </Box>
 
-            <Box className="d-flex theme-border theme-box-shadow theme-border-radius p-1 justify-content-between mt-1">
-                <Box className="d-flex align-items-center">
+            <Grid container spacing={3} className="d-flex theme-border theme-box-shadow theme-border-radius p-1 justify-content-between mt-1">
+                <Grid item md={6} className="d-flex align-items-center">
                     <Typography className="font-weight-bold">MINIMUM SHIFT RATE</Typography>
-                </Box>
-                <Box>
+                </Grid>
+                <Grid item md={6} className="d-flex align-items-center">
                     <Autocomplete
+                        fullWidth
                         id="combo-box-demo"
                         options={rateData}
                         getOptionLabel={(option) => option.title}
-                        style={{ width: 300 }}
                         value={rateData[0]}
                         renderInput={(params) => <TextField {...params} label="Rate" variant="outlined" />}
                     />
-                </Box>
-            </Box>
-
+                </Grid>
+            </Grid>
         </Container>
     )
 }

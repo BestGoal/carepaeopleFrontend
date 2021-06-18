@@ -139,7 +139,7 @@ export default function WorkerReference() {
 
             <Dialog open={mode} onClose={() => SetMode(false)}>
                 <DialogTitle>Add New Reference</DialogTitle>
-                <DialogContent className="m-1" style={{overflow: "hidden"}}>
+                <DialogContent className="m-1 overflow-hidden">
                     <Grid container spacing={3}>
                         <Grid item md={6} xs={12}>
                             <TextField fullWidth variant="outlined" label="Company Name" />

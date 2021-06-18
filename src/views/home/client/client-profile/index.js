@@ -26,7 +26,7 @@ export default function Profile() {
                                     <Grid item md={4} xs={12}>
                                         <Box className="d-flex justify-content-center avatar">
                                             <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
-                                            <PhotoCamera className="crusor-pointer" style={{ position: "absolute", right: "16px", bottom: "16px" }} />
+                                            <PhotoCamera className="crusor-pointer camera" />
                                         </Box>
                                     </Grid>
                                     <Grid item md={8} xs={12}>
@@ -73,7 +73,7 @@ export default function Profile() {
                             <Box className="client-profile d-flex justify-content-center">
                                 <Box className="avatar crusor-pointer">
                                     <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
-                                    <PhotoCamera style={{ position: "absolute", right: "16px", bottom: "16px" }} />
+                                    <PhotoCamera className="camera" />
                                 </Box>
                             </Box>
                             <Box className="mt-1">

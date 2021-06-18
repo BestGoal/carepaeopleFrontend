@@ -63,7 +63,7 @@ export default function WorkerBillingPaymentHistory() {
                         value === 2 &&
                             <Grid item xs={12}>
                                 <Box className="text-align-center">
-                                    <CancelPresentation style={{ width: "100px", height: "100px" }} />
+                                    <CancelPresentation className="no-item" />
                                     <Typography>Currently you don't have any invoices.</Typography>
                                 </Box>
                             </Grid>

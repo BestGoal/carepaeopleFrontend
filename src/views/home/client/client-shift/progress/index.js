@@ -72,9 +72,9 @@ export default function ClientProgresShifts() {
                                             </Box>
                                         </Grid>
                                         <Grid item md={6} xs={12} className="d-flex align-items-center">
-                                            <Box className="theme-border p-1 d-flex theme-border-radius" style={{width: "100%"}}>
+                                            <Box className="theme-border p-1 d-flex theme-border-radius">
                                                 <Box>
-                                                    <img src={Root.adminUrl + item.avatar} alt="" style={{width: "100px", height: "100px"}} />
+                                                    <img className="s-avatar" src={Root.adminUrl + item.avatar} alt="" />
                                                 </Box>
                                                 <Box className="ml-1">
                                                     <Typography>Shift Accepted By : </Typography>

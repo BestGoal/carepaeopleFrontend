@@ -4,7 +4,7 @@ import Header from "./component/main/header/index"
 
 export default function FullpageLayout({ children }) {
     return (
-        <Box style={{height: "100%"}}>
+        <Box className="main-layout">
             <Header />
             {children}
         </Box>

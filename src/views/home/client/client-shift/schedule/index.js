@@ -29,7 +29,7 @@ export default function WorkerCurrentShift() {
 								<Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
 							</Grid>
 							<Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
-								<img src={Root.adminUrl + "avatar/1.jpg"} alt="" />
+								<img className="avatar" src={Root.adminUrl + "avatar/1.jpg"} alt="" />
 							</Grid>
 							<Grid item sm={8} xs={12}>
 								<Grid container spacing={3}>
@@ -62,9 +62,9 @@ export default function WorkerCurrentShift() {
 										</Box>
 									</Grid>
 									<Grid item md={6} xs={12} className="d-flex align-items-center">
-										<Box className="theme-border p-1 d-flex theme-border-radius" style={{ width: "100%" }}>
+										<Box className="theme-border p-1 d-flex theme-border-radius">
 											<Box>
-												<img src={Root.adminUrl + "avatar/1.jpg"} alt="" style={{ width: "100px", height: "100px" }} />
+												<img className="s-avatar" src={Root.adminUrl + "avatar/1.jpg"} alt="" />
 											</Box>
 											<Box className="ml-1">
 												<Typography>Shift Accepted By : </Typography>
