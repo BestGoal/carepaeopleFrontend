@@ -7,7 +7,7 @@ import Router from './Router';
 import { Layout } from "./layout/index";
 import configureStore from "./redux/store";
 import reportWebVitals from './reportWebVitals';
-import { sessionCheck } from "./redux/action/auth/loginActions";
+import { sessionCheck } from "./redux/action/auth/loginRequests";
 import './asset/scss/index.scss';
 import 'react-toastify/dist/ReactToastify.css';
 

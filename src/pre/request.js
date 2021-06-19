@@ -3,7 +3,15 @@ import { setLoading } from "../redux/action/base";
 import { Root } from "./config"
 
 const Axios = async (method, data, url, dispatch, loading = false) => {
-    const options = { method, url: Root.adminUrl + url, data };
+    const options = { 
+        method, 
+        url: Root.adminUrl + url, 
+        data,
+        headers: {
+            'authorization': `${localStorage.getItem("careshifts-token")}`,
+            "Content-Type": "application/json",
+        }
+    };
     if(loading) {
         dispatch(setLoading(true))
     }
