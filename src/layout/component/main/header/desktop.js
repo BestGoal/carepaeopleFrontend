@@ -23,6 +23,11 @@ export default function DesktopHeader() {
     const [SettingMenu, setSettingMenu] = React.useState(null);
     const settingKey = Boolean(SettingMenu);
 
+    const logout = () => {
+        localStorage.clear()
+        window.location.reload()
+    }
+
     return (
         <AppBar position="static" className="header-app-bar">
             <Container>
@@ -131,7 +136,7 @@ export default function DesktopHeader() {
                                                     history.push("/set-nitification")
                                                 }}>Notifications</MenuItem>
                                             </Menu>
-                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => window.location.reload()}>Sign Out</Button>
+                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => logout()}>Sign Out</Button>
                                         </>
                                         :
                                         <>
@@ -192,7 +197,7 @@ export default function DesktopHeader() {
                                                     history.push("/set-nitification")
                                                 }}>Notifications</MenuItem>
                                             </Menu>
-                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => window.location.reload()}>Logout</Button>
+                                            <Button className="bg-transparent color-white text-capitalize" onClick={() => logout()}>Logout</Button>
                                         </>
                                 )
                         }

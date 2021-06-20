@@ -6,7 +6,7 @@ import { Root } from "../../../pre/config"
 
 export default function Register() {
     return (
-        <Container className="auth">
+        <Container className="auth container">
             <Box className="auth-register d-flex">
                 <Box className="d-flex flex-direction-column theme-box-shadow text-align-center p-3 bg-white register-main-card">
                     <Box className="bg-theme theme-border-radius color-white text-capitalize p-2 crusor-pointer" onClick={(e) => history.push("/client-register")}>

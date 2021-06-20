@@ -1,35 +1,39 @@
-.auth{
-    height: calc(100% - 80px);
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    .auth-register {
-        .register-main-card {
-            width: 400px;
-            margin: auto;
-            .register-app-img {
-                width: 35%;
+.main-layout{
+    height: 100%;
+    .auth{
+        height: calc(100% - 80px);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        .auth-register {
+            .register-main-card {
+                width: 400px;
+                margin: auto;
+                .register-app-img {
+                    width: 35%;
+                }
+                .register-app-img-qr {
+                    width: 20%;
+                }
             }
-            .register-app-img-qr {
-                width: 20%;
+            @media(max-width: 500px) {
+                .register-main-card{
+                    width: 100%;
+                    padding: 1rem !important;
+                    box-shadow: none !important;
+                    background-color: #fafafa !important;
+                }
             }
         }
+        .register-client-card {
+            max-width: 600px;
+        }
         @media(max-width: 500px) {
-            .register-main-card{
+            .register-client-card{
                 padding: 1rem !important;
                 box-shadow: none !important;
                 background-color: #fafafa !important;
             }
-        }
-    }
-    .register-client-card {
-        max-width: 600px;
-    }
-    @media(max-width: 500px) {
-        .register-client-card{
-            padding: 1rem !important;
-            box-shadow: none !important;
-            background-color: #fafafa !important;
         }
     }
 }

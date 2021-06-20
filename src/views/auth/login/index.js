@@ -69,7 +69,7 @@ export default function Login() {
     }
 
     return (
-        <Container className="d-flex p-1 auth">
+        <Container className="d-flex p-1 auth container">
             <Box className="register-client-card theme-box-shadow bg-white text-align-center p-3 m-auto">
                 <Typography className="font-weight-bold mt-1" variant="h5"> SIGN IN </Typography>
                 <Grid container spacing={2} className="mt-1">

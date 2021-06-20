@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography"
 export default function Faq() {
 
     return (
-        <Container className="container pt-2 mb-1 faq-page">
+        <Container className="container">
             <Box className="pb-1">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> How It works </Typography>
             </Box>

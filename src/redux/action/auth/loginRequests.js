@@ -1,5 +1,7 @@
 import { toast } from "react-toastify"
 import Axios from "../../../pre/request"
+import { permissionData } from "../../../configs/index"
+import { history } from "../../../history";
 
 export const SignUpRequest = async (sendData, dispatch) => {
     let rdata = await Axios("POST", sendData, "api/auth/signup", dispatch, true)
@@ -44,5 +46,17 @@ export const sessionCheck = async () => {
         }
     } catch (e) {
         return { auth: { isAuth: false } }
+    }
+}
+
+export const socketInit = () => {
+    return async (dispatch, getState) => {
+        let userData = getState().auth.userData;
+        console.log(userData)
+        // if(userData.permission === permissionData.worker) {
+        //     history.push("/worker-home")    
+        // } else if(userData.permission === permissionData.client) {
+        //     history.push("/client-home")    
+        // }
     }
 }

@@ -4,6 +4,8 @@ import { connect, useSelector } from "react-redux";
 import { history } from "./history";
 import { ContextLayout } from "./layout";
 import { ToastContainer } from 'react-toastify';
+import { socketInit } from "./redux/action/auth/loginRequests"
+import { urlData, permissionData } from "./configs/index"
 
 const Dashboard = lazy(() => import("./views/dashboard/index"));
 const Register = lazy(() => import("./views/auth/register/index"));
@@ -84,10 +86,46 @@ const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout,
 const AppRoute = connect(null)(RouteConfig)
 
 const RequireAuth = (data) => {
+	const pathName = data.location.pathname
 	const isAuthorized = useSelector((state) => state.auth.isAuth);
-	if (!isAuthorized) {
-		return <Redirect to={"/"} />
+	const userData = useSelector((state) => state.auth.userData);
+
+	let flag = 0;
+	let loginFlag = urlData.login.findIndex(item => item === pathName);
+	if (loginFlag > -1) {
+		flag = 1;
 	}
+	let authFlag = urlData.auth.findIndex(item => item === pathName);
+	if (authFlag > -1) {
+		flag = 2;
+	}
+	let workerFlag = urlData.worker.findIndex(item => item === pathName);
+	if (workerFlag > -1) {
+		flag = 3;
+	}
+	let clientFlag = urlData.client.findIndex(item => item === pathName);
+	if (clientFlag > -1) {
+		flag = 4;
+	}
+
+	if (isAuthorized) {
+		if (flag === 1) {
+			if (userData.permission === permissionData.worker) {
+				return <Redirect to={"/worker-home"} />
+			} else if (userData.permission === permissionData.client) {
+				return <Redirect to={"/client-home"} />
+			}
+		} else if (flag === 3 && userData.permission === permissionData.client) {
+			return <Redirect to={"/client-home"} />
+		} else if (flag === 4 && userData.permission === permissionData.worker) {
+			return <Redirect to={"/worker-home"} />
+		}
+	} else {
+		if (flag === 2 || flag === 3 || flag === 4) {
+			return <Redirect to={"/"} />
+		}
+	}
+
 	for (let i in data.children) {
 		if (data.children[i].props.path === data.location.pathname) {
 			return data.children.slice(0, data.children.length - 1)
@@ -98,22 +136,36 @@ const RequireAuth = (data) => {
 
 class AppRouter extends React.Component {
 
+	componentDidMount() {
+		if (this.props.isAuth) {
+			this.props.socketInit()
+		}
+	}
+
 	render() {
 		return (
 			<Router history={history}>
-				{ this.props.loading && <Loading /> }
+				{this.props.loading && <Loading />}
 				<Switch>
 					<AppRoute path="/" exact component={Dashboard} MainLayout />
-					<AppRoute path="/login" exact component={Login} MainLayout />
-					<AppRoute path="/register" exact component={Register} MainLayout />
-					<AppRoute path="/recover-password" exact component={RecoverPassword} MainLayout />
-					<AppRoute path="/confirm-user" exact component={ConfirmUser} MainLayout />
-					<AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
-					<AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
-					<AppRoute path="/how-it-works" exact component={HowItWorks} MainLayout />
-					<AppRoute path="/downloads" exact component={Downloads} MainLayout />
-					<AppRoute path="/about-us" exact component={AboutUs} MainLayout />
+
 					<RequireAuth>
+
+						<AppRoute path="/login" exact component={Login} MainLayout />
+						<AppRoute path="/register" exact component={Register} MainLayout />
+						<AppRoute path="/recover-password" exact component={RecoverPassword} MainLayout />
+						<AppRoute path="/confirm-user" exact component={ConfirmUser} MainLayout />
+						<AppRoute path="/client-register" exact component={ClientRegister} MainLayout />
+						<AppRoute path="/worker-register" exact component={WorkerRegister} MainLayout />
+						<AppRoute path="/how-it-works" exact component={HowItWorks} MainLayout />
+						<AppRoute path="/downloads" exact component={Downloads} MainLayout />
+						<AppRoute path="/about-us" exact component={AboutUs} MainLayout />
+						<AppRoute path="/faq" exact component={Faq} MainLayout />
+						<AppRoute path="/contact-us" exact component={ContactUs} MainLayout />
+
+						<AppRoute path="/set-password" exact component={SetPassword} MainLayout />
+						<AppRoute path="/set-nitification" exact component={SetNotification} MainLayout />
+
 						<AppRoute path="/worker-home" exact component={WorkerHome} MainLayout />
 						<AppRoute path="/worker-profile" exact component={WorkerProfile} MainLayout />
 						<AppRoute path="/worker-document" exact component={WorkerDocument} MainLayout />
@@ -129,14 +181,9 @@ class AppRouter extends React.Component {
 						<AppRoute path="/worker-billing-report" exact component={WorkerBillingReport} MainLayout />
 						<AppRoute path="/worker-billing-tax" exact component={WorkerBillingTax} MainLayout />
 
-						<AppRoute path="/faq" exact component={Faq} MainLayout />
-						<AppRoute path="/contact-us" exact component={ContactUs} MainLayout />
-
 						<AppRoute path="/set-available" exact component={SetAvailable} MainLayout />
 						<AppRoute path="/set-rate" exact component={SetRate} MainLayout />
 						<AppRoute path="/set-distance" exact component={SetDistance} MainLayout />
-						<AppRoute path="/set-password" exact component={SetPassword} MainLayout />
-						<AppRoute path="/set-nitification" exact component={SetNotification} MainLayout />
 
 						<AppRoute path="/client-home" exact component={ClientHome} MainLayout />
 						<AppRoute path="/client-profile" exact component={ClientProfile} MainLayout />
@@ -171,6 +218,7 @@ const mapStateToPropss = (state) => ({
 })
 
 const mapDispatchToProps = {
+	socketInit
 }
 
 export default connect(mapStateToPropss, mapDispatchToProps)(AppRouter);

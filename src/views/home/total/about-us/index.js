@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography"
 
 export default function ContactUs() {
     return (
-        <Container className="container pt-2 mb-1">
+        <Container className="container">
             <Typography className="text-align-center font-weight-bold" variant="h5"> About Us </Typography>
             <Box className="pb-1 theme-border theme-box-shadow theme-border-radius p-2">
                 <Typography className="mt-2">CareShifts is the best on-demand healthcare shifts posting platform.</Typography>

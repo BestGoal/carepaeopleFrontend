@@ -44,19 +44,19 @@ export default function Header() {
                                 <Clear onClick={() => setMode(!mode)} />
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Post Shifts </Typography>
+                                <Typography className="font-weight-bold color-theme" onClick={()=>gotoPage("/client-register")}> Post Shifts </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Work Shifts </Typography>
+                                <Typography className="font-weight-bold color-theme" onClick={()=>gotoPage("/worker-register")}> Work Shifts </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> How it works </Typography>
+                                <Typography className="font-weight-bold color-theme" onClick={()=>gotoPage("/how-it-works")}> How it works </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> Download </Typography>
+                                <Typography className="font-weight-bold color-theme" onClick={()=>gotoPage("/downloads")}> Download </Typography>
                             </Box>
                             <Box className="p-1 border-solid-1">
-                                <Typography className="font-weight-bold color-theme"> About Us </Typography>
+                                <Typography className="font-weight-bold color-theme" onClick={()=>gotoPage("/about-us")}> About Us </Typography>
                             </Box>
                         </CardContent>
                         <CardActions className="d-flex justify-content-center header-auth-button">
