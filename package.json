@@ -22,6 +22,7 @@
     "react-feather": "^2.0.9",
     "react-icons": "^4.2.0",
     "react-media": "^1.10.0",
+    "react-modal": "^3.14.3",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

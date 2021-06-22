@@ -10,17 +10,27 @@ import LocationOn from "@material-ui/icons/LocationOn"
 import PhotoCamera from "@material-ui/icons/PhotoCamera"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
+import Modal from 'react-modal';
 import { Root } from "../../../../pre/config"
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
 
 export default function Profile() {
 
     const [mode, setmode] = useState(false)
     const userData = useSelector(state => state.auth.userData)
 
-    console.log(userData)
-
     return (
-        <Container className="client-home container pt-2">
+        <Container className="client-home container">
             {
                 !mode ?
                     <>
@@ -40,10 +50,7 @@ export default function Profile() {
                                             <Box className="d-flex mt-2">
                                                 <LocationOn />
                                                 <Typography>
-                                                    {
-                                                        `${userData.zipcode} ${userData.streetNumber} ${userData.streetName} 
-                                                         ${userData.province} ${userData.country}`
-                                                    }
+                                                    {`${userData.streetNumber} ${userData.streetName} ${userData.city} ${userData.province} ${userData.zipcode} ${userData.country}`}
                                                 </Typography>
                                             </Box>
                                             <Grid container spacing={3} className="mt-2">
@@ -66,7 +73,6 @@ export default function Profile() {
                                 <Typography className="font-weight-bold">Company Description: </Typography>
                                 <Typography className="ml-1">
                                     {userData.companyDescription}
-                                    {/* Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. */}
                                 </Typography>
                             </Box>
                         </Box>
@@ -82,38 +88,64 @@ export default function Profile() {
                     </>
                     :
                     <>
-                        <Box className="theme-border theme-box-shadow p-2">
-                            <Box className="client-profile d-flex justify-content-center">
-                                <Box className="avatar crusor-pointer">
-                                    <img className="avatar" src={Root.adminUrl + userData.avatar} alt="" />
-                                    <PhotoCamera className="camera" />
-                                </Box>
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="firstName" value={`${userData.firstName}`} />
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="lastName" value={`${userData.lastName}`} />
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="Address" value={"userData"} />
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="Email" value="imogenemartin81@gmail.com" />
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="Phone Number" value="12038923887" />
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="Company Description" multiline rows={5} />
-                            </Box>
-                            <Box className="mt-1">
-                                <TextField fullWidth variant="outlined" label="Site Notes" multiline rows={5} />
-                            </Box>
-                            <Box className="mt-1">
-                                <Button className="bg-theme color-white" fullWidth onClick={() => setmode(false)}>Save</Button>
-                            </Box>
+                        <Box spacing={3} className="theme-border theme-box-shadow p-2">
+                            <Grid container spacing={3}>
+                                <Grid item xs={12} className="d-flex justify-content-center">
+                                    <Grid className="avatar crusor-pointer">
+                                        <img className="avatar" src={Root.adminUrl + userData.avatar} alt="" />
+                                        <PhotoCamera className="camera" />
+                                    </Grid>
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="firstName" value={`${userData.firstName}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="lastName" value={`${userData.lastName}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="streetNumber" value={`${userData.streetNumber}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="streetName" value={`${userData.streetName}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="city" value={`${userData.city}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="province" value={`${userData.province}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="zipcode" value={`${userData.zipcode}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="country" value={`${userData.country}`} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="Email" value={userData.email} />
+                                </Grid>
+                                <Grid md={4} xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="Phone Number" value={userData.phoneNumber} />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="Company Description" multiline rows={5} value={userData.companyDescription} />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <TextField fullWidth variant="outlined" label="Site Notes" multiline rows={5} value={userData.siteNotes} />
+                                </Grid>
+                                <Grid xs={12} item className="d-flex justify-content-between">
+                                    <Button fullWidth className="bg-theme color-white" onClick={() => setmode(false)}>Save</Button>
+                                    <Button fullWidth className="ml-1" variant="contained" onClick={() => setmode(false)}>Cancel</Button>
+                                </Grid>
+                            </Grid>
                         </Box>
+                        <Modal
+                            isOpen={true}
+                            onRequestClose={() => console.log()}
+                            style={customStyles}
+                            contentLabel="Example Modal"
+                        >
+                            <img className="img-modal-t" src={Root.adminUrl + userData.avatar} alt="" />
+                        </Modal>
                     </>
             }
         </Container>

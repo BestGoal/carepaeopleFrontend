@@ -1,4 +1,5 @@
 import React from "react"
+import { useSelector } from "react-redux"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
 import Grid from '@material-ui/core/Grid';
@@ -13,6 +14,9 @@ import ScheduleShifts from "../client-shift/schedule/index"
 import PostedShifts from "../client-shift/posted/index"
 
 export default function ClientHome() {
+
+    const userData = useSelector(state => state.auth.userData)
+
     return (
         <>
             <Container className="client-home container pt-2">
@@ -25,11 +29,14 @@ export default function ClientHome() {
                     <Grid item md={8} xs={12}>
                         <Box className="p-1 theme-border">
                             <Box className="d-flex align-items-center">
-                                <Typography variant="h4"> Denis postnykhdo </Typography>
+                                <Typography variant="h4">{`${userData.firstName} ${userData.lastName}`}</Typography>
                             </Box>
                             <Box className="d-flex align-items-center mt-2">
                                 <LocationOn />
-                                <Typography> 23 Etobicoke Creek Trail, Mississauga, ON L4W 5N3, Canada </Typography>
+                                <Typography>
+                                    {`${userData.streetNumber} ${userData.streetName} ${userData.city} ${userData.province} 
+                                        ${userData.zipcode} ${userData.country}`}
+                                </Typography>
                             </Box>
                             <Grid container className="d-flex">
                                 <Grid item md={6} xs={12} className="d-flex mt-1">
