@@ -7,11 +7,10 @@ import Typography from "@material-ui/core/Typography"
 import WatchLater from "@material-ui/icons/WatchLater"
 import Group from "@material-ui/icons/Group"
 import LocationOn from "@material-ui/icons/LocationOn"
-import { Root } from "../../../../pre/config"
-
 import ProgressShifts from "../client-shift/progress/index"
 import ScheduleShifts from "../client-shift/schedule/index"
 import PostedShifts from "../client-shift/posted/index"
+import { Root } from "../../../../pre/config"
 
 export default function ClientHome() {
 

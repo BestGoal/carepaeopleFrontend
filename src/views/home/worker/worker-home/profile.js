@@ -1,4 +1,5 @@
 import React from "react"
+import { useSelector } from "react-redux"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
 import Card from '@material-ui/core/Card';
@@ -9,14 +10,18 @@ import AssignmentTurnedIn from "@material-ui/icons/AssignmentTurnedIn"
 import MonetizationOn from "@material-ui/icons/MonetizationOn"
 import StarRatings from 'react-star-ratings';
 import { Root } from "../../../../pre/config"
+import { locationData } from "../../../../configs/index"
 
 export default function WorkerProfile() {
+
+    const userData = useSelector(state => state.auth.userData)
+
     return (
         <Container className="p-2">
             <Grid container spacing={2} className="theme-border theme-box-shadow worker-profile theme-border-radius p-1">
                 <Grid item md={4} xs={12}>
                     <Box className="d-flex justify-content-center">
-                        <img className="avatar" src={Root.adminUrl + "avatar/avatar.webp"} alt="" />
+                        <img className="avatar" src={ Root.adminUrl + userData.avatar} alt="" />
                     </Box>
                     <Box className="d-flex justify-content-center align-items-center mt-1">
                         <Typography>5.0</Typography>
@@ -34,8 +39,8 @@ export default function WorkerProfile() {
                 <Grid item md={8} xs={12}>
                     <Box className="p-2">
                         <Box className="">
-                            <Typography variant="h4"> Denis postnykhdo </Typography>
-                            <Typography variant="h6"> (Personal Support Worker) </Typography>
+                            <Typography variant="h4">{`${userData.firstName} ${userData.lastName}`}</Typography>
+                            <Typography variant="h6">{`( ${locationData.filter(item=>item.value === Number(userData.jobPosition))[0].title} )`}</Typography>
                         </Box>
                         <Box className="d-flex mt-2">
                             <Box className="d-flex align-items-center">

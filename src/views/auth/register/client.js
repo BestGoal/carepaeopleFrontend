@@ -36,14 +36,8 @@ export default function ClientRegister() {
     const [zipcode, SetZipcode] = useState("");
     const [email, SetEmail] = useState("");
     const [phoneNumber, SetPhoneNumber] = useState("");
-    const [password, SetPassword] = useState({
-        value: "",
-        show: false
-    });
-    const [repassword, SetRePassword] = useState({
-        value: "",
-        show: false
-    });
+    const [password, SetPassword] = useState({ value: "", show: false });
+    const [repassword, SetRePassword] = useState({ value: "", show: false });
     const [companyDescription, SetCompanyDescription] = useState("");
     const [isAccept, setIsAccept] = useState(false)
 
@@ -152,6 +146,7 @@ export default function ClientRegister() {
                             <OutlinedInput
                                 id="password"
                                 type={password.show ? 'text' : 'password'}
+                                label="Password"
                                 value={password.value}
                                 onChange={handlePasswordChange('value')}
                                 endAdornment={
@@ -176,6 +171,7 @@ export default function ClientRegister() {
                                 id="re-password"
                                 type={repassword.show ? 'text' : 'password'}
                                 value={repassword.value}
+                                label="Confirm Password"
                                 onChange={handleRePasswordChange('value')}
                                 endAdornment={
                                     <InputAdornment position="end">

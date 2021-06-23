@@ -83,6 +83,7 @@ export default function Login() {
                                 id="password"
                                 type={password.show ? 'text' : 'password'}
                                 value={password.value}
+                                label="Password"
                                 onChange={handlePasswordChange('value')}
                                 endAdornment={
                                     <InputAdornment position="end">

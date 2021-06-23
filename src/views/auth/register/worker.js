@@ -159,6 +159,7 @@ export default function WorkerRegister() {
                                 type={password.show ? 'text' : 'password'}
                                 value={password.value}
                                 onChange={handlePasswordChange('value')}
+                                label={"Password"}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
@@ -182,6 +183,7 @@ export default function WorkerRegister() {
                                 type={repassword.show ? 'text' : 'password'}
                                 value={repassword.value}
                                 onChange={handleRePasswordChange('value')}
+                                label={"Confirm Password"}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton

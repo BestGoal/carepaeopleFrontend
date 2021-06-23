@@ -6,12 +6,12 @@ import Available from "./available/index"
 import Message from "./message.js"
 
 export default function WorkerHome() {
-  return (
-    <Box className="worker-home container pt-2">
-      <Profile />
-      <Upcoming />
-      <Available />
-      <Message />
-    </Box>
-  )
+	return (
+		<Box className="worker-home container pt-2">
+			<Profile />
+			<Upcoming />
+			<Available />
+			<Message />
+		</Box>
+	)
 }

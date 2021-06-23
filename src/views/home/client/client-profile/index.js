@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
@@ -15,18 +14,6 @@ import TextField from "@material-ui/core/TextField"
 import { ProfileUpdate } from "../../../../redux/action/profile/profileRequest"
 import { LoginAction } from "../../../../redux/action/auth/loginActions"
 import { Root } from "../../../../pre/config"
-// import Modal from 'react-modal';
-
-// const customStyles = {
-//     content: {
-//         top: '50%',
-//         left: '50%',
-//         right: 'auto',
-//         bottom: 'auto',
-//         marginRight: '-50%',
-//         transform: 'translate(-50%, -50%)',
-//     },
-// };
 
 export default function ClientProfile() {
 
@@ -179,12 +166,7 @@ export default function ClientProfile() {
                                 <Grid item xs={12} className="d-flex justify-content-center">
                                     <Grid className="avatar crusor-pointer">
                                         <img className="avatar" src={tempAvatar} alt="" onClick={()=>document.getElementById("file").click()} />
-                                        <input
-                                            id="file"
-                                            type="file"
-                                            style={{ display: "none" }}
-                                            onChange={e => ChooseImage(e)}
-                                        />
+                                        <input id="file" type="file" style={{ display: "none" }} onChange={e => ChooseImage(e)} />
                                         <PhotoCamera className="camera" />
                                     </Grid>
                                 </Grid>
@@ -230,19 +212,6 @@ export default function ClientProfile() {
                                 </Grid>
                             </Grid>
                         </Box>
-                        {/* <Modal
-                            isOpen={true}
-                            onRequestClose={() => console.log()}
-                            style={customStyles}
-                            contentLabel="Example Modal"
-                        >
-                            <img className="img-modal-t" src={Root.adminUrl + userData.avatar} alt="" />
-                            <Box>
-                                <Button>SELECT</Button>
-                                <Button>SAVE</Button>
-                                <Button>CANCEL</Button>
-                            </Box>
-                        </Modal> */}
                     </>
             }
         </Container>
