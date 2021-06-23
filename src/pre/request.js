@@ -8,8 +8,9 @@ const Axios = async (method, data, url, dispatch, loading = false) => {
         url: Root.adminUrl + url, 
         data,
         headers: {
-            'authorization': `${localStorage.getItem("careshifts-token")}`,
+            "authorization": `${localStorage.getItem("careshifts-token")}`,
             "Content-Type": "application/json",
+            "timeout": 5000
         }
     };
     if(loading) {

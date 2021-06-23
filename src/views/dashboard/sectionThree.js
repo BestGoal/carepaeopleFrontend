@@ -10,7 +10,7 @@ export default function SelectionOne() {
     return (
         <Box className="section-footer">
             <Container>
-                <Grid className="footer-grid" container spacing={3} className="mt-2 p-2">
+                <Grid className="footer-grid mt-2 p-2" container spacing={3}>
                     <Grid item md={4} sm={6}>
                         <Typography variant="h5" className="font-weight-bold">CareShifts.ca</Typography>
                         <Box className="d-flex align-items-center mt-1 crusor-pointer">
