@@ -93,21 +93,21 @@ export default function Profile() {
                                 <Box className="ml-1">
                                     <Typography> Phone: +{userData.phoneNumber}</Typography>
                                 </Box>
-                                <Box className="ml-1"><Edit className="crusor-pointer" onClick={() => openModal("phoneNumber", "Number")} /></Box>
+                                <Box className="ml-1"><Edit className="crusor-pointer" onClick={() => openModal("phoneNumber", "number")} /></Box>
                             </Box>
                             <Box className="d-flex">
                                 <Box> <Email /> </Box>
                                 <Box className="ml-1">
                                     <Typography>Email: {userData.email}</Typography>
                                 </Box>
-                                <Box className="ml-1"><Edit className="crusor-pointer" onClick={() => openModal("email", "Email")} /></Box>
+                                <Box className="ml-1"><Edit className="crusor-pointer" onClick={() => openModal("email", "email")} /></Box>
                             </Box>
                             <Box className="d-flex">
                                 <Box> <Drafts /> </Box>
                                 <Box className="ml-1">
-                                    <Typography> Mailing: 20 Park Ave, Etobicock, Toronto, ON M8W 2G4, Canada</Typography>
+                                    <Typography> Mailing: {userData.mailing}</Typography>
                                 </Box>
-                                <Box className="ml-1"> <Edit className="crusor-pointer" /> </Box>
+                                <Box className="ml-1"> <Edit className="crusor-pointer" onClick={() => openModal("mailing", "text")} /> </Box>
                             </Box>
                         </Box>
                     </CardContent>
@@ -123,30 +123,30 @@ export default function Profile() {
                             <Box className="d-flex">
                                 <Box> <School /> </Box>
                                 <Box className="ml-1">
-                                    <Typography>School: University of Tronto</Typography>
+                                    <Typography>School: {userData.school}</Typography>
                                 </Box>
-                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
+                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" onClick={() => openModal("school", "text")} /> </Box>
                             </Box>
                             <Box className="d-flex">
                                 <Box> <Rotate90DegreesCcw /> </Box>
                                 <Box className="ml-1">
-                                    <Typography> Degree/Diploma/Certificate: Degree</Typography>
+                                    <Typography> Degree/Diploma/Certificate: {userData.degree}</Typography>
                                 </Box>
-                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
+                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" onClick={() => openModal("degree", "text")} /> </Box>
                             </Box>
                             <Box className="d-flex">
                                 <Box> <Contactless /> </Box>
                                 <Box className="ml-1">
-                                    <Typography>Filed Of Study: Nursing</Typography>
+                                    <Typography>Filed Of Study: {userData.study_type}</Typography>
                                 </Box>
-                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
+                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" onClick={() => openModal("study_type", "text")} /> </Box>
                             </Box>
                             <Box className="d-flex">
                                 <Box> <DateRange /> </Box>
                                 <Box className="ml-1">
-                                    <Typography> Year Of Study: 2015 - 2019</Typography>
+                                    <Typography> Year Of Study: {userData.study_year}</Typography>
                                 </Box>
-                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" /> </Box>
+                                <Box className="ml-1"> <Edit className="d-flex crusor-pointer" onClick={() => openModal("study_year", "text")} /> </Box>
                             </Box>
                         </Box>
                     </CardContent>
