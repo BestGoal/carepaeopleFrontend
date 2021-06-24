@@ -94,3 +94,78 @@ export const urlData = {
         "/client-statement"
     ]
 }
+
+export const workerDocument = [
+    {
+        id: 1,
+        title: "Government Photo ID",
+    },
+    {
+        id: 2,
+        title: "Degree / Diploma / Certificate",
+    },
+    {
+        id: 3,
+        title: "Professional Licences",
+    },
+    {
+        id: 4,
+        title: "Resume",
+    },
+    {
+        id: 5,
+        title: "First Aid / CPR",
+    },
+    {
+        id: 6,
+        title: "Current COVID-19 Result",
+    },
+    {
+        id: 7,
+        title: "COVID-19 Vaccination",
+    },
+    {
+        id: 8,
+        title: "Immunization Record",
+    },
+    {
+        id: 9,
+        title: "TB Screening",
+    },
+    {
+        id: 10,
+        title: "Vulnerable Sector Check",
+    },
+    {
+        id: 11,
+        title: "Current Flu Vaccination",
+    },
+    {
+        id: 12,
+        title: "Other Vaccinations",
+    },
+    {
+        id: 13,
+        title: "Food Handler Certificate",
+    },
+    {
+        id: 14,
+        title: "N95 Mask Fit",
+    },
+    {
+        id: 15,
+        title: "CPI",
+    },
+    {
+        id: 16,
+        title: "Smart Serve",
+    },
+    {
+        id: 17,
+        title: "Work Authorization",
+    },
+    {
+        id: 18,
+        title: "Additional Documents",
+    }
+]

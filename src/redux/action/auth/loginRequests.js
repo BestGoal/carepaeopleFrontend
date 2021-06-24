@@ -51,8 +51,7 @@ export const sessionCheck = async () => {
 
 export const socketInit = () => {
     return async (dispatch, getState) => {
-        let userData = getState().auth.userData;
-        console.log(userData)
+        // let userData = getState().auth.userData;
         // if(userData.permission === permissionData.worker) {
         //     history.push("/worker-home")    
         // } else if(userData.permission === permissionData.client) {
