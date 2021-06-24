@@ -68,10 +68,17 @@ export default function ClientPost({ status }) {
                 date = new Date(`${d.getFullYear() + 1} 1`)
             }
         } else {
+            let tDay = 1;
             if (m > 1) {
-                date = new Date(`${d.getFullYear()} ${m - 1}`)
+                if(d.getFullYear() === new Date().getFullYear() && m-1 === new Date().getMonth() + 1) {
+                    tDay = new Date().getDate()                   
+                }
+                date = new Date(`${d.getFullYear()} ${m - 1} ${tDay}`)
             } else {
-                date = new Date(`${d.getFullYear() - 1} 12`)
+                if(d.getFullYear()-1 === new Date().getFullYear() && 12 === new Date().getMonth() + 1) {
+                    tDay = new Date().getDate()                   
+                }
+                date = new Date(`${d.getFullYear() - 1} 12 ${tDay}`)
             }
         }
         if (cdv <= new Date(date).valueOf()) {
@@ -93,7 +100,7 @@ export default function ClientPost({ status }) {
         let cy = cd.getFullYear();
         let cm = cd.getMonth();
 
-        console.log(y, cy, m, cm, cd.getDate(), day)
+        // console.log(y, cy, m, cm, cd.getDate(), day)
 
         if(y === cy && m === cm && cd.getDate() > day) {
             return "disable-num"

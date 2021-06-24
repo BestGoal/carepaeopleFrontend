@@ -11,8 +11,7 @@ import Description from "@material-ui/icons/Description"
 import HighlightOff from "@material-ui/icons/HighlightOff"
 import Modal from 'react-modal';
 import { workerDocument } from "../../../../configs/index"
-import { getWorkerDocument, addWorkerDocument, getWorkerDocumentWithId, removeWorkerDocumentWithId, sendDownload } from "../../../../redux/action/profile/profileRequest"
-import { Root } from "../../../../pre/config";
+import { getWorkerDocument, addWorkerDocument, getWorkerDocumentWithId, removeWorkerDocumentWithId } from "../../../../redux/action/profile/profileRequest"
 
 const customStyles = {
 	content: {
@@ -68,17 +67,13 @@ export default function WorkerDocumentPage() {
 			setMode(true);
 		}
 	}
-	
+
 	const removeDocument = async (url) => {
 		let data = await removeWorkerDocumentWithId(url, currentDocumentType, dispatch)
 		if (data) {
 			setDocumentDataWithId(data)
 			loadFunction()
 		}
-	}
-
-	const download = (url) => {
-		sendDownload(url);
 	}
 
 	const DocumentItemRender = ({ item }) => {
@@ -133,14 +128,12 @@ export default function WorkerDocumentPage() {
 					</Grid>
 					{
 						documentDataWithId.document?.map((key, item) => (
-							<Grid item md={3} sm={4} xs={12} key={key}>
-								<Box className="d-flex align-items-center">
-									<Box onClick={()=>download(documentDataWithId.document[item].url)} className="d-flex crusor-pointer">
-										<Description />
-										<Typography>{documentDataWithId.document[item].fileName}</Typography>
-									</Box>
-									<HighlightOff className="crusor-pointer" onClick={() => removeDocument(documentDataWithId.document[item].url)} />
-								</Box>
+							<Grid item md={3} sm={4} xs={12} key={key} className="d-flex align-items-center">
+								<a href={documentDataWithId.document[item].url} download={documentDataWithId.document[item].url} className="d-flex crusor-pointer modal-a-download">
+									<Description />
+									<Typography className="letter-cut-dot">{documentDataWithId.document[item].fileName}</Typography>
+								</a>
+								<HighlightOff className="crusor-pointer" onClick={() => removeDocument(documentDataWithId.document[item].url)} />
 							</Grid>
 						))
 					}

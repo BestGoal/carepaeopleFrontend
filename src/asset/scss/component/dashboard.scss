@@ -275,3 +275,13 @@
 .ReactModal__Overlay {
     z-index: 99;
 }
+.modal-a-download{
+    width: calc(100% - 20px);
+    .letter-cut-dot{
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin: 0;
+    }
+}

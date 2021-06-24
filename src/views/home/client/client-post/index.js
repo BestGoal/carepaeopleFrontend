@@ -11,6 +11,7 @@ import ModifiedDatePicker from "./modifiedDatePicker"
 import ArrowDownward from "@material-ui/icons/ArrowDownward"
 import ArrowUpward from "@material-ui/icons/ArrowUpward"
 import Add from "@material-ui/icons/Add"
+import { locationData } from "../../../../configs/index"
 
 export default function ClientPost() {
 
@@ -46,42 +47,6 @@ export default function ClientPost() {
         setRateData(tempRateData);
     }, [])
 
-    const locationData = [
-        { title: 'Chiropractor', value: 25 },
-        { title: 'Chiropractic  Assistant', value: 25 },
-        { title: 'Dietary Aide', value: 25 },
-        { title: 'Dentist', value: 25 },
-        { title: 'Dental Hygienist', value: 25 },
-        { title: 'Dental Assistant', value: 25 },
-        { title: 'Health Care Aide', value: 25 },
-        { title: 'Home Health Aide', value: 25 },
-        { title: 'Laboratory Technician', value: 25 },
-        { title: 'Massage Therapist', value: 25 },
-        { title: 'Nurse Practitioner', value: 25 },
-        { title: 'Occupational Therapist', value: 25 },
-        { title: 'Occupational Therapy Assistant', value: 25 },
-        { title: 'Osteopath', value: 25 },
-        { title: 'Physical Therapist', value: 25 },
-        { title: 'Physical Therapy Assistant', value: 25 },
-        { title: 'Psychiatrist', value: 25 },
-        { title: 'Psychiatry Physician Assistant', value: 25 },
-        { title: 'Psychologist', value: 25 },
-        { title: 'Physician ', value: 25 },
-        { title: 'Physician Assistant', value: 25 },
-        { title: 'Pharmacist', value: 25 },
-        { title: 'Pharmacy Assistant', value: 25 },
-        { title: 'Physiotherapist', value: 25 },
-        { title: 'Physiotherapy Assistant', value: 25 },
-        { title: 'Personal Support Worker ', value: 25 },
-        { title: 'Personal Care Aide', value: 25 },
-        { title: 'Registered Nurse', value: 25 },
-        { title: 'Registered Practical Nurse', value: 25 },
-        { title: 'Radiologist', value: 25 },
-        { title: 'Radiographer', value: 25 },
-        { title: 'Residential Care Aide', value: 25 },
-        { title: 'Speech Language Therapist', value: 25 },
-    ]
-
     const breakData = [
         { title: 'No Break', value: 0 },
         { title: '30 Minute', value: 1 },
@@ -105,9 +70,9 @@ export default function ClientPost() {
     ]
 
     return (
-        <Container className="container pt-2 client-home">
+        <Container className="container pt-2 client-home pb-1">
             <Typography variant="h5" className="text-align-center font-weight-bold"> POST SHIFTS </Typography>
-            <Box className="main-container theme-border theme-box-shadow theme-border-radius client-post">
+            <Box className="main-container theme-border theme-box-shadow theme-border-radius client-post p-3">
                 <Grid container>
                     <Grid item sm={4} xs={12}>
                         <Typography className="post-item-header">JOB POSITION</Typography>

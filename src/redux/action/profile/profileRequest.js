@@ -52,7 +52,3 @@ export const removeWorkerDocumentWithId = async (url, documentId, dispatch) => {
         return false;
     }
 }
-
-export const sendDownload = async (url) => {
-    Axios("GET", "", `api/profile/document/download?url=${url}`)
-}
