@@ -108,6 +108,8 @@ export default function ClientPost() {
                 return "Rate can't small than 1"
             } else if(!positionData.address.length) {
                 return "Address count can't small than 1"
+            } else if(!positionData.date.length) {
+                return "Date count can't small than 1"
             }
             return true;
         }
