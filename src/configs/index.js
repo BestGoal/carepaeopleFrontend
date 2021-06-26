@@ -169,3 +169,25 @@ export const workerDocument = [
         title: "Additional Documents",
     }
 ]
+
+export const breakData = [
+    { title: 'No Break', value: 0 },
+    { title: '30 Minute', value: 1 },
+    { title: '45 Minute', value: 2 },
+    { title: '60 Minute', value: 3 },
+    { title: '120 Minute', value: 4 },
+]
+
+export const transitData = [
+    { title: 'None', value: 0 },
+    { title: '1 Hour', value: 1 },
+    { title: '2 Hour', value: 2 },
+    { title: '3 Hour', value: 3 },
+    { title: '4 Hour', value: 4 },
+    { title: '5 Hour', value: 5 },
+    { title: '6 Hour', value: 6 },
+    { title: '7 Hour', value: 7 },
+    { title: '8 Hour', value: 8 },
+    { title: '9 Hour', value: 9 },
+    { title: '10 Hour', value: 10 },
+]

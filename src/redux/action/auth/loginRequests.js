@@ -1,7 +1,5 @@
 import { toast } from "react-toastify"
 import Axios from "../../../pre/request"
-// import { permissionData } from "../../../configs/index"
-// import { history } from "../../../history";
 
 export const SignUpRequest = async (sendData, dispatch) => {
     let rdata = await Axios("POST", sendData, "api/auth/signup", dispatch, true)

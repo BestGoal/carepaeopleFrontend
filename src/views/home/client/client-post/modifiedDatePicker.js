@@ -18,11 +18,10 @@ import { toast } from 'react-toastify';
 
 const monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-export default function ClientPost({ status }) {
+export default function ClientPost({ status, dateData, updatePosition }) {
 
     const [cDate, setCDate] = useState(String(new Date()))
     const [dateNums, setDateNums] = useState([])
-    const [dateData, setDateData] = useState([])
     const [multiClock, setMultiClock] = useState(false)
 
     useEffect(() => {
@@ -99,8 +98,6 @@ export default function ClientPost({ status }) {
         let cd = new Date(cDate);
         let cy = cd.getFullYear();
         let cm = cd.getMonth();
-
-        // console.log(y, cy, m, cm, cd.getDate(), day)
 
         if(y === cy && m === cm && cd.getDate() > day) {
             return "disable-num"
@@ -187,6 +184,10 @@ export default function ClientPost({ status }) {
         } else {
             toast.error("End time have to big than start time.");
         }
+    }
+
+    const setDateData = (param) => {
+        updatePosition("date", param)
     }
 
     return (
