@@ -3,5 +3,5 @@ export const Root = process.env.NODE_ENV === "development" ? {
 }
 :
 {
-    adminUrl: "https://carepeople.ca/",
+    adminUrl: "https://careshifts.ca/",
 }
