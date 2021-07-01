@@ -117,7 +117,7 @@ export default function SetAvailable() {
             <Box className="mt-3">
                 <Typography className="text-align-center font-weight-bold" variant="h5"> SELECT THE DAYS AND TIMING OF YOUR AVAILABILITY </Typography>
             </Box>
-            {
+            { 
                 data.map((item, key) => (
                     <Grid key={key} container className={clsx("theme-border theme-border-radius p-1 mt-1", !item.flag && "bg-eee")}>
                         <Grid item md={4} className="d-flex justify-content-between align-items-center">
