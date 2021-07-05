@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import Container from "@material-ui/core/Container"
 import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography"
@@ -14,23 +15,25 @@ import LocationOn from "@material-ui/icons/LocationOn"
 import Warning from "@material-ui/icons/Warning"
 import ShiftNote from "../../../worker/worker-home/available/ShiftNote"
 import { Root } from "../../../../../pre/config"
+import { getShiftDirect } from "../../../../../redux/action/client/shifts/index"
+import { locationData, breakData, transitData, dutyData } from "../../../../../configs/index"
 
 export default function ClientShiftsPosts() {
 
-    const data = [
-        {
-            shiftName: "UHN-TORONTO WESTERN-ON",
-            avatar: "avatar/1.jpg"
-        },
-        {
-            shiftName: "Winner's LifeCare center brantford-on",
-            avatar: "avatar/2.jpg"
-        },
-        {
-            shiftName: "Denis's LifeCare center brantford-on",
-            avatar: "avatar/3.jpg"
-        }
-    ]
+    const dispatch = useDispatch();
+    const userData = useSelector(state => state.auth.userData)
+    const [data, setData] = useState([])
+
+
+    useEffect(() => {
+        load()
+    }, [])
+
+    const load = async () => {
+        let rdata = await getShiftDirect(dispatch)
+        setData(rdata)
+        console.log(rdata)
+    }
 
     return (
         <Container className="container pt-2 mb-1 worker-home p-1">
@@ -43,11 +46,13 @@ export default function ClientShiftsPosts() {
                         <Box className="p-2">
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <Typography className="text-align-center" variant="h5"> {item.shiftName} </Typography>
-                                    <Typography className="text-align-center"> Personal Care Aide ( PCA ) </Typography>
+                                    <Typography className="text-align-center" variant="h5"> {`${userData.firstName} ${userData.lastName}`} </Typography>
+                                    <Typography className="text-align-center">
+                                        {`${locationData.filter(it => it.value === item.job_position)[0].title} (${dutyData.filter(it=>it.value===item.duty)[0].title})`}
+                                    </Typography>
                                 </Grid>
                                 <Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
-                                    <img src={Root.adminUrl + item.avatar} alt="" />
+                                    <img src={Root.adminUrl + userData.avatar} alt="" />
                                 </Grid>
                                 <Grid item sm={8} xs={12}>
                                     <Grid container spacing={3}>
@@ -63,7 +68,7 @@ export default function ClientShiftsPosts() {
                                                 </Box>
                                                 <Box className="d-flex align-items-center">
                                                     <AvTimer />
-                                                    <Typography className="ml-1"> Unpaid Break: 30minutes </Typography>
+                                                    <Typography className="ml-1">{`Unpaid Break: ${breakData.filter(it=>it.value===item.unpaid_break)[0].title}`}</Typography>
                                                 </Box>
                                                 <Box className="d-flex align-items-center">
                                                     <Payment />
@@ -85,9 +90,9 @@ export default function ClientShiftsPosts() {
                         </Box>
                         <Box className="p-1 d-flex justify-content-center bg-eee">
                             <LocationOn />
-                            <Typography className="ml-1"> 399 Bathurst St, Toronto, ON M5T 2S8, Canada  </Typography>
+                            <Typography className="ml-1">{`${item.address[0]}`}</Typography>
                         </Box>
-                        <ShiftNote />
+                        <ShiftNote data={item.note} />
                         <Box className="d-flex">
                             <Button fullWidth variant="contained" className="accept bg-theme color-white border-radius-0">EDIT</Button>
                             <Button fullWidth variant="contained" className="accept border-radius-0">Cancel</Button>

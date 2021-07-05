@@ -14,7 +14,7 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward"
 import Add from "@material-ui/icons/Add"
 import { toast } from "react-toastify"
 import TempAddress from "./tempAddress"
-import { locationData, breakData, transitData } from "../../../../configs/index"
+import { locationData, breakData, transitData, dutyData } from "../../../../configs/index"
 import { postShiftDirect } from "../../../../redux/action/client/shifts/index"
 
 export default function ClientPost() {
@@ -32,7 +32,8 @@ export default function ClientPost() {
         transit_allowance: 0,
         address: [
             `${userData.streetNumber} ${userData.streetName} ${userData.city} ${userData.province} ${userData.zipcode} ${userData.country}`
-        ]
+        ],
+        duty: dutyData[0].value
     }
 
     const [positionData, setPositionData] = useState(templateShift)
@@ -84,7 +85,7 @@ export default function ClientPost() {
                 setTempAddress("")
             } else if (string) {
                 let address = [...positionData.address, ...[string]];
-                setPositionData(Object.assign({}, positionData, { address }));                
+                setPositionData(Object.assign({}, positionData, { address }));
             } else {
                 toast.error("Can't add empty address")
             }
@@ -102,22 +103,22 @@ export default function ClientPost() {
     const postShift = (flag) => {
 
         const validator = () => {
-            if(positionData.vacancies <= 0) {
+            if (positionData.vacancies <= 0) {
                 return "Vacancies can't small than 1"
-            } else if(positionData.rate <= 0) {
+            } else if (positionData.rate <= 0) {
                 return "Rate can't small than 1"
-            } else if(!positionData.address.length) {
+            } else if (!positionData.address.length) {
                 return "Address count can't small than 1"
-            } else if(!positionData.date.length) {
+            } else if (!positionData.date.length) {
                 return "Date count can't small than 1"
             }
             return true;
         }
         let cflag = validator();
 
-        if(flag) {
+        if (flag) {
             let rdata = postShiftDirect(positionData, dispatch);
-            if(rdata) {
+            if (rdata) {
                 setPositionData(templateShift)
             }
         } else {
@@ -177,6 +178,19 @@ export default function ClientPost() {
                                     :
                                     <TextField fullWidth type="number" variant="outlined" value={positionData.rate} onChange={(e) => updatePosition("rate", e.currentTarget.value)} />
                             }
+                        </Box>
+                    </Grid>
+                    <Grid item sm={12} xs={12}>
+                        <Typography className="post-item-header">DUTY OF THE WORKER</Typography>
+                        <Box className="p-1 pl-0">
+                            <Autocomplete
+                                fullWidth
+                                options={dutyData}
+                                getOptionLabel={(option) => option.title}
+                                value={dutyData.filter(it => it.value === positionData.duty)[0]}
+                                renderInput={(params) => <TextField {...params} variant="outlined" />}
+                                onChange={(e, v) => updatePosition("job_position", v?.value)}
+                            />
                         </Box>
                     </Grid>
                     <Grid item xs={12}>
@@ -258,8 +272,8 @@ export default function ClientPost() {
                             </> : <></>
                     }
                     <Grid item xs={12} className="d-flex justify-content-between mt-1">
-                        <Button fullWidth className="bg-theme color-white" onClick={()=>postShift(false)}>REQUEST DEDICATED POOL</Button>
-                        <Button fullWidth className="bg-theme color-white ml-1" onClick={()=>postShift(true)}>POST DIRECT SHIFTS</Button>
+                        <Button fullWidth className="bg-theme color-white" onClick={() => postShift(false)}>REQUEST DEDICATED POOL</Button>
+                        <Button fullWidth className="bg-theme color-white ml-1" onClick={() => postShift(true)}>POST DIRECT SHIFTS</Button>
                     </Grid>
                     <Typography className="mt-1 text-align-center">Please note that 15% admin fee will be added to the rate.</Typography>
                 </Grid>

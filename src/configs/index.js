@@ -191,3 +191,9 @@ export const transitData = [
     { title: '9 Hour', value: 9 },
     { title: '10 Hour', value: 10 },
 ]
+
+export const dutyData = [
+    { title: 'Floor Duty', value: 0 },
+    { title: 'One On One', value: 1 },
+    { title: 'Companion', value: 2 }
+]

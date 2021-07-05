@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography"
 import Add from "@material-ui/icons/Add"
 import Remove from "@material-ui/icons/Remove"
 
-export default function ShiftNote() {
+export default function ShiftNote({data}) {
 
     const [mode, setMode] = React.useState(false)
     
@@ -22,12 +22,7 @@ export default function ShiftNote() {
                 </Box>
                 {
                     mode && 
-                        <span className="mt-1">
-                            I want to good norse.
-                            who can work for my patianet.
-                            He have to good idea about shift and have more experience.
-                            Thanks
-                        </span>
+                        <span className="mt-1">{data}</span>
                 }
             </CardContent>
         </Card>

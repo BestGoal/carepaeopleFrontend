@@ -33,10 +33,10 @@ export default function ClientPost({ status, dateData, updatePosition }) {
         let day = cd.getDate();
         let date = new Date(`${cy} ${cm} ${day}`).toLocaleDateString()
         setDateData([
-            { 
+            {
                 date,
-                start: new Date(date+" 06:00:00 AM").toLocaleTimeString(),
-                end: new Date(date+" 10:00:00 AM").toLocaleTimeString(),
+                start: new Date(date + " 06:00:00 AM").toLocaleTimeString(),
+                end: new Date(date + " 10:00:00 AM").toLocaleTimeString(),
             }
         ])
     }, [status])
@@ -69,13 +69,13 @@ export default function ClientPost({ status, dateData, updatePosition }) {
         } else {
             let tDay = 1;
             if (m > 1) {
-                if(d.getFullYear() === new Date().getFullYear() && m-1 === new Date().getMonth() + 1) {
-                    tDay = new Date().getDate()                   
+                if (d.getFullYear() === new Date().getFullYear() && m - 1 === new Date().getMonth() + 1) {
+                    tDay = new Date().getDate()
                 }
                 date = new Date(`${d.getFullYear()} ${m - 1} ${tDay}`)
             } else {
-                if(d.getFullYear()-1 === new Date().getFullYear() && 12 === new Date().getMonth() + 1) {
-                    tDay = new Date().getDate()                   
+                if (d.getFullYear() - 1 === new Date().getFullYear() && 12 === new Date().getMonth() + 1) {
+                    tDay = new Date().getDate()
                 }
                 date = new Date(`${d.getFullYear() - 1} 12 ${tDay}`)
             }
@@ -99,9 +99,9 @@ export default function ClientPost({ status, dateData, updatePosition }) {
         let cy = cd.getFullYear();
         let cm = cd.getMonth();
 
-        if(y === cy && m === cm && cd.getDate() > day) {
+        if (y === cy && m === cm && cd.getDate() > day) {
             return "disable-num"
-        } else if (dateData.findIndex(item => item.date === new Date(`${cy} ${cm} ${day}`).toLocaleDateString()) > -1){
+        } else if (dateData.findIndex(item => item.date === new Date(`${cy} ${cm} ${day}`).toLocaleDateString()) > -1) {
             return "enable-item"
         } else {
             return ""
@@ -110,7 +110,7 @@ export default function ClientPost({ status, dateData, updatePosition }) {
 
     const makeDateData = async (day) => {
         let flag = await checkDate(day);
-        if(flag === "disable-num") {
+        if (flag === "disable-num") {
             return;
         }
         let tempDateData = dateData;
@@ -119,67 +119,70 @@ export default function ClientPost({ status, dateData, updatePosition }) {
         let cm = cd.getMonth();
         let date = new Date(`${cy} ${cm} ${day}`).toLocaleDateString()
         let index = tempDateData.findIndex(item => item.date === date)
-        if(index > -1) {
+        if (index > -1) {
             let dtData = []
             tempDateData = tempDateData.slice(index, 1)
-            for(let i = 0 ; i < dateData.length ; i ++) {
-                if(index !== i) {
+            for (let i = 0; i < dateData.length; i++) {
+                if (index !== i) {
                     dtData.push(dateData[i])
                 }
             }
             setDateData(dtData)
         } else {
-            if(status) {
+            if (status) {
                 setDateData([
-                    { 
+                    {
                         date,
-                        start: new Date(date+" 06:00:00 AM").toLocaleTimeString(),
-                        end: new Date(date+" 10:00:00 AM").toLocaleTimeString(),
+                        start: new Date(date + " 06:00:00 AM").toLocaleTimeString(),
+                        end: new Date(date + " 10:00:00 AM").toLocaleTimeString(),
                     }
                 ])
             } else {
-                setDateData([ ...tempDateData, ...[
+                let modifiedTempData = [...tempDateData, ...[
                     {
                         date,
-                        start: new Date(date+" 06:00:00 AM").toLocaleTimeString(),
-                        end: new Date(date+" 10:00:00 AM").toLocaleTimeString(),
+                        start: new Date(date + " 06:00:00 AM").toLocaleTimeString(),
+                        end: new Date(date + " 10:00:00 AM").toLocaleTimeString(),
                     }
-                ]])
+                ]]
+                modifiedTempData.sort((a, b) => { return new Date(a.date) < new Date(b.date) ? -1 : 1 })
+                setDateData(modifiedTempData)
             }
         }
     }
 
     const makeMultiClick = () => {
         let tempDateData = dateData;
-        if(multiClock) {
-            for (let i = 0 ; i < tempDateData.length ; i ++) {
+        if (multiClock) {
+            for (let i = 0; i < tempDateData.length; i++) {
                 tempDateData[i].start = new Date(tempDateData[i].date + " 06:00:00 AM").toLocaleTimeString()
                 tempDateData[i].end = new Date(tempDateData[i].date + " 10:00:00 AM").toLocaleTimeString()
             }
         }
-        setDateData([ ...tempDateData ])
+        tempDateData.sort((a, b) => { return new Date(a.date) < new Date(b.date) ? -1 : 1 })
+        setDateData([...tempDateData])
         setMultiClock(!multiClock)
     }
 
     const changeTimeFunc = (item = false, start, end) => {
         let cs = new Date(new Date().toLocaleDateString() + " " + start).valueOf()
         let ce = new Date(new Date().toLocaleDateString() + " " + end).valueOf()
-        if(cs < ce) {
-            if(item) {
+        if (cs < ce) {
+            if (item) {
                 let tempDateData = dateData;
                 let index = tempDateData.findIndex(it => it.date === item.date);
-                if(index > -1) {
+                if (index > -1) {
                     tempDateData[index].start = start;
                     tempDateData[index].end = end;
                 }
-                setDateData([ ...tempDateData ])
+                setDateData([...tempDateData])
             } else {
                 let tempDateData = dateData;
-                for(let i = 0 ; i < tempDateData.length ; i ++) {
+                for (let i = 0; i < tempDateData.length; i++) {
                     tempDateData[i].start = start;
                     tempDateData[i].end = end;
                 }
-                setDateData([ ...tempDateData ])
+                setDateData([...tempDateData])
             }
         } else {
             toast.error("End time have to big than start time.");
@@ -200,15 +203,15 @@ export default function ClientPost({ status, dateData, updatePosition }) {
                 </Grid>
                 {
                     (!status && dateData.length > 1) &&
-                        <Grid 
-                            xs={6} 
-                            item 
-                            className="d-flex align-items-center justify-content-center crusor-pointer" 
-                            onClick={()=>makeMultiClick()}
-                        >
-                            <Checkbox color="primary" checked={multiClock} />
-                            <Typography>Select different timings for each day</Typography>
-                        </Grid>
+                    <Grid
+                        xs={6}
+                        item
+                        className="d-flex align-items-center justify-content-center crusor-pointer"
+                        onClick={() => makeMultiClick()}
+                    >
+                        <Checkbox color="primary" checked={multiClock} />
+                        <Typography>Select different timings for each day</Typography>
+                    </Grid>
                 }
             </Grid>
             <TableContainer component={Paper} className="modify-tbl">
@@ -220,9 +223,9 @@ export default function ClientPost({ status, dateData, updatePosition }) {
                                     {
                                         dateItem.map((dtItem, dtkey) => (
                                             <TableCell align="center" key={dtkey}>
-                                                <IconButton 
-                                                    className={clsx("date-num", checkDate(dtItem))} 
-                                                    color="inherit" 
+                                                <IconButton
+                                                    className={clsx("date-num", checkDate(dtItem))}
+                                                    color="inherit"
                                                     onClick={() => makeDateData(dtItem)}
                                                 >
                                                     <Typography className="fs-1 font-weight-bold">{dtItem}</Typography>
@@ -236,10 +239,10 @@ export default function ClientPost({ status, dateData, updatePosition }) {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <ModifyClocks 
-                multiClock={multiClock} 
-                dateData={dateData} 
-                changeTimeFunc={changeTimeFunc} 
+            <ModifyClocks
+                multiClock={multiClock}
+                dateData={dateData}
+                changeTimeFunc={changeTimeFunc}
                 makeMultiClick={makeMultiClick}
             />
         </Box>

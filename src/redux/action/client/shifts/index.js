@@ -11,3 +11,12 @@ export const postShiftDirect = async (sendData, dispatch) => {
         return false;
     }
 }
+
+export const getShiftDirect = async (dispatch) => {
+    let rdata = await Axios("POST", "", "api/client/get-shift", dispatch, true)
+    if (rdata.status) {
+        return rdata.data
+    } else {
+        return [];
+    }
+}
