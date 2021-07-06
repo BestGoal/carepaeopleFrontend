@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 
 export default function WorkerMessage() {
     return (
-        <Container className="mt-4 mb-1 p-0">
+        <Container className="p-1">
             <Box>
                 <Typography className="text-align-center font-weight-bold" variant="h6">GENERAL MESSAGE</Typography>
             </Box>

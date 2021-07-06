@@ -1,8 +1,8 @@
 import React from "react"
 import Box from "@material-ui/core/Box"
 import Profile from "./profile.js"
-import Upcoming from "./upcoming.js"
-import Available from "./available/index"
+import Upcoming from "../worker-shift/currentSchedule/index"
+import Available from "../worker-shift/available/index"
 import Message from "./message.js"
 
 export default function WorkerHome() {

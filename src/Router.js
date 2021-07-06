@@ -21,7 +21,7 @@ const WorkerDocument = lazy(() => import("./views/home/worker/worker-document/in
 const WorkerReference = lazy(() => import("./views/home/worker/worker-reference/index"));
 
 const WorkerShiftProgress = lazy(() => import("./views/home/worker/worker-shift/progress/index"));
-const WorkerUpcomingShift = lazy(() => import("./views/home/worker/worker-shift/upcoming/index"));
+const WorkerUpcomingShift = lazy(() => import("./views/home/worker/worker-shift/currentSchedule/index"));
 const WorkerShiftHistory = lazy(() => import("./views/home/worker/worker-shift/history/index"));
 const WorkerShiftAvailable = lazy(() => import("./views/home/worker/worker-shift/available/index"));
 
