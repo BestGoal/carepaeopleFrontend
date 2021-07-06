@@ -69,7 +69,7 @@ export default function ClientPost() {
 
         let tempRateData = [];
         for (let i = 15; i <= 100; i++) {
-            tempRateData.push({ title: `${i}$ per hour`, value: i });
+            tempRateData.push({ title: `$${i} per hour`, value: i });
         }
         tempRateData.push({ title: "Other", value: 0 });
         setRateData(tempRateData);

@@ -1,4 +1,5 @@
 export const locationData = [
+    { title: 'Personal Support Worker / Personal Care Aide', value: 26 },
     { title: 'Chiropractor', value: 1 },
     { title: 'Chiropractic  Assistant', value: 2 },
     { title: 'Dietary Aide', value: 3 },
@@ -24,7 +25,6 @@ export const locationData = [
     { title: 'Pharmacy Assistant', value: 23 },
     { title: 'Physiotherapist', value: 24 },
     { title: 'Physiotherapy Assistant', value: 25 },
-    { title: 'Personal Support Worker / Personal Care Aide', value: 26 },
     { title: 'Registered Nurse', value: 27 },
     { title: 'Registered Practical Nurse', value: 28 },
     { title: 'Radiologist', value: 29 },
@@ -172,11 +172,11 @@ export const workerDocument = [
 ]
 
 export const breakData = [
-    { title: 'No Break', value: 0, time: 0 },
-    { title: '30 Minute', value: 1, time: 0.5 },
-    { title: '45 Minute', value: 2, time: 0.75 },
-    { title: '60 Minute', value: 3, time: 1 },
-    { title: '120 Minute', value: 4, time: 2 },
+    { title: 'None', value: 0, time: 0 },
+    { title: '30 Minutes', value: 1, time: 0.5 },
+    { title: '45 Minutes', value: 2, time: 0.75 },
+    { title: '60 Minutes', value: 3, time: 1 },
+    { title: '120 Minutes', value: 4, time: 2 },
 ]
 
 export const transitData = [
