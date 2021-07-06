@@ -15,31 +15,38 @@ import ArrowRight from "@material-ui/icons/ArrowRight"
 import ModifyClocks from "./modifyClock"
 import clsx from "clsx"
 import { toast } from 'react-toastify';
+import { monthArray } from "../../../../configs/index"
 
-const monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-
-export default function ClientPost({ status, dateData, updatePosition }) {
+export default function ClientPost({ status, dateData = [], updatePosition }) {
 
     const [cDate, setCDate] = useState(String(new Date()))
     const [dateNums, setDateNums] = useState([])
     const [multiClock, setMultiClock] = useState(false)
-
+    /*eslint-disable */
     useEffect(() => {
         makeDateNums(new Date().valueOf())
         setMultiClock(false)
         let cd = new Date();
         let cy = cd.getFullYear();
-        let cm = cd.getMonth();
+        let cm = cd.getMonth() + 1;
         let day = cd.getDate();
         let date = new Date(`${cy} ${cm} ${day}`).toLocaleDateString()
         setDateData([
             {
                 date,
                 start: new Date(date + " 06:00:00 AM").toLocaleTimeString(),
-                end: new Date(date + " 10:00:00 AM").toLocaleTimeString(),
+                end: new Date(date + " 06:00:00 PM").toLocaleTimeString(),
             }
         ])
     }, [status])
+
+    // useEffect(() => {
+    //     if(!dateData.length) {
+    //         makeDateData(new Date().getDate())
+    //     }
+    // }, [])
+    
+    /*eslint-enable */
 
     const makeDateNums = (date) => {
         let data = [
@@ -94,10 +101,10 @@ export default function ClientPost({ status, dateData, updatePosition }) {
     const checkDate = (day) => {
         let d = new Date();
         let y = d.getFullYear();
-        let m = d.getMonth();
+        let m = d.getMonth() + 1;
         let cd = new Date(cDate);
         let cy = cd.getFullYear();
-        let cm = cd.getMonth();
+        let cm = cd.getMonth() + 1;
 
         if (y === cy && m === cm && cd.getDate() > day) {
             return "disable-num"
@@ -116,7 +123,7 @@ export default function ClientPost({ status, dateData, updatePosition }) {
         let tempDateData = dateData;
         let cd = new Date(cDate);
         let cy = cd.getFullYear();
-        let cm = cd.getMonth();
+        let cm = cd.getMonth() + 1;
         let date = new Date(`${cy} ${cm} ${day}`).toLocaleDateString()
         let index = tempDateData.findIndex(item => item.date === date)
         if (index > -1) {
@@ -134,7 +141,7 @@ export default function ClientPost({ status, dateData, updatePosition }) {
                     {
                         date,
                         start: new Date(date + " 06:00:00 AM").toLocaleTimeString(),
-                        end: new Date(date + " 10:00:00 AM").toLocaleTimeString(),
+                        end: new Date(date + " 06:00:00 PM").toLocaleTimeString(),
                     }
                 ])
             } else {
@@ -142,7 +149,7 @@ export default function ClientPost({ status, dateData, updatePosition }) {
                     {
                         date,
                         start: new Date(date + " 06:00:00 AM").toLocaleTimeString(),
-                        end: new Date(date + " 10:00:00 AM").toLocaleTimeString(),
+                        end: new Date(date + " 06:00:00 PM").toLocaleTimeString(),
                     }
                 ]]
                 modifiedTempData.sort((a, b) => { return new Date(a.date) < new Date(b.date) ? -1 : 1 })
@@ -156,7 +163,7 @@ export default function ClientPost({ status, dateData, updatePosition }) {
         if (multiClock) {
             for (let i = 0; i < tempDateData.length; i++) {
                 tempDateData[i].start = new Date(tempDateData[i].date + " 06:00:00 AM").toLocaleTimeString()
-                tempDateData[i].end = new Date(tempDateData[i].date + " 10:00:00 AM").toLocaleTimeString()
+                tempDateData[i].end = new Date(tempDateData[i].date + " 06:00:00 PM").toLocaleTimeString()
             }
         }
         tempDateData.sort((a, b) => { return new Date(a.date) < new Date(b.date) ? -1 : 1 })

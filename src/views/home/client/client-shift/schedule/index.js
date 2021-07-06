@@ -13,7 +13,7 @@ import SkipPrevious from "@material-ui/icons/SkipPrevious"
 import LocationOn from "@material-ui/icons/LocationOn"
 import Warning from "@material-ui/icons/Warning"
 
-import ShiftNote from "../../../worker/worker-home/available/ShiftNote"
+import ShiftNote from "../../../../baseComponent/ShiftNote"
 import { Root } from "../../../../../pre/config"
 
 export default function WorkerCurrentShift() {

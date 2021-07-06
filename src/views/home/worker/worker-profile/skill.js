@@ -17,12 +17,12 @@ export default function Profile() {
             <Card className="p-2 theme-border theme-box-shadow">
                 <CardContent>
                     <Box className="pb-1">
-                        <Typography className="text-align-center font-weight-bold" variant="h5"> SKILLS </Typography>
+                        <Typography className="text-align-center font-weight-bold" variant="h5"> JOB POSITION </Typography>
                     </Box>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <Box className="theme-border theme-border-radius p-2">
-                                <Typography variant="h6" className="text-align-center">{`( ${locationData.filter(item=>item.value === Number(userData.jobPosition))[0].title} )`}</Typography>
+                                <Typography variant="h6" className="text-align-center">{`${locationData.filter(item=>item.value === Number(userData.jobPosition))[0].title}`}</Typography>
                             </Box>
                         </Grid>
                     </Grid>

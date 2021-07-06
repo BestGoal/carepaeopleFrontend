@@ -37,10 +37,11 @@ export default function WorkerDocumentPage() {
 		let data = await getWorkerDocument(dispatch)
 		setDocumentData(data)
 	}
-
+	/*eslint-disable */
 	useEffect(() => {
 		loadFunction()
 	}, [])
+	/*eslint-enable */
 
 	const openFile = (id) => {
 		setCurrentDocumentType(id)

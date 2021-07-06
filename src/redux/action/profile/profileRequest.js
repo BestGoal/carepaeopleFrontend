@@ -24,7 +24,6 @@ export const getWorkerDocument = async (dispatch) => {
 
 export const addWorkerDocument = async (sendData, dispatch) => {
     let rdata = await Axios("POST", sendData, "api/profile/document", dispatch, true)
-    console.log(rdata)
     if (rdata.status) {
         return rdata.data
     } else {

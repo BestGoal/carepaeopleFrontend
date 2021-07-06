@@ -86,6 +86,7 @@ export const urlData = {
         "/client-dedicated-posted",
         "/client-shift-history",
         "/client-post",
+        "/client-preview",
         "/previous-workers",
         "/client-wallet",
         "/client-billing-history",
@@ -171,11 +172,11 @@ export const workerDocument = [
 ]
 
 export const breakData = [
-    { title: 'No Break', value: 0 },
-    { title: '30 Minute', value: 1 },
-    { title: '45 Minute', value: 2 },
-    { title: '60 Minute', value: 3 },
-    { title: '120 Minute', value: 4 },
+    { title: 'No Break', value: 0, time: 0 },
+    { title: '30 Minute', value: 1, time: 0.5 },
+    { title: '45 Minute', value: 2, time: 0.75 },
+    { title: '60 Minute', value: 3, time: 1 },
+    { title: '120 Minute', value: 4, time: 2 },
 ]
 
 export const transitData = [
@@ -197,3 +198,12 @@ export const dutyData = [
     { title: 'One On One', value: 1 },
     { title: 'Companion', value: 2 }
 ]
+
+export const covidData = [
+    { title: 'Negative ', value: 0 },
+    { title: 'Positive', value: 1 },
+]
+
+export const monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+export const weekData = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"]

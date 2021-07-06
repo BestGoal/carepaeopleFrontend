@@ -33,6 +33,7 @@ const WorkerBillingTax = lazy(() => import("./views/home/worker/worker-billing/t
 const ClientHome = lazy(() => import("./views/home/client/client-home/index"));
 const ClientProfile = lazy(() => import("./views/home/client/client-profile/index"));
 const ClientPost = lazy(() => import("./views/home/client/client-post/index"));
+const ClientPreview = lazy(() => import("./views/home/client/client-preview/index"));
 
 const ClientShiftProgress = lazy(() => import("./views/home/client/client-shift/progress/index"));
 const ClientShiftSchedule = lazy(() => import("./views/home/client/client-shift/schedule/index"));
@@ -195,6 +196,7 @@ class AppRouter extends React.Component {
 						<AppRoute path="/client-shift-history" exact component={ClientShiftHistory} MainLayout />
 
 						<AppRoute path="/client-post" exact component={ClientPost} MainLayout />
+						<AppRoute path="/client-preview" exact component={ClientPreview} MainLayout />
 						<AppRoute path="/previous-workers" exact component={ClientPrevious} MainLayout />
 						<AppRoute path="/client-wallet" exact component={ClientWallet} MainLayout />
 

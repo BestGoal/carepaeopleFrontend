@@ -14,18 +14,25 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward"
 import Add from "@material-ui/icons/Add"
 import { toast } from "react-toastify"
 import TempAddress from "./tempAddress"
-import { locationData, breakData, transitData, dutyData } from "../../../../configs/index"
-import { postShiftDirect } from "../../../../redux/action/client/shifts/index"
+import { locationData, breakData, transitData, dutyData, covidData } from "../../../../configs/index"
+import { sentToPreview } from "../../../../redux/action/client/shifts/index"
 
 export default function ClientPost() {
 
     const userData = useSelector(state => state.auth.userData)
+    const shiftEditData = useSelector(state => state.client.shift.shiftEditData)
     const templateShift = {
         job_position: locationData[0].value,
         vacancies: 1,
         rate: 15,
         dateType: true,
-        date: [],
+        date: [
+            {
+                date: new Date().toLocaleDateString(),
+                start: new Date(new Date().toLocaleDateString() + " 06:00:00 AM").toLocaleTimeString(),
+                end: new Date(new Date().toLocaleDateString() + " 06:00:00 PM").toLocaleTimeString(),
+            }
+        ],
         note: "",
         eventName: "",
         unpaid_break: 0,
@@ -33,7 +40,8 @@ export default function ClientPost() {
         address: [
             `${userData.streetNumber} ${userData.streetName} ${userData.city} ${userData.province} ${userData.zipcode} ${userData.country}`
         ],
-        duty: dutyData[0].value
+        duty: dutyData[0].value,
+        covid: covidData[0].value
     }
 
     const [positionData, setPositionData] = useState(templateShift)
@@ -50,6 +58,7 @@ export default function ClientPost() {
 
     const dispatch = useDispatch();
 
+    /*eslint-disable */
     useEffect(() => {
         let tempVacineData = [];
         for (let i = 1; i <= 50; i++) {
@@ -64,7 +73,15 @@ export default function ClientPost() {
         }
         tempRateData.push({ title: "Other", value: 0 });
         setRateData(tempRateData);
+
     }, [])
+
+    useEffect(() => {
+        if (Object.keys(shiftEditData).length) {
+            setPositionData(Object.assign({}, positionData, shiftEditData))
+        }
+    }, [shiftEditData])
+    /*eslint-enable */
 
     const updatePosition = (key, value) => {
         let temp = {}
@@ -108,23 +125,22 @@ export default function ClientPost() {
             } else if (positionData.rate <= 0) {
                 return "Rate can't small than 1"
             } else if (!positionData.address.length) {
-                return "Address count can't small than 1"
+                return "Please select address"
             } else if (!positionData.date.length) {
-                return "Date count can't small than 1"
+                return "Please select the date"
             }
             return true;
         }
-        let cflag = validator();
 
-        if (flag) {
-            let rdata = postShiftDirect(positionData, dispatch);
-            if (rdata) {
-                setPositionData(templateShift)
-            }
+
+        let cflag = validator();
+        if (flag && cflag === true) {
+            sentToPreview(positionData, dispatch);
         } else {
             toast.error(cflag)
         }
     }
+
 
     return (
         <Container className="container pt-2 client-home pb-1">
@@ -180,7 +196,7 @@ export default function ClientPost() {
                             }
                         </Box>
                     </Grid>
-                    <Grid item sm={12} xs={12}>
+                    <Grid item sm={4} xs={12}>
                         <Typography className="post-item-header">DUTY OF THE WORKER</Typography>
                         <Box className="p-1 pl-0">
                             <Autocomplete
@@ -188,6 +204,19 @@ export default function ClientPost() {
                                 options={dutyData}
                                 getOptionLabel={(option) => option.title}
                                 value={dutyData.filter(it => it.value === positionData.duty)[0]}
+                                renderInput={(params) => <TextField {...params} variant="outlined" />}
+                                onChange={(e, v) => updatePosition("job_position", v?.value)}
+                            />
+                        </Box>
+                    </Grid>
+                    <Grid item sm={4} xs={12}>
+                        <Typography className="post-item-header">COVID-19 STATUS</Typography>
+                        <Box className="p-1 pl-0">
+                            <Autocomplete
+                                fullWidth
+                                options={covidData}
+                                getOptionLabel={(option) => option.title}
+                                value={covidData.filter(it => it.value === positionData.covid)[0]}
                                 renderInput={(params) => <TextField {...params} variant="outlined" />}
                                 onChange={(e, v) => updatePosition("job_position", v?.value)}
                             />
