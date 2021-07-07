@@ -38,7 +38,6 @@ const ClientPreview = lazy(() => import("./views/home/client/client-preview/inde
 const ClientShiftProgress = lazy(() => import("./views/home/client/client-shift/progress/index"));
 const ClientShiftSchedule = lazy(() => import("./views/home/client/client-shift/schedule/index"));
 const ClientShiftPosted = lazy(() => import("./views/home/client/client-shift/posted/index"));
-const ClientShiftDedicated = lazy(() => import("./views/home/client/client-shift/dedicated/index"));
 const ClientShiftHistory = lazy(() => import("./views/home/client/client-shift/history/index"));
 
 const ClientWallet = lazy(() => import("./views/home/client/client-wallet/index"));
@@ -192,7 +191,6 @@ class AppRouter extends React.Component {
 						<AppRoute path="/client-shift-progress" exact component={ClientShiftProgress} MainLayout />
 						<AppRoute path="/client-shifts-schedule" exact component={ClientShiftSchedule} MainLayout />
 						<AppRoute path="/client-shift-posted" exact component={ClientShiftPosted} MainLayout />
-						<AppRoute path="/client-dedicated-posted" exact component={ClientShiftDedicated} MainLayout />
 						<AppRoute path="/client-shift-history" exact component={ClientShiftHistory} MainLayout />
 
 						<AppRoute path="/client-post" exact component={ClientPost} MainLayout />

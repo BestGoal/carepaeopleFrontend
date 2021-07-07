@@ -148,7 +148,6 @@ export default function DesktopHeader() {
                                                 <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shift-progress") }}>Shifts In Progress</MenuItem>
                                                 <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shifts-schedule") }}>Current Schedule</MenuItem>
                                                 <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shift-posted") }}>Posted Direct Shifts</MenuItem>
-                                                <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-dedicated-posted") }}>Dedicated Pool Request</MenuItem>
                                                 <MenuItem onClick={() => { setShiftMenu(null); history.push("/client-shift-history") }}>Shifts History</MenuItem>
                                             </Menu>
                                             <Button className="bg-transparent color-white text-capitalize" onClick={(e) => setBillngMenu(e.currentTarget)}>Billings</Button>

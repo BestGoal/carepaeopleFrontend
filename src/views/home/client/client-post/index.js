@@ -12,6 +12,9 @@ import ModifiedDatePicker from "./modifiedDatePicker"
 import ArrowDownward from "@material-ui/icons/ArrowDownward"
 import ArrowUpward from "@material-ui/icons/ArrowUpward"
 import Add from "@material-ui/icons/Add"
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { toast } from "react-toastify"
 import TempAddress from "./tempAddress"
 import { locationData, breakData, transitData, dutyData, covidData } from "../../../../configs/index"
@@ -117,24 +120,23 @@ export default function ClientPost() {
         }
     }
 
-    const postShift = (flag) => {
+    const postShift = () => {
 
         const validator = () => {
             if (positionData.vacancies <= 0) {
                 return "Vacancies can't small than 1"
             } else if (positionData.rate <= 0) {
                 return "Rate can't small than 1"
-            } else if (!positionData.address.length) {
-                return "Please select address"
+            } else if (!positionData.address.length || positionData.address.length > 1) {
+                return "Please select one address"
             } else if (!positionData.date.length) {
                 return "Please select the date"
             }
             return true;
         }
 
-
         let cflag = validator();
-        if (flag && cflag === true) {
+        if (cflag === true) {
             sentToPreview(positionData, dispatch);
         } else {
             toast.error(cflag)
@@ -150,14 +152,19 @@ export default function ClientPost() {
                     <Grid item sm={4} xs={12}>
                         <Typography className="post-item-header">JOB POSITION</Typography>
                         <Box className="p-1 pl-0">
-                            <Autocomplete
-                                fullWidth
-                                options={locationData}
-                                getOptionLabel={(option) => option.title}
-                                value={locationData.filter(it => it.value === positionData.job_position)[0]}
-                                renderInput={(params) => <TextField {...params} variant="outlined" />}
-                                onChange={(e, v) => updatePosition("job_position", v?.value)}
-                            />
+                            <FormControl variant="outlined" fullWidth>
+                                <Select
+                                    id="demo-simple-select-outlined"
+                                    value={positionData.job_position}
+                                    onChange={(e) => updatePosition("job_position", e.target.value)}
+                                >
+                                    {
+                                        locationData.map((item, key) => (
+                                            <MenuItem key={key} value={item.value}>{item.title}</MenuItem>
+                                        ))
+                                    }
+                                </Select>
+                            </FormControl>
                         </Box>
                     </Grid>
                     <Grid item sm={4} xs={12}>
@@ -165,16 +172,27 @@ export default function ClientPost() {
                         <Box className="p-1 pl-0">
                             {
                                 !vacanciesStatus ?
-                                    <Autocomplete
-                                        fullWidth
-                                        options={vacancieData}
-                                        getOptionLabel={(option) => option.title}
-                                        value={vacancieData.filter(it => it.value === positionData.vacancies)[0]}
-                                        renderInput={(params) => <TextField {...params} variant="outlined" />}
-                                        onChange={(e, v) => updatePosition("vacancies", v.value)}
-                                    />
+                                    <FormControl variant="outlined" fullWidth>
+                                        <Select
+                                            id="demo-simple-select-outlined"
+                                            value={positionData.vacancies}
+                                            onChange={(e) => updatePosition("vacancies", e.target.value)}
+                                        >
+                                            {
+                                                vacancieData.map((item, key) => (
+                                                    <MenuItem key={key} value={item.value}>{item.title}</MenuItem>
+                                                ))
+                                            }
+                                        </Select>
+                                    </FormControl>
                                     :
-                                    <TextField fullWidth type="number" variant="outlined" value={positionData.vacancies} onChange={(e) => updatePosition("vacancies", e.currentTarget.value)} />
+                                    <TextField 
+                                        fullWidth 
+                                        type="number" 
+                                        variant="outlined" 
+                                        value={positionData.vacancies} 
+                                        onChange={(e) => e.currentTarget.value >= 0 && updatePosition("vacancies", e.currentTarget.value)} 
+                                    />
                             }
                         </Box>
                     </Grid>
@@ -253,11 +271,7 @@ export default function ClientPost() {
                     {
                         mode ?
                             <>
-                                <Grid item sm={4} xs={12} className="mt-1">
-                                    <Typography className="post-item-header">ADD EVENT NAME</Typography>
-                                    <TextField className="mt-1" fullWidth variant="outlined" value={positionData.eventName} onChange={(e) => updatePosition("eventName", e.currentTarget.value)} />
-                                </Grid>
-                                <Grid item sm={4} xs={12} className="mt-1">
+                                <Grid item sm={6} xs={12} className="mt-1">
                                     <Typography className="post-item-header">UNPAID BREAK</Typography>
                                     <Box className="p-1">
                                         <Autocomplete
@@ -270,7 +284,7 @@ export default function ClientPost() {
                                         />
                                     </Box>
                                 </Grid>
-                                <Grid item sm={4} xs={12} className="mt-1">
+                                <Grid item sm={6} xs={12} className="mt-1">
                                     <Typography className="post-item-header">TRANSIT ALLOWANCE</Typography>
                                     <Box className="p-1">
                                         <Autocomplete
@@ -300,11 +314,8 @@ export default function ClientPost() {
                                 </Grid>
                             </> : <></>
                     }
-                    <Grid item xs={12} className="d-flex justify-content-between mt-1">
-                        <Button fullWidth className="bg-theme color-white" onClick={() => postShift(false)}>REQUEST DEDICATED POOL</Button>
-                        <Button fullWidth className="bg-theme color-white ml-1" onClick={() => postShift(true)}>POST DIRECT SHIFTS</Button>
-                    </Grid>
-                    <Typography className="mt-1 text-align-center">Please note that 15% admin fee will be added to the rate.</Typography>
+                    <Button fullWidth className="bg-theme color-white" onClick={() => postShift()}>POST DIRECT SHIFTS</Button>
+                    <Typography className="mt-1 text-align-center">Please note that 18% admin fee will be added to the rate.</Typography>
                 </Grid>
             </Box>
         </Container>

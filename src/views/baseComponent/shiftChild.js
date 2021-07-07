@@ -11,7 +11,7 @@ import Warning from "@material-ui/icons/Warning"
 import Timer from "@material-ui/icons/Timer"
 import ShiftNote from "./ShiftNote"
 import { Root } from "../../pre/config"
-import { locationData, breakData, dutyData, covidData, weekData, monthArray } from "../../configs/index"
+import { locationData, breakData, dutyData, covidData, weekData, monthArray, transitData } from "../../configs/index"
 
 export default function ClientShiftsPosts({ userData, shiftData }) {
 
@@ -19,7 +19,17 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
         if (shiftData.dateType) {
             let date = shiftData.date[0]
             let showDate = weekData[new Date(date.date).getDay()] + ". " + monthArray[new Date(date.date).getMonth()] + " " + new Date(date.date).getDate() + ", " + new Date(date.date).getFullYear()
-            let showTime = date.start + " ~ " + date.end
+
+            let start = date.start
+            let end = date.end
+            let sap = new Date(date.date + ", " + start).getHours() > 12 ? "PM" : "AM"
+            let shour = new Date(date.date + ", " + start).getHours() > 12 ? new Date(date.date + ", " + start).getHours() - 12 : new Date(date.date + ", " + start).getHours()
+            let sminute = new Date(date.date + ", " + start).getMinutes() < 10 ? "0" + new Date(date.date + ", " + start).getMinutes() : new Date(date.date + ", " + start).getMinutes()
+            let eap = new Date(date.date + ", " + end).getHours() > 12 ? "PM" : "AM"
+            let ehour = new Date(date.date + ", " + end).getHours() > 12 ? new Date(date.date + ", " + end).getHours() - 12 : new Date(date.date + ", " + end).getHours()
+            let eminute = new Date(date.date + ", " + end).getMinutes() < 10 ? "0" + new Date(date.date + ", " + end).getMinutes() : new Date(date.date + ", " + end).getMinutes()
+            let showTime = shour + ":" + sminute + " " + sap + " - " + ehour + ":" + eminute + " " + eap
+
             let time = (new Date(date.date + "," + date.end) - new Date(date.date + ", " + date.start)) / 3600000
             let money = shiftData.rate * (time - breakData.filter(it => shiftData.unpaid_break === it.value)[0].time)
             return <Fragment>
@@ -35,6 +45,12 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
                     <AvTimer />
                     <Typography className="ml-1">{`Unpaid Break: ${breakData.filter(it => it.value === shiftData.unpaid_break)[0].title}`}</Typography>
                 </Box>
+                {
+                    shiftData.transit_allowance > 0 ? <Box className="d-flex align-items-center">
+                        <AvTimer />
+                        <Typography className="ml-1">{`Transit Allowance: ${transitData.filter(it => it.value === shiftData.transit_allowance)[0].title}`}</Typography>
+                    </Box> : ""
+                }
                 <Box className="d-flex align-items-center">
                     <Payment />
                     <Typography className="ml-1"> Pay: ${money} @ ${shiftData.rate}/hr </Typography>
@@ -58,10 +74,32 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
 
             if (timeFlag) {
                 let showDate = ""
-                let showTime = firstDate.start + " ~ " + firstDate.end
+
+                let start = firstDate.start
+                let end = firstDate.end
+                let sap = new Date(firstDate.date + ", " + start).getHours() > 12 ? "PM" : "AM"
+                let shour = new Date(firstDate.date + ", " + start).getHours() > 12 ? new Date(firstDate.date + ", " + start).getHours() - 12 : new Date(firstDate.date + ", " + start).getHours()
+                let sminute = new Date(firstDate.date + ", " + start).getMinutes() < 10 ? "0" + new Date(firstDate.date + ", " + start).getMinutes() : new Date(firstDate.date + ", " + start).getMinutes()
+                let eap = new Date(firstDate.date + ", " + end).getHours() > 12 ? "PM" : "AM"
+                let ehour = new Date(firstDate.date + ", " + end).getHours() > 12 ? new Date(firstDate.date + ", " + end).getHours() - 12 : new Date(firstDate.date + ", " + end).getHours()
+                let eminute = new Date(firstDate.date + ", " + end).getMinutes() < 10 ? "0" + new Date(firstDate.date + ", " + end).getMinutes() : new Date(firstDate.date + ", " + end).getMinutes()
+                let showTime = shour + ":" + sminute + " " + sap + " - " + ehour + ":" + eminute + " " + eap
+
                 for (let i = 0; i < allDate.length; i++) {
                     let oneDate = allDate[i];
-                    showDate += monthArray[new Date(oneDate.date).getMonth()] + " " + new Date(oneDate.date).getDate() + ", "
+                    let month = monthArray[new Date(oneDate.date).getMonth()];
+                    let date = new Date(oneDate.date).getDate();
+                    if (i > 0) {
+                        let lastDate = allDate[i - 1];
+                        let lastMonth = monthArray[new Date(lastDate.date).getMonth()];
+                        if (lastMonth === month) {
+                            showDate += date + (allDate.length !== i + 1 ? ", " : "")
+                        } else {
+                            showDate += month + " " + date + (allDate.length !== i + 1 ? ", " : "")
+                        }
+                    } else {
+                        showDate += month + " " + date + (allDate.length !== i + 1 ? ", " : "")
+                    }
                 }
 
                 return <Fragment>
@@ -77,6 +115,12 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
                         <AvTimer />
                         <Typography className="ml-1">{`Unpaid Break: ${breakData.filter(it => it.value === shiftData.unpaid_break)[0].title}`}</Typography>
                     </Box>
+                    {
+                        shiftData.transit_allowance > 0 ? <Box className="d-flex align-items-center">
+                            <AvTimer />
+                            <Typography className="ml-1">{`Transit Allowance: ${transitData.filter(it => it.value === shiftData.transit_allowance)[0].title}`}</Typography>
+                        </Box> : ""
+                    }
                     <Box className="d-flex align-items-center">
                         <Payment />
                         <Typography className="ml-1"> Pay: ${money} @ ${shiftData.rate}/hr </Typography>
@@ -86,7 +130,17 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
                 let showDate = []
                 for (let i = 0; i < allDate.length; i++) {
                     let oneDate = allDate[i];
-                    let showTime = oneDate.start + " ~ " + oneDate.end
+
+                    let start = oneDate.start
+                    let end = oneDate.end
+                    let sap = new Date(oneDate.date + ", " + start).getHours() > 12 ? "PM" : "AM"
+                    let shour = new Date(oneDate.date + ", " + start).getHours() > 12 ? new Date(oneDate.date + ", " + start).getHours() - 12 : new Date(oneDate.date + ", " + start).getHours()
+                    let sminute = new Date(oneDate.date + ", " + start).getMinutes() < 10 ? "0" + new Date(oneDate.date + ", " + start).getMinutes() : new Date(oneDate.date + ", " + start).getMinutes()
+                    let eap = new Date(oneDate.date + ", " + end).getHours() > 12 ? "PM" : "AM"
+                    let ehour = new Date(oneDate.date + ", " + end).getHours() > 12 ? new Date(oneDate.date + ", " + end).getHours() - 12 : new Date(oneDate.date + ", " + end).getHours()
+                    let eminute = new Date(oneDate.date + ", " + end).getMinutes() < 10 ? "0" + new Date(oneDate.date + ", " + end).getMinutes() : new Date(oneDate.date + ", " + end).getMinutes()
+                    let showTime = shour + ":" + sminute + " " + sap + " - " + ehour + ":" + eminute + " " + eap
+
                     showDate.push(
                         weekData[new Date(oneDate.date).getDay()] + ". " +
                         monthArray[new Date(oneDate.date).getMonth()] + " " +
@@ -110,6 +164,12 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
                         <AvTimer />
                         <Typography className="ml-1">{`Unpaid Break: ${breakData.filter(it => it.value === shiftData.unpaid_break)[0].title}`}</Typography>
                     </Box>
+                    {
+                        shiftData.transit_allowance > 0 ? <Box className="d-flex align-items-center">
+                            <AvTimer />
+                            <Typography className="ml-1">{`Transit Allowance: ${transitData.filter(it => it.value === shiftData.transit_allowance)[0].title}`}</Typography>
+                        </Box> : ""
+                    }
                     <Box className="d-flex align-items-center">
                         <Payment />
                         <Typography className="ml-1"> Pay: ${money} @ ${shiftData.rate}/hr </Typography>
@@ -118,6 +178,8 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
             }
         }
     }
+
+    console.log(shiftData)
 
     return (
         <Fragment>
