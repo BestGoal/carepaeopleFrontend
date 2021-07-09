@@ -31,7 +31,7 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
             let showTime = shour + ":" + sminute + " " + sap + " - " + ehour + ":" + eminute + " " + eap
 
             let time = (new Date(date.date + "," + date.end) - new Date(date.date + ", " + date.start)) / 3600000
-            let money = shiftData.rate * (time - breakData.filter(it => shiftData.unpaid_break === it.value)[0].time)
+            let money = (shiftData.rate * (time - breakData.filter(it => shiftData.unpaid_break === it.value)[0].time)).toFixed(2)
             return <Fragment>
                 <Box className="d-flex align-items-center">
                     <DateRange />
@@ -70,7 +70,7 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
                 time += (new Date(oneDate.date + "," + oneDate.end) - new Date(oneDate.date + ", " + oneDate.start)) / 3600000
                 time -= breakTime
             }
-            let money = shiftData.rate * (time - breakData.filter(it => shiftData.unpaid_break === it.value)[0].time)
+            let money = (shiftData.rate * (time - breakData.filter(it => shiftData.unpaid_break === it.value)[0].time)).toFixed(2)
 
             if (timeFlag) {
                 let showDate = ""
@@ -178,8 +178,6 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
             }
         }
     }
-
-    console.log(shiftData)
 
     return (
         <Fragment>

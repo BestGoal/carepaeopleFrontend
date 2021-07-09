@@ -52,3 +52,23 @@ export const removeShiftDirect = async (data, dispatch) => {
         return [];
     }
 }
+
+export const getCurrentShift = async (dispatch) => {
+    let rdata = await Axios("POST", "", "api/client/get-current-shift", dispatch, true)
+    if (rdata.status) {
+        return rdata.data
+    } else {
+        return [];
+    }
+}
+
+export const cancelCurrentShift = async (data, dispatch) => {
+    let rdata = await Axios("POST", data, "api/client/cancel-current-shift", dispatch, true)
+    if (rdata.status) {
+        toast.success("Success")
+        return rdata.data
+    } else {
+        toast.error("Failure")
+        return [];
+    }
+}
