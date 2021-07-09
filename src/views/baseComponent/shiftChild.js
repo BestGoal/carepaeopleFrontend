@@ -13,7 +13,7 @@ import ShiftNote from "./ShiftNote"
 import { Root } from "../../pre/config"
 import { locationData, breakData, dutyData, covidData, weekData, monthArray, transitData } from "../../configs/index"
 
-export default function ClientShiftsPosts({ userData, shiftData }) {
+export default function ClientShiftsPosts({ userData, shiftData, isClient = false }) {
 
     const getDateRender = () => {
         if (shiftData.dateType) {
@@ -189,23 +189,46 @@ export default function ClientShiftsPosts({ userData, shiftData }) {
                             {`${locationData.filter(it => it.value === shiftData.job_position)[0].title} (${dutyData.filter(it => it.value === shiftData.duty)[0].title})`}
                         </Typography>
                     </Grid>
-                    <Grid item sm={4} xs={12} className="d-flex justify-content-center theme-border-radius">
+                    <Grid item sm={3} xs={12} className="d-flex justify-content-center theme-border-radius">
                         <img src={Root.adminUrl + userData.avatar} alt="" />
                     </Grid>
-                    <Grid item sm={8} xs={12}>
-                        <Box className="p-1 height-100">
+                    <Grid item sm={9} xs={12}>
+                        <Grid container>
+                            <Grid item md={6} xs={12}>
+                                <Box className="p-1 height-100">
+                                    {
+                                        getDateRender()
+                                    }
+                                    <Box className="d-flex align-items-center">
+                                        <SkipPrevious />
+                                        <Typography className="ml-1"> Instant pay: Available </Typography>
+                                    </Box>
+                                    <Box className="d-flex align-items-center">
+                                        <Warning />
+                                        <Typography className="ml-1">{`Covid-19 ${covidData.filter(it => it.value === shiftData.covid)[0].title}`}</Typography>
+                                    </Box>
+                                </Box>
+                            </Grid>
                             {
-                                getDateRender()
+                                isClient ?
+                                    <Grid item md={6} xs={12} className="d-flex align-items-center">
+                                        <Box className="theme-border p-1 d-flex theme-border-radius align-items-center">
+                                            <Box>
+                                                <img className="s-avatar" src={Root.adminUrl + shiftData.workerData.avatar} alt="" />
+                                            </Box>
+                                            <Box className="ml-1">
+                                                <Typography>Shift Accepted By : </Typography>
+                                                <Typography>
+                                                    {shiftData.workerData.firstName + " " + shiftData.workerData.lastName}
+                                                </Typography>
+                                                <Typography>
+                                                    ({locationData.filter(it => it.value === shiftData.job_position)[0].title})
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+                                    </Grid> : ""
                             }
-                            <Box className="d-flex align-items-center">
-                                <SkipPrevious />
-                                <Typography className="ml-1"> Instant pay: Available </Typography>
-                            </Box>
-                            <Box className="d-flex align-items-center">
-                                <Warning />
-                                <Typography className="ml-1">{`Covid-19 ${covidData.filter(it => it.value === shiftData.covid)[0].title}`}</Typography>
-                            </Box>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Box>

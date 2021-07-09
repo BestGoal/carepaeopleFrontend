@@ -29,3 +29,22 @@ export const getCurrentShiftWorker = async (dispatch) => {
         return []
     }
 }
+
+export const cancelShift = async (id, dispatch) => {
+    let rdata = await Axios("POST", {id}, "api/worker/cancel-shift", dispatch, true)
+    if (rdata.status) {
+        return rdata.data
+    } else {
+        toast.error(rdata.data)
+        return []
+    }
+}
+
+export const sendClockIn = async (id, dispatch) => {
+    let rdata = await Axios("POST", {id}, "api/worker/click-in", dispatch, true)
+    if (rdata.status) {
+        toast.success(rdata.data)
+    } else {
+        toast.error(rdata.data)
+    }
+}

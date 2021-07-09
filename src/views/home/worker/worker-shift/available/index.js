@@ -46,12 +46,12 @@ export default function WorkerJob() {
                     </Grid>
                 </Grid>
                 {
-                    data.map((item, key) => (
+                    data.length ? data.map((item, key) => (
                         <Box className="mt-1 theme-border theme-box-shadow" key={key}>
                             <ShiftChild userData={item.clientData} shiftData={item} />
                             <Button onClick={()=>acceptShift(item, dispatch)} fullWidth variant="contained" className="bg-theme color-white border-radius-0 accept">Accept Shift</Button>
                         </Box>
-                    ))
+                    )) : <Typography className="text-align-center">Thee is any available shifts</Typography>
                 }
                 <Button onClick={()=>loadShifts(itemCount + 5)} variant="contained" fullWidth className="mt-2">Load More</Button>
             </Container>

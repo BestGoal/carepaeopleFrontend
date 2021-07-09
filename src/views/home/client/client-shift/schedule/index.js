@@ -35,12 +35,12 @@ export default function ClientCurrentShifts() {
                 <Typography className="text-align-center font-weight-bold" variant="h5">CURRENT SCHEDULE</Typography>
             </Box>
             {
-                data.map((item, key) => (
+                data.length ? data.map((item, key) => (
                     <Box className="worker-job mt-1 theme-border theme-box-shadow" key={key}>
-                        <ShiftChild userData={userData} shiftData={item} />
+                        <ShiftChild userData={userData} shiftData={item} isClient={true} />
                         <Button onClick={() => cancelShift(item._id)} fullWidth variant="contained" className="accept border-radius-0">CANCEL</Button>
                     </Box>
-                ))
+                )) : <Typography className="text-align-center">Thee is any current shifts</Typography>
             }
         </Container>
     )

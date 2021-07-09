@@ -22,6 +22,7 @@ export default function ClientShiftsPosts() {
 
     const loadShifts = async (count) => {
         let rdata = await getShiftDirect({ count }, dispatch)
+        console.log(rdata)
         setData(rdata)
         setItemCount(rdata.length)
     }
@@ -38,12 +39,12 @@ export default function ClientShiftsPosts() {
                 <Typography className="text-align-center font-weight-bold" variant="h5">POSTED DIRECT SHIFTS</Typography>
             </Box>
             {
-                data.map((item, key) => (
+                data.length ? data.map((item, key) => (
                     <Box className="worker-job mt-1 theme-border theme-box-shadow" key={key}>
                         <ShiftChild userData={userData} shiftData={item} />
                         <Button onClick={() => deleteShift(item._id)} fullWidth variant="contained" className="accept border-radius-0">DELETE</Button>
                     </Box>
-                ))
+                )) : <Typography className="text-align-center">Thee is any posted shifts</Typography>
             }
             <Box className="d-flex justify-content-center mt-2">
                 <Button onClick={() => loadShifts(itemCount + 5)} variant="contained" fullWidth>Load More</Button>
