@@ -24,8 +24,8 @@ export default function ClientCurrentShifts() {
         setData(rdata)
     }
 
-    const cancelShift = async (id) => {
-        let rdata = await cancelCurrentShift({ id }, dispatch)
+    const cancelShift = async (id, worker) => {
+        let rdata = await cancelCurrentShift({ id, worker }, dispatch)
         setData(rdata)
     }
 
@@ -38,7 +38,7 @@ export default function ClientCurrentShifts() {
                 data.length ? data.map((item, key) => (
                     <Box className="worker-job mt-1 theme-border theme-box-shadow" key={key}>
                         <ShiftChild userData={userData} shiftData={item} isClient={true} />
-                        <Button onClick={() => cancelShift(item._id)} fullWidth variant="contained" className="accept border-radius-0">CANCEL</Button>
+                        <Button onClick={() => cancelShift(item._id, item.worker)} fullWidth variant="contained" className="accept border-radius-0">CANCEL</Button>
                     </Box>
                 )) : <Typography className="text-align-center">Thee is any current shifts</Typography>
             }

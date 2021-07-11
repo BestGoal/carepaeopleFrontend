@@ -30,7 +30,7 @@ export default function WorkerSchedule() {
     }
 
     const clockin = async (item) => {
-        sendClockIn(item._id)
+        sendClockIn(item._id, dispatch)
     }
 
     return (
