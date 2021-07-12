@@ -72,3 +72,12 @@ export const cancelCurrentShift = async (data, dispatch) => {
         return [];
     }
 }
+
+export const getProgressShift = async (dispatch) => {
+    let rdata = await Axios("POST", "", "api/client/get-progress-shift", dispatch, true)
+    if (rdata.status) {
+        return rdata.data
+    } else {
+        return [];
+    }
+}

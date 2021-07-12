@@ -44,6 +44,25 @@ export const sendClockIn = async (id, dispatch) => {
     let rdata = await Axios("POST", {id}, "api/worker/click-in", dispatch, true)
     if (rdata.status) {
         toast.success(rdata.data)
+        history.push("/worker-shift-progress")     
+    } else {
+        toast.error(rdata.data)
+    }
+}
+
+export const getProgressShiftWorker = async (dispatch) => {
+    let rdata = await Axios("POST", "", "api/worker/get-progress-shift", dispatch, true)
+    if (rdata.status) {
+        return rdata.data
+    } else {
+        return []
+    }
+}
+
+export const sendClockOut = async (id, dispatch) => {
+    let rdata = await Axios("POST", {id}, "api/worker/click-out", dispatch, true)
+    if (rdata.status) {
+        toast.success(rdata.data)
     } else {
         toast.error(rdata.data)
     }
